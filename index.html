@@ -113,12 +113,10 @@ p { max-width: 62ch; text-wrap: pretty; }
 .hero-spine .v, .hero-spine-h .v { fill: var(--foerde); }
 .hero-spine .seg[data-region="isg"] .v, .hero-spine-h .seg[data-region="isg"] .v { fill: var(--foerde-3); }
 
-/* ---------- intro: statement with inline frames ---------- */
+/* ---------- intro: one statement ---------- */
 .intro { background: var(--sand); padding: 22vh var(--margin); text-align: center; }
 .intro h2 { font-size: var(--step-lead); letter-spacing: -0.02em; }
 .statement { margin: 28px auto 0; max-width: 26em; font-size: var(--step-lead); line-height: 1.22; font-weight: 520; letter-spacing: -0.02em; }
-.frame { display: inline-block; height: 0.85em; width: 1.25em; vertical-align: -0.1em; margin: 0 0.12em; border-radius: var(--vertebra); overflow: hidden; background: #000; }
-.frame img { width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Wo es wehtut: index with preview ---------- */
 .where { background: var(--foerde); color: var(--papier); padding: clamp(6rem, 11vw, 10rem) var(--margin); }
@@ -297,7 +295,6 @@ p { max-width: 62ch; text-wrap: pretty; }
 
   .intro { padding: 96px var(--margin); text-align: left; }
   .statement { margin-left: 0; font-size: 1.25rem; }
-  .statement .frame:last-of-type { display: none; }
 
   .where { padding-block: 96px; }
   .preview { grid-template-columns: 30% 1fr; }
@@ -395,7 +392,7 @@ p { max-width: 62ch; text-wrap: pretty; }
 
   <section class="intro" aria-labelledby="intro-title">
     <h2 id="intro-title" data-reveal>Erst verstehen, dann entscheiden.</h2>
-    <p class="statement" data-reveal style="--i:1">Eine Operation <span class="frame"><img src="assets/v2/mri-t2-disc.webp" width="800" height="800" alt="" loading="lazy"></span> an der Wirbelsäule lässt sich nicht zurücknehmen. Prüfen Sie Ihre Bilder <span class="frame"><img src="assets/v2/mri-t2-lumbar.webp" width="620" height="760" alt="" loading="lazy"></span> und Ihre Wege <span class="frame"><img src="assets/v3/beach-walk.webp" width="1000" height="1376" alt="" loading="lazy"></span> vorher in Ruhe.</p>
+    <p class="statement" data-reveal style="--i:1">Eine Operation an der Wirbelsäule lässt sich nicht zurücknehmen. Prüfen Sie Ihre Bilder und Ihre Wege vorher in Ruhe.</p>
   </section>
 
   <section class="where" id="wo" aria-labelledby="where-title">
