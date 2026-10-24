@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Mockup Version 3</title>
+<style>
+@font-face { font-family: "Archivo"; font-weight: 100 900; font-stretch: 62% 125%; src: url(../../assets/fonts/archivo-var.woff2) format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: italic; src: url(../../assets/fonts/newsreader-italic.woff2) format("woff2"); }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 3200px; height: 2000px; overflow: hidden; }
+body { position: relative; background: #003b39; font-family: "Archivo", sans-serif; color: #f7f7f5; }
+/* the page's own motif: vertebral blocks, very large, behind everything */
+.motif { position: absolute; left: -120px; top: -160px; display: grid; gap: 26px; }
+.motif i { display: block; height: 150px; border-radius: 34% / 30%; background: #0d4d49; }
+.motif i:nth-child(odd) { background: #0a4542; }
+.motif-r { position: absolute; right: -260px; bottom: -220px; display: grid; gap: 24px; justify-items: end; }
+.motif-r i { display: block; height: 120px; border-radius: 34% / 30%; background: #0d4d49; }
+.browser { position: absolute; left: 230px; top: 300px; width: 2000px; border-radius: 34px; background: #e6e4df; padding: 0 0 0; overflow: hidden; box-shadow: 0 80px 160px rgba(0,0,0,.35), 0 20px 50px rgba(0,0,0,.25); }
+.chrome { height: 74px; display: flex; align-items: center; gap: 16px; padding: 0 30px; background: #ebe9e5; }
+.chrome b { width: 18px; height: 18px; border-radius: 50%; background: #c9c6c0; }
+.url { margin-left: 26px; flex: 1; max-width: 760px; height: 42px; border-radius: 21px; background: #f7f7f5; display: flex; align-items: center; padding: 0 22px; font-size: 21px; color: #575653; letter-spacing: 0.01em; }
+.browser img { display: block; width: 100%; }
+.phone { position: absolute; width: 520px; border-radius: 86px; background: #111; padding: 20px; box-shadow: 0 80px 140px rgba(0,0,0,.45), 0 20px 40px rgba(0,0,0,.3); }
+.phone .screen { border-radius: 68px; overflow: hidden; background: var(--sb, #f7f7f5); padding-top: 64px; }
+.phone img { display: block; width: 100%; }
+.phone::after { content: ""; position: absolute; top: 38px; left: 50%; width: 150px; height: 42px; margin-left: -75px; border-radius: 21px; background: #111; }
+.p1 { left: 1990px; top: 600px; }
+.p2 { left: 2560px; top: 380px; }
+.caption { position: absolute; left: 230px; top: 110px; display: flex; align-items: baseline; gap: 36px; }
+.caption h1 { font-weight: 600; font-stretch: 116%; font-size: 76px; letter-spacing: -0.04em; color: #f7f7f5; }
+.caption p { font-size: 32px; color: #c0e2bf; }
+.foot { position: absolute; left: 230px; bottom: 96px; right: 230px; display: flex; justify-content: space-between; align-items: baseline; font-size: 28px; color: #c6d6d2; }
+.foot .voice { font-family: "Newsreader", serif; font-style: italic; font-size: 40px; color: #f7f7f5; }
+.chips { display: flex; gap: 14px; }
+.chips span { display: inline-flex; align-items: center; gap: 14px; height: 54px; padding: 0 26px 0 18px; border-radius: 27px; background: #0d4d49; color: #f7f7f5; font-size: 24px; }
+.chips span i { width: 26px; height: 26px; border-radius: 34% / 30%; background: var(--c); }
+</style>
+</head>
+<body>
+<div class="motif" aria-hidden="true">
+  <i style="width:300px"></i><i style="width:330px"></i><i style="width:360px"></i><i style="width:400px"></i><i style="width:440px"></i><i style="width:470px"></i><i style="width:500px"></i><i style="width:520px"></i><i style="width:540px"></i><i style="width:560px"></i><i style="width:580px"></i><i style="width:600px"></i><i style="width:620px"></i>
+</div>
+<div class="motif-r" aria-hidden="true">
+  <i style="width:380px"></i><i style="width:430px"></i><i style="width:480px"></i><i style="width:540px"></i><i style="width:600px"></i>
+</div>
+
+<div class="caption">
+  <h1>Dr. med. Christoph Manicke</h1>
+  <p>Neurochirurgie mit Schwerpunkt Wirbelsäule, Kiel · Website, Version 3</p>
+</div>
+
+<div class="browser">
+  <div class="chrome"><b></b><b></b><b></b><div class="url">Dr. med. Christoph Manicke · Neurochirurgie Kiel</div></div>
+  <img src="desk-hero.png" alt="">
+</div>
+
+<div class="phone p1"><div class="screen"><img src="phone-wo.png" alt=""></div></div>
+<div class="phone p2"><div class="screen"><img src="phone-hero.png" alt=""></div></div>
+
+<div class="foot">
+  <span class="voice">„Erst verstehen, dann entscheiden.“</span>
+  <span class="chips">
+    <span><i style="--c:#f7f7f5"></i>Kieler Papier</span>
+    <span><i style="--c:#003b39; outline: 2px solid #245f5a"></i>Fördetief</span>
+    <span><i style="--c:#5d6c67"></i>Salbei</span>
+    <span><i style="--c:#c0e2bf"></i>Mint</span>
+  </span>
+</div>
+</body>
+</html>
