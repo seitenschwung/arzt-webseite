@@ -1,0 +1,2056 @@
+{
+ "url": "index.html",
+ "at": "2026-10-24T19:58:02.517Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.57,
+    0.58,
+    0.77,
+    0.8,
+    0.6,
+    0.54,
+    0.65,
+    0.61,
+    0.57,
+    0.61,
+    0.6,
+    0.41
+   ],
+   "motion": {
+    "elements": 46,
+    "css": 4,
+    "transitions": 42,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 11757,
+     "screens": 13.1,
+     "words": 924,
+     "img": 8,
+     "video": 1,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 1,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "vertebral-column-with-dissections-of-nerves-and-",
+      "vertebrae-thirteen-figures-line-engraving-by-a-8",
+      "muscles-and-bones-of-the-vertebral-column-800.we",
+      "st-elisabeth-krankenhaus-am-konigsweg-8-kiel.web",
+      "postcard-panorama-of-kiel-1902-960.webp",
+      "wintermorgen-am-eingang-zur-kieler-forde-2400.we"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Manicke",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 216,
+     "vw": 15,
+     "font": "Zilla Slab",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 0.8,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "right",
+     "position": "right",
+     "widthRatio": 0.51,
+     "top": 687,
+     "tag": "span",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Dr. med. Christoph Manicke Manicke",
+     "words": 5,
+     "lines": 2,
+     "size": 42,
+     "font": "Zilla Slab"
+    },
+    "headings": [
+     {
+      "text": "Manicke",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 216,
+      "vw": 15,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "right",
+      "position": "right",
+      "widthRatio": 0.51,
+      "top": 687,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Wenn der Rücken nicht heilt",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.29,
+      "top": 1073,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "24",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.14,
+      "top": 1808,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "31",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.14,
+      "top": 1808,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "2",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.14,
+      "top": 1808,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "Wo es wehtut",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.25,
+      "top": 2204,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Schwerpunkte",
+      "words": 1,
+      "chars": 12,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 3206,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Zeit für die ganze Geschichte",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 4917,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ihr erster Termin",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.29,
+      "top": 6412,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Für Kolleginnen und Kollegen",
+      "words": 4,
+      "chars": 28,
+      "lines": 2,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 7748,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Häufige Fragen",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 52,
+      "vw": 3.6,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.46,
+      "top": 8986,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 11,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Zilla Slab",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      15,
+      21,
+      24,
+      52,
+      216
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Zilla Slab",
+      "size": 21,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12
+     },
+     "measureChars": 86,
+     "max": {
+      "size": 216,
+      "vw": 15,
+      "font": "Zilla Slab",
+      "text": "Manicke"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ebe5e3",
+     "bodyBgHsl": {
+      "h": 15,
+      "s": 0.17,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e1dad7",
+       "top": 32,
+       "hsl": {
+        "h": 18,
+        "s": 0.14,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#2b2622",
+       "top": 2103,
+       "hsl": {
+        "h": 27,
+        "s": 0.12,
+        "l": 0.15
+       }
+      },
+      {
+       "color": "#ebe5e3",
+       "top": 3150,
+       "hsl": {
+        "h": 15,
+        "s": 0.17,
+        "l": 0.91
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#2b2622",
+       "share": 0.71
+      },
+      {
+       "color": "#6a615d",
+       "share": 0.18
+      },
+      {
+       "color": "#ebe5e3",
+       "share": 0.08
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.03
+      },
+      {
+       "color": "#0b6537",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#3a342f",
+      "hsl": {
+       "h": 27,
+       "s": 0.1,
+       "l": 0.21
+      },
+      "fg": "#ebe5e3"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 2,
+     "radius": 0,
+     "height": 67,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Zum Inhalt",
+      "Termin über Doctolib"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 7,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.46
+     },
+     {
+      "type": "img",
+      "ratio": 0.45
+     },
+     {
+      "type": "img",
+      "ratio": 0.45
+     },
+     {
+      "type": "img",
+      "ratio": 0.44
+     }
+    ],
+    "nav": {
+     "links": 5,
+     "fixed": false,
+     "height": 23,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "zilla slab"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 11757,
+    "margins": {
+     "left": 32,
+     "right": 32
+    },
+    "sections": [
+     {
+      "sel": "div.split",
+      "tag": "div",
+      "top": 0,
+      "height": 10364,
+      "words": 865,
+      "media": 6,
+      "middle": 0,
+      "heading": {
+       "text": "Manicke",
+       "size": 216,
+       "tag": "h1"
+      },
+      "left": 17,
+      "right": 32,
+      "textLeft": 26,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#kontakt.visit",
+      "tag": "section",
+      "top": 10364,
+      "height": 900,
+      "words": 39,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "So finden Sie mich",
+       "size": 24,
+       "tag": "h2"
+      },
+      "left": 1012,
+      "right": 92,
+      "textLeft": 1012,
+      "textRight": 92,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 11264,
+      "height": 493,
+      "words": 90,
+      "media": 0,
+      "middle": 418,
+      "heading": null,
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Dr. med. Christoph Manicke Manicke",
+      "size": 42,
+      "top": 656,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 740,
+      "n": 25
+     },
+     {
+      "x": 764,
+      "n": 1
+     },
+     {
+      "x": 908,
+      "n": 1
+     },
+     {
+      "x": 1012,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 28,
+    "bodySize": 21,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.13,
+    "voidBox": {
+     "x": 720,
+     "y": 120,
+     "w": 720,
+     "h": 240
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.54,
+    0.68,
+    0.81,
+    0.71,
+    0.59,
+    0.76,
+    0.62,
+    0.67,
+    0.72,
+    0.74,
+    0.25,
+    0.23
+   ],
+   "motion": {
+    "elements": 45,
+    "css": 4,
+    "transitions": 41,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 11877,
+     "screens": 11.6,
+     "words": 922,
+     "img": 8,
+     "video": 1,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 1,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "vertebral-column-with-dissections-of-nerves-and-",
+      "vertebrae-thirteen-figures-line-engraving-by-a-8",
+      "muscles-and-bones-of-the-vertebral-column-800.we",
+      "st-elisabeth-krankenhaus-am-konigsweg-8-kiel.web",
+      "postcard-panorama-of-kiel-1902-960.webp",
+      "wintermorgen-am-eingang-zur-kieler-forde-1200.we"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Manicke",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 115.2,
+     "vw": 15,
+     "font": "Zilla Slab",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 0.8,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "right",
+     "position": "right",
+     "widthRatio": 0.51,
+     "top": 892,
+     "tag": "span",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Dr. med. Christoph Manicke Manicke",
+     "words": 5,
+     "lines": 2,
+     "size": 38.2,
+     "font": "Zilla Slab"
+    },
+    "headings": [
+     {
+      "text": "Manicke",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 115.2,
+      "vw": 15,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.8,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "right",
+      "position": "right",
+      "widthRatio": 0.51,
+      "top": 892,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Wenn der Rücken nicht heilt",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 1144,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "24",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.46,
+      "top": 1887,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "31",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.46,
+      "top": 2002,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "2",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.46,
+      "top": 2116,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "Wo es wehtut",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.34,
+      "top": 2367,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Schwerpunkte",
+      "words": 1,
+      "chars": 12,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.41,
+      "top": 3361,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Zeit für die ganze Geschichte",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.45,
+      "top": 5032,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ihr erster Termin",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.4,
+      "top": 6305,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Für Kolleginnen und Kollegen",
+      "words": 4,
+      "chars": 28,
+      "lines": 2,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.45,
+      "top": 7643,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Häufige Fragen",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 37.7,
+      "vw": 4.9,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.46,
+      "top": 8811,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 11,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Zilla Slab",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      19,
+      21,
+      38,
+      115
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Zilla Slab",
+      "size": 19.1,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12
+     },
+     "measureChars": 86,
+     "max": {
+      "size": 115.2,
+      "vw": 15,
+      "font": "Zilla Slab",
+      "text": "Manicke"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ebe5e3",
+     "bodyBgHsl": {
+      "h": 15,
+      "s": 0.17,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e1dad7",
+       "top": 20,
+       "hsl": {
+        "h": 18,
+        "s": 0.14,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#2b2622",
+       "top": 2303,
+       "hsl": {
+        "h": 27,
+        "s": 0.12,
+        "l": 0.15
+       }
+      },
+      {
+       "color": "#ebe5e3",
+       "top": 3305,
+       "hsl": {
+        "h": 15,
+        "s": 0.17,
+        "l": 0.91
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#2b2622",
+       "share": 0.71
+      },
+      {
+       "color": "#6a615d",
+       "share": 0.18
+      },
+      {
+       "color": "#ebe5e3",
+       "share": 0.08
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.03
+      },
+      {
+       "color": "#0b6537",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#3a342f",
+      "hsl": {
+       "h": 27,
+       "s": 0.1,
+       "l": 0.21
+      },
+      "fg": "#ebe5e3"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 8,
+     "inHero": 2,
+     "radius": 0,
+     "height": 64,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Zum Inhalt",
+      "Termin über Doctolib"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 6,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.47
+     },
+     {
+      "type": "img",
+      "ratio": 0.47
+     },
+     {
+      "type": "img",
+      "ratio": 0.46
+     },
+     {
+      "type": "img",
+      "ratio": 0.44
+     }
+    ],
+    "nav": {
+     "links": 4,
+     "fixed": false,
+     "height": 22,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "zilla slab"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 11877,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "div.split",
+      "tag": "div",
+      "top": 0,
+      "height": 10330,
+      "words": 843,
+      "media": 6,
+      "middle": 0,
+      "heading": {
+       "text": "Manicke",
+       "size": 115,
+       "tag": "h1"
+      },
+      "left": 12,
+      "right": 20,
+      "textLeft": 26,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": true
+     },
+     {
+      "sel": "section#kontakt.visit",
+      "tag": "section",
+      "top": 10330,
+      "height": 1024,
+      "words": 39,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "So finden Sie mich",
+       "size": 21,
+       "tag": "h2"
+      },
+      "left": 340,
+      "right": 92,
+      "textLeft": 340,
+      "textRight": 92,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 11354,
+      "height": 524,
+      "words": 90,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Dr. med. Christoph Manicke Manicke",
+      "size": 38,
+      "top": 864,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 395,
+      "n": 24
+     },
+     {
+      "x": 419,
+      "n": 2
+     },
+     {
+      "x": 340,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 27,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.64,
+    0.46,
+    0.81,
+    0.64,
+    0.46,
+    0.64,
+    0.65,
+    0.6,
+    0.41,
+    0.44,
+    0.57,
+    0.61
+   ],
+   "motion": {
+    "elements": 36,
+    "css": 4,
+    "transitions": 32,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 11768,
+     "screens": 13.9,
+     "words": 926,
+     "img": 8,
+     "video": 1,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 8,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 1,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "vertebral-column-with-dissections-of-nerves-and-",
+      "vertebrae-thirteen-figures-line-engraving-by-a-8",
+      "muscles-and-bones-of-the-vertebral-column-800.we",
+      "postcard-panorama-of-kiel-1902-960.webp",
+      "wintermorgen-am-eingang-zur-kieler-forde-1200.we"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Manicke",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 81.9,
+     "vw": 21,
+     "font": "Zilla Slab",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 0.82,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 478,
+     "tag": "span",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Dr. med. Christoph Manicke Manicke",
+     "words": 5,
+     "lines": 2,
+     "size": 36,
+     "font": "Zilla Slab"
+    },
+    "headings": [
+     {
+      "text": "Manicke",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 81.9,
+      "vw": 21,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 0.82,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 478,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Wenn der Rücken nicht heilt",
+      "words": 5,
+      "chars": 27,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.66,
+      "top": 836,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "24",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1478,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "31",
+      "words": 1,
+      "chars": 2,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1586,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "2",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1694,
+      "tag": "b",
+      "kind": "heading"
+     },
+     {
+      "text": "Wo es wehtut",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.57,
+      "top": 1931,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Schwerpunkte",
+      "words": 1,
+      "chars": 12,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 2793,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Zeit für die ganze Geschichte",
+      "words": 5,
+      "chars": 29,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 4878,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Ihr erster Termin",
+      "words": 3,
+      "chars": 17,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.66,
+      "top": 6597,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Für Kolleginnen und Kollegen",
+      "words": 4,
+      "chars": 28,
+      "lines": 2,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 7724,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Häufige Fragen",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Zilla Slab",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 8838,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 11,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Zilla Slab",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      18,
+      20,
+      32,
+      82
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Zilla Slab",
+      "size": 18,
+      "leading": 1.35,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12
+     },
+     "measureChars": 50,
+     "max": {
+      "size": 81.9,
+      "vw": 21,
+      "font": "Zilla Slab",
+      "text": "Manicke"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ebe5e3",
+     "bodyBgHsl": {
+      "h": 15,
+      "s": 0.17,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e1dad7",
+       "top": 12,
+       "hsl": {
+        "h": 18,
+        "s": 0.14,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#2b2622",
+       "top": 1867,
+       "hsl": {
+        "h": 27,
+        "s": 0.12,
+        "l": 0.15
+       }
+      },
+      {
+       "color": "#ebe5e3",
+       "top": 2737,
+       "hsl": {
+        "h": 15,
+        "s": 0.17,
+        "l": 0.91
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#2b2622",
+       "share": 0.7
+      },
+      {
+       "color": "#6a615d",
+       "share": 0.18
+      },
+      {
+       "color": "#ebe5e3",
+       "share": 0.09
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.03
+      },
+      {
+       "color": "#0b6537",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#3a342f",
+      "hsl": {
+       "h": 27,
+       "s": 0.1,
+       "l": 0.21
+      },
+      "fg": "#ebe5e3"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 10,
+     "inHero": 4,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Zum Inhalt",
+      "Menü",
+      "Termin",
+      "Termin über Doctolib"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.53
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": false,
+     "height": 44,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "zilla slab"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 11768,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "aside.stage",
+      "tag": "aside",
+      "top": 0,
+      "height": 490,
+      "words": 0,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 12,
+      "right": 12,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.hero",
+      "tag": "section",
+      "top": 490,
+      "height": 234,
+      "words": 16,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Dr. med. Christoph",
+       "size": 20,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 110,
+      "textLeft": 20,
+      "textRight": 110,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 836,
+      "height": 919,
+      "words": 125,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 21,
+      "textLeft": 20,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#schwerpunkte.focus",
+      "tag": "section",
+      "top": 1867,
+      "height": 2859,
+      "words": 182,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Wo es wehtut",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 25,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#ueber.letter",
+      "tag": "section",
+      "top": 4838,
+      "height": 1648,
+      "words": 125,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Zeit für die ganze Geschichte",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#ablauf.route",
+      "tag": "section",
+      "top": 6597,
+      "height": 1015,
+      "words": 84,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 33,
+      "textLeft": 20,
+      "textRight": 33,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#zuweiser.peers",
+      "tag": "section",
+      "top": 7724,
+      "height": 1001,
+      "words": 97,
+      "media": 2,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 24,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#fragen.faq",
+      "tag": "section",
+      "top": 8838,
+      "height": 1380,
+      "words": 197,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 21,
+      "textLeft": 20,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakt.visit",
+      "tag": "section",
+      "top": 10218,
+      "height": 1029,
+      "words": 39,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 36,
+      "right": 36,
+      "textLeft": 36,
+      "textRight": 36,
+      "fullBleed": true,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 11247,
+      "height": 521,
+      "words": 90,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 20,
+      "right": 30,
+      "textLeft": 20,
+      "textRight": 30,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Dr. med. Christoph Manicke Manicke",
+      "size": 36,
+      "top": 478,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 27
+     },
+     {
+      "x": 36,
+      "n": 2
+     },
+     {
+      "x": 186,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 30,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "untitled-section",
+   "width": 390,
+   "message": "A section carries text but no heading: section#kontakt.visit at 10218px.",
+   "fix": "Name it with a short heading unless it is the continuation of the section above."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/desktop-fold.jpg",
+   "pages": [
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/desktop-page-01.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/desktop-page-02.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/tablet-fold.jpg",
+   "pages": [
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/tablet-page-01.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/mobile-fold.jpg",
+   "pages": [
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/mobile-page-01.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/before/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

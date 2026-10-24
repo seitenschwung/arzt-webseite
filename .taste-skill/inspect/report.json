@@ -1,0 +1,2706 @@
+{
+ "url": "index.html",
+ "at": "2026-10-24T20:17:19.794Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    0.94,
+    0.96,
+    0.96,
+    0.97,
+    0.77,
+    0.65,
+    0.93,
+    0.5,
+    0.97,
+    1
+   ],
+   "motion": {
+    "elements": 38,
+    "css": 4,
+    "transitions": 33,
+    "scripted": 1,
+    "videos": 2,
+    "playingVideos": 2
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 8779,
+     "screens": 9.8,
+     "words": 503,
+     "img": 27,
+     "video": 2,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 23,
+     "videoCount": 2,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "mri-t2-lumbar.webp",
+      "mri-stir.webp",
+      "mri-t1.webp",
+      "disc-herniation.webp",
+      "bell-vertebrae.webp",
+      "mri-t2-disc.webp",
+      "mri-t2-lumbar.webp",
+      "mri-t2-full.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Zweite Meinung zur Wirbelsäule",
+     "words": 4,
+     "chars": 30,
+     "lines": 2,
+     "size": 133.4,
+     "vw": 9.3,
+     "font": "Archivo",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 1,
+     "top": 317,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Zweite Meinung zur Wirbelsäule",
+     "words": 4,
+     "lines": 2,
+     "size": 133.4,
+     "font": "Archivo"
+    },
+    "headings": [
+     {
+      "text": "Zweite Meinung zur Wirbelsäule",
+      "words": 4,
+      "chars": 30,
+      "lines": 2,
+      "size": 133.4,
+      "vw": 9.3,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 317,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Dr. med. Christoph Manicke, Neurochirurg in Kiel. Unabhängige Beratung vor und nach Operationen an der Wirbelsäule.",
+      "words": 16,
+      "chars": 115,
+      "lines": 3,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.4,
+      "top": 647,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Erst verstehen, dann entscheiden.",
+      "words": 4,
+      "chars": 33,
+      "lines": 2,
+      "size": 101.4,
+      "vw": 7,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.045,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 1330,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wobei ich berate",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 2129,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Zweitmeinung vor der OP",
+      "words": 4,
+      "chars": 23,
+      "lines": 2,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.17,
+      "top": 2399,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Das ganze Fachgebiet",
+      "words": 3,
+      "chars": 20,
+      "lines": 2,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.17,
+      "top": 3386,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Nach einer Operation",
+      "words": 3,
+      "chars": 20,
+      "lines": 2,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.17,
+      "top": 3389,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Konservativ oder operativ",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.17,
+      "top": 3390,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "So läuft die Zweitmeinung",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.55,
+      "top": 4358,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Anrufen",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.22,
+      "top": 4922,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Mitbringen",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 4922,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Besprechen",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.39,
+      "top": 4922,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Zeit für Ihre Fragen",
+      "words": 4,
+      "chars": 20,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 5271,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Die Praxis",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.25,
+      "top": 5271,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Der Arzt",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.25,
+      "top": 5489,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Häufige Fragen",
+      "words": 2,
+      "chars": 14,
+      "lines": 2,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.31,
+      "top": 6398,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Anfrage vorbereiten",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 7530,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "E-Mail öffnen",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.31,
+      "top": 7709,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Termin vereinbaren",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 8314,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "0172 6347706",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 133.4,
+      "vw": 9.3,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 8358,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "christoph.manicke@gmx.de",
+      "words": 1,
+      "chars": 24,
+      "lines": 1,
+      "size": 29.9,
+      "vw": 2.1,
+      "font": "Archivo",
+      "weight": 520,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.26,
+      "top": 8496,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 21,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 3,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Archivo",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      15,
+      17,
+      19,
+      30,
+      64,
+      101,
+      133
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Archivo",
+      "size": 19,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.2
+     },
+     "measureChars": 80,
+     "max": {
+      "size": 133.4,
+      "vw": 9.3,
+      "font": "Archivo",
+      "text": "Zweite Meinung"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f7f5",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.11,
+      "l": 0.96
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#003b39",
+       "top": 0,
+       "hsl": {
+        "h": 178,
+        "s": 1,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#ebe9e5",
+       "top": 1170,
+       "hsl": {
+        "h": 40,
+        "s": 0.13,
+        "l": 0.91
+       }
+      },
+      {
+       "color": "#f7f7f5",
+       "top": 4185,
+       "hsl": {
+        "h": 60,
+        "s": 0.11,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#c0e2bf",
+       "top": 5195,
+       "hsl": {
+        "h": 118,
+        "s": 0.38,
+        "l": 0.82
+       }
+      },
+      {
+       "color": "#5d6c67",
+       "top": 7202,
+       "hsl": {
+        "h": 160,
+        "s": 0.07,
+        "l": 0.39
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1b1b",
+       "share": 0.74
+      },
+      {
+       "color": "#f7f7f5",
+       "share": 0.12
+      },
+      {
+       "color": "#d3dfdc",
+       "share": 0.07
+      },
+      {
+       "color": "#eef2f0",
+       "share": 0.04
+      },
+      {
+       "color": "#b9cac6",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#003b39",
+      "hsl": {
+       "h": 178,
+       "s": 1,
+       "l": 0.12
+      },
+      "fg": "#f7f7f5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Zum Inhalt",
+      "Anrufen",
+      "Termin vereinbaren: 0172 6347706"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 31,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 15,
+     "mediaRadius": 14,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 7,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "archivo"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 8779,
+    "margins": {
+     "left": 32,
+     "right": 32
+    },
+    "sections": [
+     {
+      "sel": "section#top.hero",
+      "tag": "section",
+      "top": 0,
+      "height": 1170,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Zweite Meinung",
+       "size": 133,
+       "tag": "h1"
+      },
+      "left": 32,
+      "right": 188,
+      "textLeft": 32,
+      "textRight": 188,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 1170,
+      "height": 855,
+      "words": 70,
+      "media": 1,
+      "middle": 14,
+      "heading": {
+       "text": "Erst verstehen,",
+       "size": 101,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 58,
+      "textLeft": 32,
+      "textRight": 58,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#leistungen.deal",
+      "tag": "section",
+      "top": 2025,
+      "height": 2160,
+      "words": 77,
+      "media": 4,
+      "middle": 128,
+      "heading": {
+       "text": "Wobei ich berate",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 359,
+      "textLeft": 32,
+      "textRight": 359,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#ablauf.steps",
+      "tag": "section",
+      "top": 4185,
+      "height": 1010,
+      "words": 57,
+      "media": 3,
+      "middle": 19,
+      "heading": {
+       "text": "So läuft die Zweitmeinung",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 28,
+      "right": 26,
+      "textLeft": 32,
+      "textRight": 249,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#praxis.practice",
+      "tag": "section",
+      "top": 5195,
+      "height": 1030,
+      "words": 63,
+      "media": 0,
+      "middle": 456,
+      "heading": {
+       "text": "Zeit für Ihre Fragen",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 76,
+      "right": 182,
+      "textLeft": 76,
+      "textRight": 182,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#fragen.faq",
+      "tag": "section",
+      "top": 6225,
+      "height": 978,
+      "words": 223,
+      "media": 0,
+      "middle": 241,
+      "heading": {
+       "text": "Häufige Fragen",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 348,
+      "textLeft": 32,
+      "textRight": 348,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakt.contact",
+      "tag": "section",
+      "top": 7202,
+      "height": 767,
+      "words": 48,
+      "media": 14,
+      "middle": 1900,
+      "heading": {
+       "text": "Anfrage vorbereiten",
+       "size": 64,
+       "tag": "h2"
+      },
+      "left": 0,
+      "right": 0,
+      "textLeft": 32,
+      "textRight": 156,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 7969,
+      "height": 810,
+      "words": 117,
+      "media": 0,
+      "middle": 343,
+      "heading": {
+       "text": "0172 6347706",
+       "size": 133,
+       "tag": "a"
+      },
+      "left": 32,
+      "right": 32,
+      "textLeft": 32,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Zweite Meinung zur Wirbelsäule",
+      "size": 133,
+      "top": 317,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 32,
+      "n": 12
+     },
+     {
+      "x": 528,
+      "n": 8
+     },
+     {
+      "x": 893,
+      "n": 6
+     },
+     {
+      "x": 383,
+      "n": 2
+     },
+     {
+      "x": 413,
+      "n": 2
+     },
+     {
+      "x": 732,
+      "n": 2
+     },
+     {
+      "x": 852,
+      "n": 2
+     },
+     {
+      "x": 969,
+      "n": 2
+     },
+     {
+      "x": 76,
+      "n": 1
+     },
+     {
+      "x": 194,
+      "n": 1
+     },
+     {
+      "x": 208,
+      "n": 1
+     },
+     {
+      "x": 907,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 40,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.2,
+    "voidBox": {
+     "x": 0,
+     "y": 120,
+     "w": 1440,
+     "h": 180
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 10,
+   "filled": [
+    0.98,
+    0.98,
+    0.96,
+    0.99,
+    0.79,
+    0.86,
+    0.83,
+    0.92,
+    0.96,
+    1
+   ],
+   "motion": {
+    "elements": 35,
+    "css": 4,
+    "transitions": 31,
+    "scripted": 0,
+    "videos": 2,
+    "playingVideos": 2
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 9551,
+     "screens": 9.3,
+     "words": 501,
+     "img": 27,
+     "video": 2,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 18,
+     "videoCount": 2,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "mri-t2-disc.webp",
+      "mri-t2-lumbar.webp",
+      "mri-t2-full.webp",
+      "portrait-manicke.webp",
+      "burgstra-e-kiel-2017-01-strip.webp",
+      "alter-markt-kiel-01-strip.webp",
+      "burgstrasse-1966-strip.webp",
+      "forde-strip.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Zweite Meinung zur Wirbelsäule",
+     "words": 4,
+     "chars": 30,
+     "lines": 2,
+     "size": 75.6,
+     "vw": 9.8,
+     "font": "Archivo",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 1,
+     "top": 436,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Zweite Meinung zur Wirbelsäule",
+     "words": 4,
+     "lines": 2,
+     "size": 75.6,
+     "font": "Archivo"
+    },
+    "headings": [
+     {
+      "text": "Zweite Meinung zur Wirbelsäule",
+      "words": 4,
+      "chars": 30,
+      "lines": 2,
+      "size": 75.6,
+      "vw": 9.8,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 436,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Erst verstehen, dann entscheiden.",
+      "words": 4,
+      "chars": 33,
+      "lines": 2,
+      "size": 57.1,
+      "vw": 7.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.045,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 1427,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wobei ich berate",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 2357,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "So läuft die Zweitmeinung",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.66,
+      "top": 4822,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Zeit für Ihre Fragen",
+      "words": 4,
+      "chars": 20,
+      "lines": 2,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 5779,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Häufige Fragen",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 6981,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Anfrage vorbereiten",
+      "words": 2,
+      "chars": 19,
+      "lines": 1,
+      "size": 45.4,
+      "vw": 5.9,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 8139,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "0172 6347706",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 75.6,
+      "vw": 9.8,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.95,
+      "top": 9093,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 3,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Archivo",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      17,
+      18,
+      25,
+      45,
+      57,
+      76
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Archivo",
+      "size": 17.9,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14.2
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 75.6,
+      "vw": 9.8,
+      "font": "Archivo",
+      "text": "Zweite Meinung"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f7f5",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.11,
+      "l": 0.96
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#003b39",
+       "top": 0,
+       "hsl": {
+        "h": 178,
+        "s": 1,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#ebe9e5",
+       "top": 1331,
+       "hsl": {
+        "h": 40,
+        "s": 0.13,
+        "l": 0.91
+       }
+      },
+      {
+       "color": "#f7f7f5",
+       "top": 4710,
+       "hsl": {
+        "h": 60,
+        "s": 0.11,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#c0e2bf",
+       "top": 5703,
+       "hsl": {
+        "h": 118,
+        "s": 0.38,
+        "l": 0.82
+       }
+      },
+      {
+       "color": "#5d6c67",
+       "top": 7811,
+       "hsl": {
+        "h": 160,
+        "s": 0.07,
+        "l": 0.39
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1b1b",
+       "share": 0.74
+      },
+      {
+       "color": "#f7f7f5",
+       "share": 0.12
+      },
+      {
+       "color": "#d3dfdc",
+       "share": 0.07
+      },
+      {
+       "color": "#eef2f0",
+       "share": 0.04
+      },
+      {
+       "color": "#b9cac6",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#003b39",
+      "hsl": {
+       "h": 178,
+       "s": 1,
+       "l": 0.12
+      },
+      "fg": "#f7f7f5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Zum Inhalt",
+      "Anrufen",
+      "Termin vereinbaren: 0172 6347706"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 26,
+     "boxRadius": 14,
+     "squareMedia": 0,
+     "roundedMedia": 13,
+     "mediaRadius": 14,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "archivo"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 9551,
+    "margins": {
+     "left": 20,
+     "right": 20
+    },
+    "sections": [
+     {
+      "sel": "section#top.hero",
+      "tag": "section",
+      "top": 0,
+      "height": 1331,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Zweite Meinung",
+       "size": 76,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 82,
+      "textLeft": 20,
+      "textRight": 82,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 1331,
+      "height": 922,
+      "words": 70,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Erst verstehen,",
+       "size": 57,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 227,
+      "textLeft": 20,
+      "textRight": 227,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#leistungen.deal",
+      "tag": "section",
+      "top": 2253,
+      "height": 2458,
+      "words": 77,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Wobei ich berate",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 153,
+      "textLeft": 20,
+      "textRight": 166,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section#ablauf.steps",
+      "tag": "section",
+      "top": 4710,
+      "height": 992,
+      "words": 57,
+      "media": 3,
+      "middle": 11,
+      "heading": {
+       "text": "So läuft die Zweitmeinung",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 18,
+      "right": 17,
+      "textLeft": 20,
+      "textRight": 54,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#praxis.practice",
+      "tag": "section",
+      "top": 5703,
+      "height": 1166,
+      "words": 63,
+      "media": 0,
+      "middle": 74,
+      "heading": {
+       "text": "Zeit für Ihre Fragen",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 76,
+      "right": 86,
+      "textLeft": 76,
+      "textRight": 86,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#fragen.faq",
+      "tag": "section",
+      "top": 6869,
+      "height": 941,
+      "words": 196,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Häufige Fragen",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 189,
+      "textLeft": 20,
+      "textRight": 189,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakt.contact",
+      "tag": "section",
+      "top": 7811,
+      "height": 819,
+      "words": 48,
+      "media": 14,
+      "middle": 2579,
+      "heading": {
+       "text": "Anfrage vorbereiten",
+       "size": 45,
+       "tag": "h2"
+      },
+      "left": 0,
+      "right": 0,
+      "textLeft": 20,
+      "textRight": 224,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 8630,
+      "height": 922,
+      "words": 117,
+      "media": 0,
+      "middle": 120,
+      "heading": {
+       "text": "0172 6347706",
+       "size": 76,
+       "tag": "a"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 1944,
+      "height": 308
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Zweite Meinung zur Wirbelsäule",
+      "size": 76,
+      "top": 436,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 14
+     },
+     {
+      "x": 48,
+      "n": 7
+     },
+     {
+      "x": 413,
+      "n": 5
+     },
+     {
+      "x": 37,
+      "n": 2
+     },
+     {
+      "x": 178,
+      "n": 2
+     },
+     {
+      "x": 206,
+      "n": 2
+     },
+     {
+      "x": 395,
+      "n": 2
+     },
+     {
+      "x": 454,
+      "n": 2
+     },
+     {
+      "x": 76,
+      "n": 1
+     },
+     {
+      "x": 493,
+      "n": 1
+     },
+     {
+      "x": 503,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 39,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 9,
+   "filled": [
+    0.98,
+    0.98,
+    0.65,
+    0.76,
+    0.77,
+    0.82,
+    0.93,
+    0.88,
+    1
+   ],
+   "motion": {
+    "elements": 32,
+    "css": 4,
+    "transitions": 28,
+    "scripted": 0,
+    "videos": 2,
+    "playingVideos": 2
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 7301,
+     "screens": 8.7,
+     "words": 499,
+     "img": 27,
+     "video": 2,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "mri-stir.webp",
+      "mri-t1.webp",
+      "disc-herniation.webp",
+      "bell-vertebrae.webp",
+      "mri-t2-disc.webp",
+      "mri-t2-lumbar.webp",
+      "mri-t2-full.webp",
+      "portrait-manicke.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 1,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Zweite Meinung zur Wirbelsäule",
+     "words": 4,
+     "chars": 30,
+     "lines": 2,
+     "size": 39.8,
+     "vw": 10.2,
+     "font": "Archivo",
+     "weight": 600,
+     "tracking": -0.045,
+     "leading": 1,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "center",
+     "position": "center",
+     "widthRatio": 1,
+     "top": 348,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Zweite Meinung zur Wirbelsäule",
+     "words": 4,
+     "lines": 2,
+     "size": 39.8,
+     "font": "Archivo"
+    },
+    "headings": [
+     {
+      "text": "Zweite Meinung zur Wirbelsäule",
+      "words": 4,
+      "chars": 30,
+      "lines": 2,
+      "size": 39.8,
+      "vw": 10.2,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.045,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 348,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Erst verstehen, dann entscheiden.",
+      "words": 4,
+      "chars": 33,
+      "lines": 2,
+      "size": 32.8,
+      "vw": 8.4,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.045,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1056,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Wobei ich berate",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1733,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Zweitmeinung vor der OP",
+      "words": 4,
+      "chars": 23,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.59,
+      "top": 1924,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Nach einer Operation",
+      "words": 3,
+      "chars": 20,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.59,
+      "top": 1924,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Konservativ oder operativ",
+      "words": 3,
+      "chars": 25,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.59,
+      "top": 1924,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Das ganze Fachgebiet",
+      "words": 3,
+      "chars": 20,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.025,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.59,
+      "top": 1924,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "So läuft die Zweitmeinung",
+      "words": 4,
+      "chars": 25,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2500,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Anrufen",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2817,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Mitbringen",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 3124,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Besprechen",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 3492,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Zeit für Ihre Fragen",
+      "words": 4,
+      "chars": 20,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.74,
+      "top": 3734,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Die Praxis",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 3842,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Der Arzt",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.84,
+      "top": 4019,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Häufige Fragen",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 4810,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Anfrage vorbereiten",
+      "words": 2,
+      "chars": 19,
+      "lines": 2,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.03,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5950,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "E-Mail öffnen",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6317,
+      "tag": "button",
+      "kind": "heading"
+     },
+     {
+      "text": "Termin vereinbaren",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Archivo",
+      "weight": 560,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6805,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "0172 6347706",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 39.8,
+      "vw": 10.2,
+      "font": "Archivo",
+      "weight": 600,
+      "tracking": -0.05,
+      "leading": 0.9,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6841,
+      "tag": "a",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 19,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 2,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Archivo",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      17,
+      22,
+      33,
+      36,
+      40
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Archivo",
+      "size": 17,
+      "leading": 1.3,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 11.6
+     },
+     "measureChars": 50,
+     "max": {
+      "size": 39.8,
+      "vw": 10.2,
+      "font": "Archivo",
+      "text": "Zweite Meinung"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.05,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f7f5",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.11,
+      "l": 0.96
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#003b39",
+       "top": 0,
+       "hsl": {
+        "h": 178,
+        "s": 1,
+        "l": 0.12
+       }
+      },
+      {
+       "color": "#ebe9e5",
+       "top": 968,
+       "hsl": {
+        "h": 40,
+        "s": 0.13,
+        "l": 0.91
+       }
+      },
+      {
+       "color": "#f7f7f5",
+       "top": 1896,
+       "hsl": {
+        "h": 60,
+        "s": 0.11,
+        "l": 0.96
+       }
+      },
+      {
+       "color": "#c0e2bf",
+       "top": 1896,
+       "hsl": {
+        "h": 118,
+        "s": 0.38,
+        "l": 0.82
+       }
+      },
+      {
+       "color": "#5d6c67",
+       "top": 1896,
+       "hsl": {
+        "h": 160,
+        "s": 0.07,
+        "l": 0.39
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1b1b",
+       "share": 0.74
+      },
+      {
+       "color": "#f7f7f5",
+       "share": 0.12
+      },
+      {
+       "color": "#d3dfdc",
+       "share": 0.07
+      },
+      {
+       "color": "#eef2f0",
+       "share": 0.04
+      },
+      {
+       "color": "#b9cac6",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#003b39",
+      "hsl": {
+       "h": 178,
+       "s": 1,
+       "l": 0.12
+      },
+      "fg": "#f7f7f5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Zum Inhalt",
+      "Anrufen",
+      "Termin vereinbaren: 0172 6347706"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 24,
+     "boxRadius": 20,
+     "squareMedia": 0,
+     "roundedMedia": 3,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 1896
+      }
+     ]
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "archivo"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 7301,
+    "margins": {
+     "left": 17,
+     "right": 17
+    },
+    "sections": [
+     {
+      "sel": "section#top.hero",
+      "tag": "section",
+      "top": 0,
+      "height": 968,
+      "words": 49,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Zweite Meinung",
+       "size": 40,
+       "tag": "h1"
+      },
+      "left": 20,
+      "right": 36,
+      "textLeft": 20,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.intro",
+      "tag": "section",
+      "top": 968,
+      "height": 677,
+      "words": 70,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Erst verstehen,",
+       "size": 33,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 26,
+      "textLeft": 20,
+      "textRight": 26,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#leistungen.deal",
+      "tag": "section",
+      "top": 1645,
+      "height": 767,
+      "words": 77,
+      "media": 4,
+      "middle": 535,
+      "heading": {
+       "text": "Wobei ich berate",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 0,
+      "textLeft": 20,
+      "textRight": -694,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#ablauf.steps",
+      "tag": "section",
+      "top": 2412,
+      "height": 1279,
+      "words": 57,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "So läuft die Zweitmeinung",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 17,
+      "right": 17,
+      "textLeft": 20,
+      "textRight": 52,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#praxis.practice",
+      "tag": "section",
+      "top": 3692,
+      "height": 1031,
+      "words": 63,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Zeit für Ihre Fragen",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 32,
+      "right": 40,
+      "textLeft": 32,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#fragen.faq",
+      "tag": "section",
+      "top": 4722,
+      "height": 923,
+      "words": 173,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Häufige Fragen",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 20,
+      "right": 42,
+      "textLeft": 20,
+      "textRight": 42,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#kontakt.contact",
+      "tag": "section",
+      "top": 5646,
+      "height": 886,
+      "words": 48,
+      "media": 0,
+      "middle": 2114,
+      "heading": {
+       "text": "Anfrage vorbereiten",
+       "size": 36,
+       "tag": "h2"
+      },
+      "left": 0,
+      "right": 0,
+      "textLeft": 20,
+      "textRight": 22,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.foot",
+      "tag": "footer",
+      "top": 6532,
+      "height": 769,
+      "words": 117,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "0172 6347706",
+       "size": 40,
+       "tag": "a"
+      },
+      "left": 20,
+      "right": 20,
+      "textLeft": 20,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Zweite Meinung zur Wirbelsäule",
+      "size": 40,
+      "top": 348,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 20,
+      "n": 20
+     },
+     {
+      "x": 32,
+      "n": 13
+     },
+     {
+      "x": 327,
+      "n": 2
+     },
+     {
+      "x": 626,
+      "n": 2
+     },
+     {
+      "x": 925,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 39,
+    "bodySize": 17,
+    "stage": false,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "empty-middle",
+   "width": 1440,
+   "message": "1 section(s) have content at both edges and 1900px of nothing between: \"Anfrage vorbereiten\"",
+   "fix": "Bring the two parts together on the grid, or put the picture or figure of the section in the middle. An empty middle third reads as a hole, the same as an empty half.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "side-scroll",
+   "width": 390,
+   "message": "1 row(s) scroll sideways with content past their edge.",
+   "fix": "Jurors and most visitors read a row cut at the edge as clipped, not as scrollable. Wrap it onto more lines, or end it inside the grid."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/desktop-fold.jpg",
+   "pages": [
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/desktop-page-01.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/desktop-page-02.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/tablet-fold.jpg",
+   "pages": [
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/tablet-page-01.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/mobile-fold.jpg",
+   "pages": [
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/mobile-page-01.jpg",
+    "/Users/deluxe/Desktop/arzt-webseite/.taste-skill/inspect/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
