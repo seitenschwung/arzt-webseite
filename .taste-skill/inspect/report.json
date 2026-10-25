@@ -1,6 +1,6 @@
 {
  "url": "index.html",
- "at": "2026-10-24T21:55:22.005Z",
+ "at": "2026-10-25T11:28:54.081Z",
  "allow": [],
  "viewports": [
   {
@@ -9,7 +9,7 @@
    "load": "load",
    "screens": 10,
    "filled": [
-    0.46,
+    0.48,
     0.97,
     0.78,
     0.55,
@@ -21,9 +21,9 @@
     0.97
    ],
    "motion": {
-    "elements": 88,
+    "elements": 89,
     "css": 65,
-    "transitions": 23,
+    "transitions": 24,
     "scripted": 0,
     "videos": 0,
     "playingVideos": 0
@@ -36,7 +36,7 @@
     "page": {
      "height": 8258,
      "screens": 9.2,
-     "words": 531,
+     "words": 546,
      "img": 14,
      "video": 0,
      "canvas": 0,
@@ -607,7 +607,7 @@
      "textColors": [
       {
        "color": "#1b1b1b",
-       "share": 0.51
+       "share": 0.49
       },
       {
        "color": "#f7f7f5",
@@ -665,7 +665,7 @@
      "outlinedBoxes": 0,
      "dashed": 0,
      "blurred": 0,
-     "roundedBoxes": 19,
+     "roundedBoxes": 20,
      "boxRadius": 24,
      "squareMedia": 0,
      "roundedMedia": 7,
@@ -712,7 +712,7 @@
     "pageH": 8258,
     "margins": {
      "left": 32,
-     "right": 37
+     "right": 45
     },
     "sections": [
      {
@@ -720,7 +720,7 @@
       "tag": "section",
       "top": 0,
       "height": 900,
-      "words": 45,
+      "words": 60,
       "media": 0,
       "middle": 0,
       "heading": {
@@ -729,9 +729,9 @@
        "tag": "h1"
       },
       "left": 32,
-      "right": 602,
+      "right": 409,
       "textLeft": 32,
-      "textRight": 602,
+      "textRight": 409,
       "fullBleed": false,
       "footer": false,
       "hero": true,
@@ -1014,7 +1014,7 @@
    "load": "load",
    "screens": 9,
    "filled": [
-    0.59,
+    0.6,
     0.98,
     0.95,
     0.53,
@@ -1025,9 +1025,9 @@
     0.84
    ],
    "motion": {
-    "elements": 87,
+    "elements": 88,
     "css": 64,
-    "transitions": 23,
+    "transitions": 24,
     "scripted": 0,
     "videos": 0,
     "playingVideos": 0
@@ -1040,7 +1040,7 @@
     "page": {
      "height": 8704,
      "screens": 8.5,
-     "words": 529,
+     "words": 544,
      "img": 14,
      "video": 0,
      "canvas": 0,
@@ -1365,7 +1365,7 @@
      "textColors": [
       {
        "color": "#1b1b1b",
-       "share": 0.5
+       "share": 0.49
       },
       {
        "color": "#f7f7f5",
@@ -1423,7 +1423,7 @@
      "outlinedBoxes": 0,
      "dashed": 0,
      "blurred": 0,
-     "roundedBoxes": 14,
+     "roundedBoxes": 15,
      "boxRadius": 24,
      "squareMedia": 0,
      "roundedMedia": 6,
@@ -1465,18 +1465,18 @@
       "tag": "section",
       "top": 0,
       "height": 1024,
-      "words": 45,
+      "words": 60,
       "media": 0,
-      "middle": 0,
+      "middle": 5,
       "heading": {
        "text": "Zweite Meinung",
        "size": 60,
        "tag": "h1"
       },
       "left": 20,
-      "right": 271,
+      "right": 66,
       "textLeft": 20,
-      "textRight": 271,
+      "textRight": 66,
       "fullBleed": false,
       "footer": false,
       "hero": true,
@@ -1719,17 +1719,18 @@
    "width": 390,
    "height": 844,
    "load": "load",
-   "screens": 10,
+   "screens": 11,
    "filled": [
-    0.41,
-    0.88,
-    0.95,
-    0.69,
-    0.49,
-    0.76,
-    0.91,
-    0.73,
+    0.47,
+    0.89,
+    0.92,
+    0.58,
+    0.51,
     0.79,
+    0.86,
+    0.74,
+    0.8,
+    0.82,
     0.94
    ],
    "motion": {
@@ -1746,9 +1747,9 @@
      "h": 866
     },
     "page": {
-     "height": 8424,
-     "screens": 9.7,
-     "words": 524,
+     "height": 8552,
+     "screens": 9.9,
+     "words": 539,
      "img": 14,
      "video": 0,
      "canvas": 0,
@@ -1842,7 +1843,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 940,
+      "top": 1069,
       "tag": "h2",
       "kind": "heading"
      },
@@ -1863,7 +1864,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 1278,
+      "top": 1407,
       "tag": "h2",
       "kind": "heading"
      },
@@ -1884,7 +1885,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.63,
-      "top": 1500,
+      "top": 1629,
       "tag": "b",
       "kind": "heading"
      },
@@ -1905,7 +1906,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.63,
-      "top": 1596,
+      "top": 1725,
       "tag": "b",
       "kind": "heading"
      },
@@ -1926,7 +1927,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.63,
-      "top": 1692,
+      "top": 1821,
       "tag": "b",
       "kind": "heading"
      },
@@ -1947,7 +1948,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.63,
-      "top": 1788,
+      "top": 1916,
       "tag": "b",
       "kind": "heading"
      },
@@ -1968,7 +1969,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 2333,
+      "top": 2462,
       "tag": "h3",
       "kind": "heading"
      },
@@ -1989,7 +1990,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 2788,
+      "top": 2916,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2010,7 +2011,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 4068,
+      "top": 4197,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2031,7 +2032,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.78,
-      "top": 4298,
+      "top": 4427,
       "tag": "h3",
       "kind": "heading"
      },
@@ -2052,7 +2053,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.72,
-      "top": 4784,
+      "top": 4913,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2073,7 +2074,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.82,
-      "top": 4894,
+      "top": 5022,
       "tag": "h3",
       "kind": "heading"
      },
@@ -2094,7 +2095,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.82,
-      "top": 5069,
+      "top": 5198,
       "tag": "h3",
       "kind": "heading"
      },
@@ -2115,7 +2116,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 5876,
+      "top": 6005,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2136,7 +2137,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.8,
-      "top": 6919,
+      "top": 7047,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2157,7 +2158,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 7978,
+      "top": 8106,
       "tag": "p",
       "kind": "statement"
      },
@@ -2178,7 +2179,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.88,
-      "top": 8020,
+      "top": 8148,
       "tag": "p",
       "kind": "statement"
      }
@@ -2257,7 +2258,7 @@
      "sectionBgs": [
       {
        "color": "#ebe9e5",
-       "top": 844,
+       "top": 973,
        "hsl": {
         "h": 40,
         "s": 0.13,
@@ -2266,7 +2267,7 @@
       },
       {
        "color": "#003b39",
-       "top": 1182,
+       "top": 1311,
        "hsl": {
         "h": 178,
         "s": 1,
@@ -2275,7 +2276,7 @@
       },
       {
        "color": "#5d6c67",
-       "top": 6887,
+       "top": 7015,
        "hsl": {
         "h": 160,
         "s": 0.07,
@@ -2284,7 +2285,7 @@
       },
       {
        "color": "#c0e2bf",
-       "top": 7636,
+       "top": 7765,
        "hsl": {
         "h": 118,
         "s": 0.38,
@@ -2295,7 +2296,7 @@
      "textColors": [
       {
        "color": "#1b1b1b",
-       "share": 0.5
+       "share": 0.49
       },
       {
        "color": "#f7f7f5",
@@ -2353,7 +2354,7 @@
      "outlinedBoxes": 0,
      "dashed": 0,
      "blurred": 0,
-     "roundedBoxes": 14,
+     "roundedBoxes": 15,
      "boxRadius": 20,
      "squareMedia": 0,
      "roundedMedia": 6,
@@ -2364,7 +2365,7 @@
        "count": 6,
        "iconTopped": false,
        "rounded": false,
-       "top": 5961
+       "top": 6089
       }
      ]
     },
@@ -2391,7 +2392,7 @@
      "w": 400,
      "h": 866
     },
-    "pageH": 8424,
+    "pageH": 8552,
     "margins": {
      "left": 20,
      "right": 30
@@ -2401,8 +2402,8 @@
       "sel": "section#top.hero",
       "tag": "section",
       "top": 0,
-      "height": 844,
-      "words": 45,
+      "height": 973,
+      "words": 60,
       "media": 1,
       "middle": 0,
       "heading": {
@@ -2423,7 +2424,7 @@
      {
       "sel": "section.intro",
       "tag": "section",
-      "top": 844,
+      "top": 973,
       "height": 338,
       "words": 23,
       "media": 0,
@@ -2446,7 +2447,7 @@
      {
       "sel": "section#wo.where",
       "tag": "section",
-      "top": 1182,
+      "top": 1311,
       "height": 1510,
       "words": 80,
       "media": 2,
@@ -2469,7 +2470,7 @@
      {
       "sel": "section#leistungen.specimens",
       "tag": "section",
-      "top": 2692,
+      "top": 2820,
       "height": 1376,
       "words": 67,
       "media": 1,
@@ -2492,7 +2493,7 @@
      {
       "sel": "section#ablauf.steps",
       "tag": "section",
-      "top": 4068,
+      "top": 4197,
       "height": 674,
       "words": 47,
       "media": 0,
@@ -2515,7 +2516,7 @@
      {
       "sel": "section#praxis.practice",
       "tag": "section",
-      "top": 4742,
+      "top": 4871,
       "height": 1038,
       "words": 64,
       "media": 0,
@@ -2538,7 +2539,7 @@
      {
       "sel": "section#fragen.faq",
       "tag": "section",
-      "top": 5780,
+      "top": 5909,
       "height": 1011,
       "words": 63,
       "media": 0,
@@ -2561,7 +2562,7 @@
      {
       "sel": "section#kontakt.contact",
       "tag": "section",
-      "top": 6791,
+      "top": 6919,
       "height": 845,
       "words": 26,
       "media": 0,
@@ -2584,7 +2585,7 @@
      {
       "sel": "footer.foot",
       "tag": "footer",
-      "top": 7636,
+      "top": 7765,
       "height": 788,
       "words": 96,
       "media": 1,

@@ -112,6 +112,27 @@ p { max-width: 62ch; text-wrap: pretty; }
 .hero-spine-h { display: none; }
 .hero-spine .v, .hero-spine-h .v { fill: var(--foerde); }
 .hero-spine .seg[data-region="isg"] .v, .hero-spine-h .seg[data-region="isg"] .v { fill: var(--foerde-3); }
+/* the hero spine is a set of four links: point at a section to read about it, choose it to jump there */
+.hero-spine .seg, .hero-spine-h .seg { cursor: pointer; outline: none; }
+.hero-spine .hit, .hero-spine-h .hit { fill: transparent; }
+.hero-spine .v, .hero-spine-h .v { transition: fill 160ms ease, translate 200ms var(--ease-out); }
+/* while the pointer is on the spine, each vertebra darkens and lifts by its distance to the pointer (--i, 0 to 1) */
+.spine-live .v { fill: color-mix(in srgb, var(--foerde) calc(var(--i, 0) * 100%), var(--sand-2)); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-spine.spine-live .v { translate: calc(var(--i, 0) * -22px) 0; }
+  .hero-spine-h.spine-live .v { translate: 0 calc(var(--i, 0) * -10px); }
+}
+.hero-spine .seg:focus-visible .v, .hero-spine-h .seg:focus-visible .v { stroke: var(--tinte); stroke-width: 4px; paint-order: stroke; }
+.spine-tip { position: absolute; z-index: 3; width: 264px; padding: 20px 22px 18px; border-radius: var(--radius); background: var(--foerde); color: var(--papier); opacity: 0; visibility: hidden; translate: 0 -50%; transition: opacity 200ms ease, visibility 0s linear 200ms; }
+.spine-tip.is-shown { opacity: 1; visibility: visible; transition: opacity 200ms ease, visibility 0s; }
+.spine-tip b { display: block; font-weight: 560; font-stretch: var(--wide); font-size: var(--step-body); letter-spacing: -0.01em; }
+.spine-tip .count { display: block; margin-top: 2px; font-size: var(--step-small); color: #b9cac6; }
+.spine-tip .sym { display: block; margin-top: 10px; font-size: var(--step-small); line-height: 1.45; color: #e3ebe9; }
+.spine-tip .go { display: inline-flex; align-items: center; min-height: 2.5rem; margin-top: 14px; padding: 0 16px; border-radius: 999px; background: var(--mint); color: var(--tinte); font-size: var(--step-small); font-weight: 560; text-decoration: none; transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out); }
+.spine-tip .go:hover { background: #aed6ad; }
+.spine-tip .go:active { transform: scale(0.97); }
+.spine-tip .go:focus-visible { outline: 2px solid var(--papier); outline-offset: 3px; }
+.spine-tip.is-idle .count, .spine-tip.is-idle .go { display: none; }
 
 /* ---------- intro: one statement ---------- */
 .intro { background: var(--sand); padding: 22vh var(--margin); text-align: center; }
@@ -254,7 +275,7 @@ p { max-width: 62ch; text-wrap: pretty; }
 @media (max-width: 1100px) {
   .nav-links .hide-mid { display: none; }
   .hero-copy { max-width: 64vw; }
-  .hero-spine { right: -6vw; opacity: 0.95; }
+  .hero-spine { right: -6vw; }
   .where .left { grid-column: 1 / 13; }
   .where .right { grid-column: 1 / 13; margin-top: 48px; }
   .preview { grid-template-columns: 26% 1fr; max-width: 640px; }
@@ -292,6 +313,7 @@ p { max-width: 62ch; text-wrap: pretty; }
   .hero-facts { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 40px; }
   .hero-spine { display: none; }
   .hero-spine-h { display: block; width: 100%; height: auto; margin-top: 48px; }
+  .spine-tip { position: relative; order: 3; width: auto; margin-top: 18px; translate: none; opacity: 1; visibility: visible; transition: none; }
 
   .intro { padding: 96px var(--margin); text-align: left; }
   .statement { margin-left: 0; font-size: 1.25rem; }
@@ -375,7 +397,8 @@ p { max-width: 62ch; text-wrap: pretty; }
 
 <main id="main">
   <section class="hero" id="top" aria-labelledby="title">
-    <svg class="hero-spine" viewBox="0 0 380 1351" aria-hidden="true" focusable="false"><g class="seg" data-region="hws"><rect class="v" style="--n:0" x="168.9" y="6.0" width="72.0" height="30" rx="10.2"/><rect class="v" style="--n:1" x="173.6" y="45.0" width="73.7" height="30" rx="10.2"/><rect class="v" style="--n:2" x="177.6" y="84.0" width="75.3" height="30" rx="10.2"/><rect class="v" style="--n:3" x="180.6" y="123.0" width="77.0" height="30" rx="10.2"/><rect class="v" style="--n:4" x="182.6" y="162.0" width="78.7" height="30" rx="10.2"/><rect class="v" style="--n:5" x="183.4" y="201.0" width="80.3" height="30" rx="10.2"/><rect class="v" style="--n:6" x="183.0" y="240.0" width="82.0" height="30" rx="10.2"/></g><g class="seg" data-region="bws"><rect class="v" style="--n:7" x="179.0" y="279.0" width="88.0" height="40" rx="13.6"/><rect class="v" style="--n:8" x="174.4" y="328.0" width="91.3" height="40" rx="13.6"/><rect class="v" style="--n:9" x="168.1" y="377.0" width="94.5" height="40" rx="13.6"/><rect class="v" style="--n:10" x="160.4" y="426.0" width="97.8" height="40" rx="13.6"/><rect class="v" style="--n:11" x="151.5" y="475.0" width="101.1" height="40" rx="13.6"/><rect class="v" style="--n:12" x="142.0" y="524.0" width="104.4" height="40" rx="13.6"/><rect class="v" style="--n:13" x="132.2" y="573.0" width="107.6" height="40" rx="13.6"/><rect class="v" style="--n:14" x="122.6" y="622.0" width="110.9" height="40" rx="13.6"/><rect class="v" style="--n:15" x="113.8" y="671.0" width="114.2" height="40" rx="13.6"/><rect class="v" style="--n:16" x="106.0" y="720.0" width="117.5" height="40" rx="13.6"/><rect class="v" style="--n:17" x="99.7" y="769.0" width="120.7" height="40" rx="13.6"/><rect class="v" style="--n:18" x="95.1" y="818.0" width="124.0" height="40" rx="13.6"/></g><g class="seg" data-region="lws"><rect class="v" style="--n:19" x="86.0" y="867.0" width="140.0" height="56" rx="19.0"/><rect class="v" style="--n:20" x="84.0" y="932.0" width="148.0" height="56" rx="19.0"/><rect class="v" style="--n:21" x="85.3" y="997.0" width="156.0" height="56" rx="19.0"/><rect class="v" style="--n:22" x="89.2" y="1062.0" width="164.0" height="56" rx="19.0"/><rect class="v" style="--n:23" x="95.0" y="1127.0" width="172.0" height="56" rx="19.0"/></g><g class="seg" data-region="isg"><rect class="v" style="--n:24" x="115.7" y="1192.0" width="150.0" height="44" rx="15.0"/><rect class="v" style="--n:25" x="144.4" y="1245.0" width="110.0" height="44" rx="15.0"/><rect class="v" style="--n:26" x="172.5" y="1298.0" width="70.0" height="44" rx="15.0"/></g></svg><svg class="hero-spine-h" viewBox="0 0 1351 380" aria-hidden="true" focusable="false"><g class="seg" data-region="hws"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/></g><g class="seg" data-region="bws"><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/></g><g class="seg" data-region="lws"><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/></g><g class="seg" data-region="isg"><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></g></svg>
+    <svg class="hero-spine" viewBox="0 0 380 1351" role="group" aria-label="Wirbelsäule: Abschnitt wählen"><a class="seg" href="?bereich=hws#wo" data-region="hws" aria-label="Halswirbelsäule: typische Beschwerden ansehen"><rect class="hit" x="128.9" y="1.5" width="176.1" height="273.0"/><rect class="v" style="--n:0" x="168.9" y="6.0" width="72.0" height="30" rx="10.2"/><rect class="v" style="--n:1" x="173.6" y="45.0" width="73.7" height="30" rx="10.2"/><rect class="v" style="--n:2" x="177.6" y="84.0" width="75.3" height="30" rx="10.2"/><rect class="v" style="--n:3" x="180.6" y="123.0" width="77.0" height="30" rx="10.2"/><rect class="v" style="--n:4" x="182.6" y="162.0" width="78.7" height="30" rx="10.2"/><rect class="v" style="--n:5" x="183.4" y="201.0" width="80.3" height="30" rx="10.2"/><rect class="v" style="--n:6" x="183.0" y="240.0" width="82.0" height="30" rx="10.2"/></a><a class="seg" href="?bereich=bws#wo" data-region="bws" aria-label="Brustwirbelsäule: typische Beschwerden ansehen"><rect class="hit" x="55.1" y="274.5" width="251.9" height="588.0"/><rect class="v" style="--n:7" x="179.0" y="279.0" width="88.0" height="40" rx="13.6"/><rect class="v" style="--n:8" x="174.4" y="328.0" width="91.3" height="40" rx="13.6"/><rect class="v" style="--n:9" x="168.1" y="377.0" width="94.5" height="40" rx="13.6"/><rect class="v" style="--n:10" x="160.4" y="426.0" width="97.8" height="40" rx="13.6"/><rect class="v" style="--n:11" x="151.5" y="475.0" width="101.1" height="40" rx="13.6"/><rect class="v" style="--n:12" x="142.0" y="524.0" width="104.4" height="40" rx="13.6"/><rect class="v" style="--n:13" x="132.2" y="573.0" width="107.6" height="40" rx="13.6"/><rect class="v" style="--n:14" x="122.6" y="622.0" width="110.9" height="40" rx="13.6"/><rect class="v" style="--n:15" x="113.8" y="671.0" width="114.2" height="40" rx="13.6"/><rect class="v" style="--n:16" x="106.0" y="720.0" width="117.5" height="40" rx="13.6"/><rect class="v" style="--n:17" x="99.7" y="769.0" width="120.7" height="40" rx="13.6"/><rect class="v" style="--n:18" x="95.1" y="818.0" width="124.0" height="40" rx="13.6"/></a><a class="seg" href="?bereich=lws#wo" data-region="lws" aria-label="Lendenwirbelsäule: typische Beschwerden ansehen"><rect class="hit" x="44.0" y="862.5" width="263.0" height="325.0"/><rect class="v" style="--n:19" x="86.0" y="867.0" width="140.0" height="56" rx="19.0"/><rect class="v" style="--n:20" x="84.0" y="932.0" width="148.0" height="56" rx="19.0"/><rect class="v" style="--n:21" x="85.3" y="997.0" width="156.0" height="56" rx="19.0"/><rect class="v" style="--n:22" x="89.2" y="1062.0" width="164.0" height="56" rx="19.0"/><rect class="v" style="--n:23" x="95.0" y="1127.0" width="172.0" height="56" rx="19.0"/></a><a class="seg" href="?bereich=isg#wo" data-region="isg" aria-label="Kreuzbein und Becken: typische Beschwerden ansehen"><rect class="hit" x="75.7" y="1187.5" width="230.0" height="159.0"/><rect class="v" style="--n:24" x="115.7" y="1192.0" width="150.0" height="44" rx="15.0"/><rect class="v" style="--n:25" x="144.4" y="1245.0" width="110.0" height="44" rx="15.0"/><rect class="v" style="--n:26" x="172.5" y="1298.0" width="70.0" height="44" rx="15.0"/></a></svg><svg class="hero-spine-h" viewBox="0 0 1351 380" role="group" aria-label="Wirbelsäule: Abschnitt wählen"><a class="seg" href="?bereich=hws#wo" data-region="hws" aria-label="Halswirbelsäule: typische Beschwerden ansehen"><rect class="hit" x="1.5" y="128.9" width="273.0" height="176.1"/><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/></a><a class="seg" href="?bereich=bws#wo" data-region="bws" aria-label="Brustwirbelsäule: typische Beschwerden ansehen"><rect class="hit" x="274.5" y="55.1" width="588.0" height="251.9"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/></a><a class="seg" href="?bereich=lws#wo" data-region="lws" aria-label="Lendenwirbelsäule: typische Beschwerden ansehen"><rect class="hit" x="862.5" y="44.0" width="325.0" height="263.0"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/></a><a class="seg" href="?bereich=isg#wo" data-region="isg" aria-label="Kreuzbein und Becken: typische Beschwerden ansehen"><rect class="hit" x="1187.5" y="75.7" width="159.0" height="230.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></a></svg>
+    <div class="spine-tip is-idle"><b>Wo tut es weh?</b><span class="count"></span><span class="sym">Zeigen Sie auf die Wirbelsäule oder tippen Sie einen Wirbel an.</span><a class="go" href="#wo">Beschwerden ansehen</a></div>
     <div class="hero-copy">
       <h1 id="title"><span class="line">Zweite Meinung</span> <span class="line">zur Wirbelsäule</span></h1>
       <p class="hero-lede" data-rise style="--i:1">Dr. med. Christoph Manicke, Neurochirurg in&nbsp;Kiel. Unabhängige Beratung vor und nach Operationen an der Wirbelsäule.</p>
@@ -579,36 +602,172 @@ p { max-width: 62ch; text-wrap: pretty; }
   els.forEach((el) => io.observe(el));
 })();
 
-// Wo es wehtut: pointing at a row lights its section of the spine, swaps the picture and the detail.
+// Regions: the hero spine, the rows in "Wo es wehtut", the coupon and the URL (?bereich=) share one state.
 (() => {
+  const info = {
+    hws: { name: 'Halswirbelsäule', count: '7 Wirbel, Nacken bis Schulter', sym: 'Nackenschmerz, der in Schulter und Arm ausstrahlt, Kribbeln in den Händen.' },
+    bws: { name: 'Brustwirbelsäule', count: '12 Wirbel, zwischen den Schulterblättern', sym: 'Gürtelförmiger Schmerz um den Brustkorb, etwa nach einem Sturz.' },
+    lws: { name: 'Lendenwirbelsäule', count: '5 Wirbel, unterer Rücken', sym: 'Kreuzschmerz, der ins Bein zieht, schwere Beine beim Gehen.' },
+    isg: { name: 'Kreuzbein und Becken', count: 'Kreuz-Darmbein-Gelenke', sym: 'Tiefer, einseitiger Schmerz über dem Gesäß, schlimmer beim Aufstehen.' },
+  };
   const rows = [...document.querySelectorAll('.row')];
   const box = document.querySelector('.rows');
-  const segs = document.querySelectorAll('.mini-spine .seg');
+  const miniSegs = document.querySelectorAll('.mini-spine .seg');
   const shots = document.querySelectorAll('.shots figure');
   const panels = document.querySelectorAll('.panel-r');
   const regionSelect = document.querySelector('#f-region');
-  const names = { hws: 'Halswirbelsäule', bws: 'Brustwirbelsäule', lws: 'Lendenwirbelsäule', isg: 'Kreuzbein und Becken' };
-  let chosen = 'lws';
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const fromUrl = new URLSearchParams(location.search).get('bereich');
+  let chosen = info[fromUrl] ? fromUrl : 'lws';
+
   const show = (r) => {
-    segs.forEach((s) => s.classList.toggle('is-on', s.dataset.region === r));
+    miniSegs.forEach((s) => s.classList.toggle('is-on', s.dataset.region === r));
     shots.forEach((f) => f.classList.toggle('is-on', f.dataset.region === r));
     panels.forEach((p) => (p.hidden = p.dataset.region !== r));
   };
-  const pick = (r) => {
+  const pick = (r, { updateUrl = true } = {}) => {
     chosen = r;
     rows.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.region === r)));
     box.classList.add('has-pick');
-    if (regionSelect) regionSelect.value = names[r];
+    if (regionSelect) regionSelect.value = info[r].name;
     show(r);
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.set('bereich', r);
+      history.replaceState(null, '', url);
+    }
   };
+
   rows.forEach((b) => {
     b.addEventListener('click', () => pick(b.dataset.region));
     b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(b.dataset.region); });
     b.addEventListener('focus', () => show(b.dataset.region));
   });
   box.addEventListener('pointerleave', () => show(chosen));
-  document.querySelectorAll('.mini-spine .seg').forEach((s) => s.addEventListener('click', () => pick(s.dataset.region)));
-  show(chosen);
+  miniSegs.forEach((s) => s.addEventListener('click', () => pick(s.dataset.region)));
+
+  // the hero spine: the effect follows the pointer vertebra by vertebra; the box belongs to the section under it
+  const hero = document.querySelector('.hero');
+  const tip = document.querySelector('.spine-tip');
+  const go = tip.querySelector('.go');
+  const spines = [...document.querySelectorAll('.hero-spine, .hero-spine-h')];
+  const idle = { b: tip.querySelector('b').textContent, sym: tip.querySelector('.sym').textContent };
+  const SIGMA = 58; // in spine units: about three vertebrae either side feel the pointer
+  const model = spines.map((sv) => {
+    const horizontal = sv.classList.contains('hero-spine-h');
+    const verts = [...sv.querySelectorAll('.v')].map((el) => {
+      const n = (k) => parseFloat(el.getAttribute(k)); // from the geometry itself, so a hidden spine still has its centres
+      return { el, c: horizontal ? n('x') + n('width') / 2 : n('y') + n('height') / 2, region: el.closest('.seg').dataset.region };
+    });
+    return { sv, horizontal, verts };
+  });
+  let hideTimer, current = null, frame = 0, lastPointer = 'mouse';
+
+  const toSpine = (m, clientX, clientY) => {
+    const p = new DOMPoint(clientX, clientY).matrixTransform(m.sv.getScreenCTM().inverse());
+    return m.horizontal ? p.x : p.y;
+  };
+  const light = (m, pos) => {
+    m.sv.classList.add('spine-live');
+    let near = m.verts[0];
+    for (const v of m.verts) {
+      const d = v.c - pos;
+      v.el.style.setProperty('--i', Math.exp(-(d * d) / (2 * SIGMA * SIGMA)).toFixed(3));
+      if (Math.abs(d) < Math.abs(near.c - pos)) near = v;
+    }
+    return near.region;
+  };
+  const dark = () => model.forEach((m) => { m.sv.classList.remove('spine-live'); m.verts.forEach((v) => v.el.style.removeProperty('--i')); });
+
+  const placeTip = (m, region) => {
+    if (m.horizontal) return; // on phones the box sits under the spine
+    const seg = m.sv.querySelector(`.seg[data-region="${region}"]`);
+    const h = hero.getBoundingClientRect();
+    const r = seg.getBoundingClientRect();
+    const bar = document.querySelector('.bar').offsetHeight;
+    const half = tip.offsetHeight / 2;
+    const want = r.top + r.height / 2 - h.top;
+    const min = bar + 16 + half - h.top;
+    const max = Math.min(h.height, innerHeight - h.top) - 16 - half;
+    const top = Math.min(Math.max(want, min), Math.max(min, max));
+    tip.style.top = `${top}px`;
+    const facts = document.querySelector('.hero-facts').getBoundingClientRect();
+    const overlapsFacts = top + half > facts.top - h.top && top - half < facts.bottom - h.top;
+    const left = r.left - h.left - tip.offsetWidth + 28;
+    const maxLeft = h.width - tip.offsetWidth - 24; // never past the right margin
+    tip.style.left = `${Math.max(16, Math.min(maxLeft, overlapsFacts ? Math.max(left, facts.right - h.left + 24) : left))}px`;
+  };
+  // the box changes only when the pointer crosses into another section, so it stays put while you move to it
+  const showRegion = (m, region) => {
+    clearTimeout(hideTimer);
+    if (region !== current) {
+      current = region;
+      tip.classList.toggle('is-idle', !region);
+      tip.querySelector('b').textContent = region ? info[region].name : idle.b;
+      tip.querySelector('.count').textContent = region ? info[region].count : '';
+      tip.querySelector('.sym').textContent = region ? info[region].sym : idle.sym;
+      if (region) go.href = `?bereich=${region}#wo`;
+      if (m) placeTip(m, region || 'bws');
+    }
+    tip.classList.add('is-shown');
+  };
+  const rest = () => {
+    dark();
+    current = undefined;
+    const m = model.find((x) => !x.horizontal && x.sv.getBoundingClientRect().width);
+    showRegion(m || null, null);
+  };
+  const hideSoon = () => { clearTimeout(hideTimer); hideTimer = setTimeout(rest, 420); };
+
+  const jump = (region) => {
+    pick(region);
+    document.querySelector('#wo').scrollIntoView({ behavior: still.matches ? 'auto' : 'smooth', block: 'start' });
+    const row = rows.find((b) => b.dataset.region === region);
+    if (row) setTimeout(() => row.focus({ preventScroll: true }), still.matches ? 0 : 600);
+  };
+
+  model.forEach((m) => {
+    m.sv.addEventListener('pointerdown', (e) => { lastPointer = e.pointerType; });
+    m.sv.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      const x = e.clientX, y = e.clientY;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => showRegion(m, light(m, toSpine(m, x, y))));
+    });
+    m.sv.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hideSoon(); });
+    m.sv.querySelectorAll('.seg').forEach((seg) => {
+      const region = seg.dataset.region;
+      const centre = () => { const vs = m.verts.filter((v) => v.region === region); return (vs[0].c + vs[vs.length - 1].c) / 2; };
+      seg.addEventListener('focus', () => { light(m, centre()); showRegion(m, region); });
+      seg.addEventListener('blur', () => { if (!tip.contains(document.activeElement)) hideSoon(); });
+      seg.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // a new tab keeps the link's own ?bereich=
+        e.preventDefault();
+        if (lastPointer === 'touch' || lastPointer === 'pen') {
+          // a tap previews: the vertebrae around the finger light up and the box offers the jump
+          light(m, toSpine(m, e.clientX, e.clientY));
+          showRegion(m, region);
+          lastPointer = 'mouse';
+          return;
+        }
+        jump(region);
+      });
+    });
+  });
+  // the box is a place you can go to: hovering or focusing it keeps it open
+  tip.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+  tip.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hideSoon(); });
+  tip.addEventListener('focusin', () => clearTimeout(hideTimer));
+  tip.addEventListener('focusout', (e) => { if (!e.relatedTarget || !e.relatedTarget.closest('.seg, .spine-tip')) hideSoon(); });
+  go.addEventListener('click', (e) => {
+    if (!current || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    jump(current);
+  });
+  setTimeout(rest, still.matches ? 0 : 1700);
+  addEventListener('resize', () => { if (!current) rest(); });
+
+  pick(chosen, { updateUrl: false });
 })();
 
 // Ablauf: one stage open at a time.
