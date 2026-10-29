@@ -1,0 +1,20 @@
+import { Browser, sleep } from '/Users/deluxe/Desktop/arzt-webseite/.claude/skills/design-taste-frontend/scripts/lib/cdp.mjs';
+const b = await Browser.launch();
+const p = await b.newPage({ width: 390, height: 844, dsf: 2, mobile: true });
+await p.goto('http://localhost:8123/index.html', { settleMs: 2500 });
+const pt = await p.eval(() => { const v = document.querySelectorAll('.hero-spine-h .v')[22]; v.scrollIntoView({ block: 'center' }); const r = v.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; });
+await sleep(400);
+const tap = async (x, y) => {
+  await p.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y }] });
+  await p.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+};
+await tap(pt.x, pt.y);
+await sleep(600);
+const after = await p.eval(() => ({ url: location.search, tip: document.querySelector('.spine-tip b').textContent, live: document.querySelector('.hero-spine-h').classList.contains('spine-live'), scrollY: Math.round(scrollY) }));
+console.log('after tap', JSON.stringify(after));
+await p.screenshot({ path: '/private/tmp/claude-501/-Users-deluxe--claude-spares-spare-OqXXN1/93260805-0d17-48d6-851c-9fa580010b6d/scratchpad/mock/touch.png', format: 'png' });
+const go = await p.eval(() => { const r = document.querySelector('.spine-tip .go').getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; });
+await tap(go.x, go.y);
+await sleep(1500);
+console.log('after link', JSON.stringify(await p.eval(() => ({ url: location.search, pressed: document.querySelector('.row[aria-pressed="true"]').dataset.region, woTop: Math.round(document.querySelector('#wo').getBoundingClientRect().top) }))));
+await b.close();
