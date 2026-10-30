@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. med. Christoph Manicke · Neurochirurgie Kiel</title>
+<meta name="description" content="Dr. med. Christoph Manicke, Neurochirurg in Kiel mit Schwerpunkt Wirbelsäule. Unabhängige Zweitmeinung vor geplanten Operationen und Beratung nach Operationen. Privatpraxis Burgstraße 2, Sprechstunde nach Vereinbarung.">
+<meta name="theme-color" content="#f7f7f5">
+<link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; src: url(assets/fonts/archivo-var.woff2) format("woff2"); }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 400; font-display: swap; src: url(assets/fonts/newsreader-italic.woff2) format("woff2"); }
+
+:root {
+  /* named palette: Kieler Papier, Strandsand, Fördetief, Salbei, Mint, Tinte */
+  --papier: #f7f7f5;
+  --sand: #ebe9e5;
+  --sand-2: #e0ddd8;
+  --foerde: #003b39;
+  --foerde-2: #0d4d49;
+  --foerde-3: #245f5a;
+  --foerde-4: #9ec4bd;
+  --salbei: #5d6c67;
+  --salbei-2: #6c7a75;
+  --mint: #c0e2bf;
+  --tinte: #1b1b1b;
+
+  --bg: var(--papier);
+  --accent: var(--mint);
+
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Newsreader", Georgia, serif;
+  --wide: 116%;
+
+  --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+  --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-lead: clamp(1.375rem, 1.15rem + 0.8vw, 1.875rem);
+  --step-head: clamp(2.25rem, 1.4rem + 2.6vw, 3.75rem);
+  --step-display: clamp(2.6rem, 0.8rem + 6.2vw, 7.5rem);
+
+  --margin: clamp(1.25rem, 2.2vw, 2rem);
+  --gutter: clamp(1rem, 2vw, 2rem);
+  --radius: 24px;
+  --vertebra: 34% / 30%;
+  --bar: 72px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; color-scheme: light; }
+body { margin: 0; background: var(--bg); color: var(--tinte); font-family: var(--sans); font-size: var(--step-body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, p, figure, blockquote, ul, ol, dl, dd { margin: 0; }
+ul[class], ol[class] { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+button, input, select { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+a, button, select { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+:target { scroll-margin-top: calc(var(--bar) + 16px); }
+::selection { background: var(--foerde); color: var(--papier); }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+h1, h2, h3 { font-weight: 560; font-stretch: var(--wide); letter-spacing: -0.03em; line-height: 1.02; text-wrap: balance; }
+h2 { font-size: var(--step-head); }
+p { max-width: 62ch; text-wrap: pretty; }
+.small { font-size: var(--step-small); line-height: 1.45; }
+.voice { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+
+.skip { position: fixed; left: var(--margin); top: -4rem; z-index: 50; padding: 10px 18px; border-radius: 999px; background: var(--foerde); color: var(--papier); text-decoration: none; font-size: var(--step-small); }
+.skip:focus { top: 12px; }
+
+/* the button is a vertebral body lying on its side: a block with deeply rounded ends */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; background: var(--accent); color: var(--tinte); text-decoration: none; font-weight: 560; font-size: var(--step-small); white-space: nowrap; transition: transform var(--t-press) var(--ease-out), background-color var(--t-hover) ease; }
+.btn:hover { background: #aed6ad; }
+.btn:active { transform: scale(0.97); }
+.btn.dark { background: var(--foerde); color: var(--papier); }
+.btn.dark:hover { background: var(--foerde-2); }
+.link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 0.22em; text-decoration-thickness: 0.07em; transition: text-decoration-color var(--t-hover) ease; }
+.link:hover, .link:focus-visible { text-decoration-color: currentColor; }
+.bullets li { position: relative; padding-left: 1.6em; }
+.bullets li + li { margin-top: 0.7em; }
+.bullets li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 0.95em; height: 0.62em; border-radius: var(--vertebra); background: currentColor; opacity: 0.9; }
+
+/* ---------- bar ---------- */
+.bar { position: fixed; inset: 0 0 auto 0; z-index: 20; height: var(--bar); padding: 0 var(--margin); display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--papier); }
+.wordmark { font-weight: 600; font-stretch: var(--wide); font-size: 1.0625rem; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.bar nav { display: flex; align-items: center; gap: 28px; font-size: var(--step-small); }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { text-decoration: none; transition: opacity var(--t-hover) ease; }
+.nav-links a:hover { opacity: 0.6; }
+.nav-toggle { display: none; }
+
+/* ---------- hero: the spine, built large ---------- */
+.hero { position: relative; display: flex; flex-direction: column; min-height: 100svh; padding: calc(var(--bar) + 12vh) var(--margin) 56px; overflow: hidden; }
+.hero-copy { position: relative; z-index: 2; order: 1; max-width: min(58vw, 60rem); }
+.hero-spine-h { order: 2; }
+.hero h1 { font-size: var(--step-display); line-height: 0.95; letter-spacing: -0.045em; }
+.hero h1 .line { display: block; }
+.hero-lede { margin-top: 40px; font-size: clamp(1.1875rem, 0.95rem + 0.6vw, 1.5rem); line-height: 1.35; max-width: 36ch; }
+.hero-actions { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-facts { margin-top: clamp(48px, 9vh, 96px); display: grid; grid-template-columns: repeat(3, minmax(0, 15rem)); gap: var(--gutter); }
+.hero-facts b { display: block; font-weight: 560; font-stretch: var(--wide); font-size: var(--step-body); }
+.hero-facts span { display: block; margin-top: 4px; font-size: var(--step-small); color: #3f3f3d; }
+.hero-spine { position: absolute; z-index: 1; right: 7vw; top: calc(var(--bar) - 10svh); height: 140svh; width: auto; max-width: none; }
+.hero-spine-h { display: none; }
+.hero-spine .v, .hero-spine-h .v { fill: var(--foerde); }
+.hero-spine .seg[data-region="isg"] .v, .hero-spine-h .seg[data-region="isg"] .v { fill: var(--foerde-3); }
+/* the hero spine is a set of four links: point at a section to read about it, choose it to jump there */
+.hero-spine .seg, .hero-spine-h .seg { cursor: pointer; outline: none; }
+.hero-spine .hit, .hero-spine-h .hit { fill: transparent; }
+.hero-spine .v, .hero-spine-h .v { transition: fill 160ms ease, translate 200ms var(--ease-out); }
+/* while the pointer is on the spine, each vertebra darkens and lifts by its distance to the pointer (--i, 0 to 1) */
+.spine-live .v { fill: color-mix(in srgb, var(--foerde) calc(var(--i, 0) * 100%), var(--sand-2)); }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-spine.spine-live .v { translate: calc(var(--i, 0) * -22px) 0; }
+  .hero-spine-h.spine-live .v { translate: 0 calc(var(--i, 0) * -10px); }
+}
+.hero-spine .seg:focus-visible .v, .hero-spine-h .seg:focus-visible .v { stroke: var(--tinte); stroke-width: 4px; paint-order: stroke; }
+.spine-tip { position: absolute; z-index: 3; width: 264px; padding: 20px 22px 18px; border-radius: var(--radius); background: var(--foerde); color: var(--papier); opacity: 0; visibility: hidden; translate: 0 -50%; transition: opacity 200ms ease, visibility 0s linear 200ms; }
+.spine-tip.is-shown { opacity: 1; visibility: visible; transition: opacity 200ms ease, visibility 0s; }
+.spine-tip b { display: block; font-weight: 560; font-stretch: var(--wide); font-size: var(--step-body); letter-spacing: -0.01em; }
+.spine-tip .count { display: block; margin-top: 2px; font-size: var(--step-small); color: #b9cac6; }
+.spine-tip .sym { display: block; margin-top: 10px; font-size: var(--step-small); line-height: 1.45; color: #e3ebe9; }
+.spine-tip .go { display: inline-flex; align-items: center; min-height: 2.5rem; margin-top: 14px; padding: 0 16px; border-radius: 999px; background: var(--mint); color: var(--tinte); font-size: var(--step-small); font-weight: 560; text-decoration: none; transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out); }
+.spine-tip .go:hover { background: #aed6ad; }
+.spine-tip .go:active { transform: scale(0.97); }
+.spine-tip .go:focus-visible { outline: 2px solid var(--papier); outline-offset: 3px; }
+.spine-tip.is-idle .count, .spine-tip.is-idle .go { display: none; }
+
+/* ---------- intro: one statement ---------- */
+.intro { background: var(--sand); padding: 22vh var(--margin); text-align: center; }
+.intro h2 { font-size: var(--step-lead); letter-spacing: -0.02em; }
+.statement { margin: 28px auto 0; max-width: 26em; font-size: var(--step-lead); line-height: 1.22; font-weight: 520; letter-spacing: -0.02em; }
+
+/* ---------- Wo es wehtut: index with preview ---------- */
+.where { background: var(--foerde); color: var(--papier); padding: clamp(6rem, 11vw, 10rem) var(--margin); }
+.where h2 { color: var(--papier); }
+.where .left { grid-column: 1 / 6; }
+.where .left > p { margin-top: 18px; color: #d3dfdc; max-width: 36ch; }
+.rows { margin-top: 40px; display: grid; gap: 6px; }
+.row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; width: 100%; text-align: left; padding: 18px 22px; border-radius: var(--radius); background: var(--foerde-2); color: var(--papier); transition: background-color 240ms ease, opacity 240ms ease, transform var(--t-press) var(--ease-out); }
+.row b { display: block; font-weight: 560; font-stretch: var(--wide); font-size: var(--step-lead); letter-spacing: -0.02em; line-height: 1.1; }
+.row span { display: block; margin-top: 4px; font-size: var(--step-small); color: #c6d6d2; }
+.row::after { content: ""; width: 38px; height: 22px; border-radius: var(--vertebra); background: var(--foerde-3); transition: background-color 240ms ease; }
+.row:hover { background: var(--foerde-3); }
+.row:active { transform: scale(0.99); }
+.rows.has-pick .row:not([aria-pressed="true"]) { opacity: 0.55; }
+.row[aria-pressed="true"] { background: var(--papier); color: var(--tinte); opacity: 1; }
+.row[aria-pressed="true"] span { color: #45504d; }
+.row[aria-pressed="true"]::after { background: var(--mint); }
+.where .right { grid-column: 7 / 13; }
+.preview { position: relative; display: grid; grid-template-columns: 26% minmax(0, 1fr); gap: 24px; align-items: center; }
+.mini-spine { width: 100%; height: auto; max-height: 560px; }
+.mini-spine .v { fill: var(--foerde-3); transition: fill 240ms ease; }
+.mini-spine .seg.is-on .v { fill: var(--mint); }
+.shots { position: relative; width: 100%; max-width: 440px; aspect-ratio: 4 / 5; border-radius: var(--vertebra); overflow: hidden; background: #000; }
+.shots figure { position: absolute; inset: 0; opacity: 0; transition: opacity 240ms ease; }
+.shots figure.is-on { opacity: 1; }
+.shots img { width: 100%; height: 100%; object-fit: cover; }
+.detail { margin-top: 32px; min-height: 15rem; }
+.detail h3 { font-size: var(--step-lead); color: var(--papier); letter-spacing: -0.02em; }
+.detail .sym { margin-top: 12px; color: #e3ebe9; }
+.detail .bullets { margin-top: 20px; }
+.detail .bullets b { font-weight: 560; }
+.detail .bullets span { color: #c6d6d2; }
+.panel-r[hidden] { display: none; }
+
+/* ---------- Leistungen: specimens on colour tiles ---------- */
+.specimens { padding: clamp(7rem, 12vw, 11rem) var(--margin); }
+.specimens .head { grid-column: 1 / 4; align-self: start; }
+.specimens .head p { margin-top: 18px; max-width: 30ch; }
+.tiles { grid-column: 4 / 13; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 10px; }
+.tile .card { aspect-ratio: 4 / 5; border-radius: var(--radius); background: var(--c); display: grid; place-items: center; }
+.tile.wide { grid-column: span 2; }
+.tile.wide .card { aspect-ratio: 8 / 5; }
+.tile .card > div { height: 70%; aspect-ratio: 4 / 5; border-radius: var(--vertebra); overflow: hidden; background: #000; }
+.tile.wide .card > div { aspect-ratio: 8 / 5; height: 70%; }
+.tile .card img { width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease-soft); }
+.tile:hover .card img { transform: scale(1.04); }
+.tile h3 { margin-top: 14px; font-size: var(--step-body); letter-spacing: -0.015em; line-height: 1.15; }
+.tile p { margin-top: 6px; color: #3f3f3d; font-size: var(--step-small); line-height: 1.45; }
+
+/* ---------- Ablauf: accordion of tinted panels ---------- */
+.steps { padding: 0 var(--margin) clamp(7rem, 12vw, 11rem); }
+.steps h2 { grid-column: 1 / 6; }
+.steps .lead { grid-column: 7 / 12; align-self: end; }
+.strip { margin-top: 64px; display: flex; height: 520px; border-radius: var(--radius); overflow: hidden; }
+.stage { position: relative; flex: 1 1 0; min-width: 0; background: var(--c); color: var(--ci, var(--papier)); transition: flex-grow 450ms var(--ease-out); overflow: hidden; }
+.stage.is-open { flex-grow: 7; }
+.stage > button { position: absolute; inset: 0; z-index: 2; width: 100%; text-align: left; }
+.stage.is-open > button { pointer-events: none; }
+.stage .name-v { position: absolute; left: 24px; bottom: 24px; transform-origin: 0 100%; rotate: -90deg; translate: 0.9em 0; white-space: nowrap; font-weight: 600; font-stretch: var(--wide); font-size: 1.25rem; transition: opacity 200ms ease; }
+.stage.is-open .name-v { opacity: 0; }
+.stage .body { position: absolute; inset: 0; padding: 32px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; opacity: 0; visibility: hidden; transition: opacity 300ms ease 120ms, visibility 0s linear 420ms; }
+.stage.is-open .body { opacity: 1; visibility: visible; transition: opacity 300ms ease 120ms, visibility 0s; }
+.stage .body h3 { font-size: var(--step-lead); color: inherit; letter-spacing: -0.025em; }
+.stage .body p { align-self: end; max-width: 36ch; }
+.stage .body .txt { display: grid; grid-template-rows: auto 1fr; }
+.stage .body figure { border-radius: var(--vertebra); overflow: hidden; background: #000; min-height: 0; }
+.stage .body img { width: 100%; height: 100%; object-fit: cover; }
+.stage:not(.is-open):hover { filter: brightness(1.08); }
+
+/* ---------- Praxis: inset panel, portrait as a vertebral body ---------- */
+.practice { padding: 20px; }
+.panel { position: relative; min-height: 92svh; border-radius: var(--radius); background: var(--foerde); color: var(--papier); overflow: hidden; padding: 56px; }
+.panel h2 { color: var(--papier); max-width: 8em; }
+.portrait { position: absolute; left: 56px; bottom: 0; width: min(34vw, 500px); aspect-ratio: 4 / 5; translate: 0 18%; border-radius: var(--vertebra); overflow: hidden; background: #e9eceb; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+.panel .texts { position: absolute; left: 63%; top: 56px; right: 56px; display: grid; gap: 56px; max-width: 360px; }
+.panel h3 { font-size: var(--step-lead); letter-spacing: -0.02em; color: var(--papier); }
+.panel .texts p { margin-top: 12px; color: #d3dfdc; }
+.panel .texts .voice { color: var(--papier); font-size: 1.3125rem; line-height: 1.4; }
+.panel .btn { justify-self: start; }
+
+/* ---------- FAQ: tabbed index cards ---------- */
+.faq { background: var(--sand); padding: clamp(7rem, 12vw, 11rem) var(--margin); }
+.faq h2 { grid-column: 3 / 11; }
+.drawer { grid-column: 3 / 11; margin-top: 48px; }
+.fcard { --tab: calc(var(--i) * 150px); position: relative; margin-top: -40px; padding-top: 40px; background: var(--c); color: var(--ci, var(--tinte));
+  clip-path: polygon(0 40px, var(--tab) 40px, calc(var(--tab) + 12px) 0, calc(var(--tab) + 200px) 0, calc(var(--tab) + 212px) 40px, 100% 40px, 100% 100%, 0 100%);
+  border-radius: 0 0 var(--radius) var(--radius); }
+.fcard:first-child { margin-top: 0; }
+.fcard .tab { position: absolute; top: 0; left: var(--tab); width: 224px; height: 40px; display: grid; place-items: center; font-size: var(--step-small); font-weight: 560; }
+.fcard button { display: block; width: 100%; min-height: 96px; padding: 18px 28px 22px; text-align: left; font-size: 1.25rem; font-weight: 520; letter-spacing: -0.01em; }
+.fcard button:hover .q { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 0.07em; }
+.fcard .answer { padding: 0 28px 64px; max-width: calc(50ch + 56px); }
+.js .fcard .answer[hidden] { display: none; }
+
+/* ---------- Kontakt: the coupon ---------- */
+.contact { padding: 120px var(--margin); }
+.coupon { grid-column: 2 / 12; position: relative; display: grid; grid-template-columns: 46% 1fr; min-height: 420px; border-radius: var(--radius); background: var(--salbei); color: var(--papier); }
+.coupon::before, .coupon::after { content: ""; position: absolute; left: 46%; width: 28px; height: 28px; margin-left: -14px; border-radius: 50%; background: var(--papier); }
+.coupon::before { top: -14px; }
+.coupon::after { bottom: -14px; }
+.coupon .side { padding: 48px; display: grid; grid-template-rows: auto 1fr auto; gap: 20px; }
+.coupon h2 { color: var(--papier); }
+.coupon .side p { align-self: end; color: #eef2f0; }
+.coupon form { padding: 40px 48px; border-left: 5px dotted var(--papier); display: grid; gap: 10px; align-content: center; }
+.field { position: relative; }
+.field input, .field select { display: block; width: 100%; height: 52px; padding: 0 20px; border: 0; border-radius: 16px; background: var(--salbei-2); color: var(--papier); font-size: 1rem; appearance: none; transition: background-color var(--t-hover) ease; }
+.field select { padding-right: 48px; cursor: pointer; }
+.field input::placeholder { color: #e3e9e7; }
+.field input:hover, .field select:hover { background: #77857f; }
+.field input:focus-visible, .field select:focus-visible { outline: 2px solid var(--papier); outline-offset: 2px; }
+.field .chev { position: absolute; right: 22px; top: 50%; width: 9px; height: 9px; border-right: 2.5px solid var(--papier); border-bottom: 2.5px solid var(--papier); rotate: 45deg; translate: 0 -70%; pointer-events: none; }
+.field select option { color: var(--tinte); background: var(--papier); }
+.coupon .submit { height: 56px; border-radius: 16px; background: var(--tinte); color: var(--papier); font-weight: 560; font-stretch: var(--wide); transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out); }
+.coupon .submit:hover { background: var(--foerde); }
+.coupon .submit:active { transform: scale(0.98); }
+.coupon .fine { color: #e3e9e7; font-size: var(--step-small); }
+.coupon .fine a { color: var(--papier); }
+
+/* ---------- footer: the name built from vertebral blocks ---------- */
+.foot { background: var(--mint); padding: 56px var(--margin) 28px; }
+.blocks { display: block; width: 100%; height: auto; }
+.blocks text { fill: var(--mint); font-family: var(--sans); font-weight: 640; font-stretch: var(--wide); font-size: 96px; }
+.foot-cols { margin-top: 56px; }
+.foot-cols nav { grid-column: span 2; display: grid; gap: 8px; align-content: start; font-size: var(--step-small); }
+.foot-cols nav a { text-decoration: none; }
+.foot-cols .contactline { grid-column: 9 / 13; font-size: var(--step-small); }
+.foot-cols .contactline a { font-size: var(--step-lead); font-weight: 560; font-stretch: var(--wide); letter-spacing: -0.02em; text-decoration: none; }
+.foot-cols .contactline p + p { margin-top: 8px; }
+.credits { margin-top: 48px; max-width: 72ch; font-size: var(--step-small); line-height: 1.45; }
+.credits a { text-underline-offset: 0.15em; }
+.foot-last { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: var(--step-small); }
+
+/* ---------- tablet ---------- */
+@media (max-width: 1100px) {
+  .nav-links .hide-mid { display: none; }
+  .hero-copy { max-width: 64vw; }
+  .hero-spine { right: -6vw; }
+  .where .left { grid-column: 1 / 13; }
+  .where .right { grid-column: 1 / 13; margin-top: 48px; }
+  .preview { grid-template-columns: 26% 1fr; max-width: 640px; }
+  .specimens .head { grid-column: 1 / 13; margin-bottom: 40px; }
+  .tiles { grid-column: 1 / 13; }
+  .steps h2, .steps .lead { grid-column: 1 / 13; }
+  .steps .lead { margin-top: 18px; }
+  .stage .body { grid-template-columns: minmax(0, 1fr); }
+  .stage .body figure { display: none; }
+  .panel .texts { left: 52%; }
+  .portrait { width: 36vw; }
+  .faq h2, .drawer { grid-column: 1 / 13; }
+  .fcard { --tab: calc(var(--i) * 96px); }
+  .coupon { grid-column: 1 / 13; }
+  .foot-cols nav { grid-column: span 3; }
+  .foot-cols .contactline { grid-column: 1 / 13; margin-top: 32px; }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 767px) {
+  :root { --bar: 64px; --radius: 20px; --step-display: 10.6vw; }
+  .bar nav { gap: 8px; }
+  .wordmark { font-size: var(--step-small); white-space: normal; line-height: 1.15; max-width: 11em; }
+  .bar .btn { min-height: 2.75rem; padding: 0 16px; }
+  .js .nav-toggle { display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 14px; border-radius: 999px; font-weight: 560; font-size: var(--step-small); }
+  .nav-links { position: absolute; top: var(--bar); left: 0; right: 0; flex-direction: column; gap: 0; padding: 8px var(--margin) 20px; background: var(--papier); }
+  .nav-links a { padding: 14px 0; font-size: var(--step-body); }
+  .nav-links .hide-mid { display: block; }
+  .js .bar:not(.is-open) .nav-links { display: none; }
+
+  .hero { padding-top: calc(var(--bar) + 40px); }
+  .hero-copy { max-width: none; }
+  .hero-lede { font-size: var(--step-body); margin-top: 24px; max-width: 26ch; }
+  .hero-actions .btn { flex: 1 1 100%; }
+  .hero-facts { grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 40px; }
+  .hero-spine { display: none; }
+  .hero-spine-h { display: block; width: 100%; height: auto; margin-top: 48px; }
+  .spine-tip { position: relative; order: 3; width: auto; margin-top: 18px; translate: none; opacity: 1; visibility: visible; transition: none; }
+
+  .intro { padding: 96px var(--margin); text-align: left; }
+  .statement { margin-left: 0; font-size: 1.25rem; }
+
+  .where { padding-block: 96px; }
+  .preview { grid-template-columns: 30% 1fr; }
+  .detail { min-height: 0; }
+
+  .specimens { padding-block: 96px; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 8px; }
+  .tile.wide { grid-column: 1 / -1; order: -1; }
+  .tile h3 { font-size: 1.0625rem; }
+
+  .steps { padding-bottom: 96px; }
+  .strip { flex-direction: column; height: auto; margin-top: 40px; }
+  .stage, .stage.is-open { flex: none; }
+  .stage { min-height: 64px; }
+  .stage > button { position: relative; inset: auto; display: block; min-height: 64px; padding: 0 20px; }
+  .stage.is-open > button { display: none; }
+  .stage .name-v { position: static; rotate: 0deg; translate: 0 0; display: flex; align-items: center; min-height: 64px; font-size: 1.125rem; }
+  .stage .body { position: static; display: none; padding: 20px 20px 28px; }
+  .stage.is-open .body { display: grid; gap: 16px; }
+
+  .practice { padding: 10px; }
+  .panel { min-height: 0; padding: 32px 22px 0; }
+  .panel .texts { position: static; margin-top: 36px; gap: 36px; max-width: none; }
+  .portrait { position: relative; left: auto; width: 72vw; margin: 48px auto 0; translate: 0 18%; }
+
+  .faq { padding-block: 96px; }
+  .fcard { --tab: calc(var(--i) * 48px); clip-path: polygon(0 40px, var(--tab) 40px, calc(var(--tab) + 10px) 0, calc(var(--tab) + 120px) 0, calc(var(--tab) + 130px) 40px, 100% 40px, 100% 100%, 0 100%); }
+  .fcard .tab { width: 140px; }
+  .fcard button { min-height: 88px; padding: 16px 20px 20px; font-size: 1.0625rem; }
+  .fcard .answer { padding: 0 20px 60px; }
+
+  .contact { padding: 96px 12px; }
+  .coupon { grid-template-columns: minmax(0, 1fr); }
+  .coupon::before, .coupon::after { left: auto; top: 46%; margin: -14px 0 0; }
+  .coupon::before { left: -14px; }
+  .coupon::after { right: -14px; bottom: auto; }
+  .coupon .side { padding: 32px 24px; }
+  .coupon form { border-left: 0; border-top: 5px dotted var(--papier); padding: 28px 24px 32px; }
+  .field input, .field select, .coupon .submit { height: 54px; }
+
+  .foot-cols nav { grid-column: span 6; }
+  .foot-cols nav:nth-of-type(3) { grid-column: 1 / -1; grid-template-columns: repeat(3, auto); justify-content: start; gap: 8px 24px; margin-top: 20px; }
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: calc(var(--i, 0) * 80ms); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+  .js .hero-spine .v { opacity: 0; transform: translateY(40px); transform-box: fill-box; transform-origin: center; animation: build 700ms var(--ease-out) forwards; animation-delay: calc((27 - var(--n)) * 45ms + 200ms); }
+  .js .hero [data-rise] { opacity: 0; transform: translateY(18px); animation: rise 900ms var(--ease-out) forwards; animation-delay: calc(var(--i, 0) * 110ms + 120ms); }
+  .js .mini-spine.is-in .v { animation: build 600ms var(--ease-out) both; animation-delay: calc((27 - var(--n)) * 30ms); transform-box: fill-box; }
+  .stage.is-open .body img { animation: drift 14s var(--ease-soft) both; }
+  .blocks.is-in .blk { animation: grow 800ms var(--ease-out) both; animation-delay: calc(var(--k) * 70ms); transform-box: fill-box; transform-origin: 50% 100%; }
+}
+@keyframes build { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes drift { from { transform: scale(1.1); } to { transform: scale(1); } }
+@keyframes grow { from { transform: scaleY(0.4); opacity: 0; } to { transform: none; opacity: 1; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt</a>
+
+<header class="bar">
+  <a class="wordmark" href="#top" translate="no">Dr. med. Christoph Manicke</a>
+  <nav aria-label="Hauptnavigation">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menü</button>
+    <div class="nav-links" id="nav-links">
+      <a href="#wo">Wo es wehtut</a>
+      <a href="#leistungen">Leistungen</a>
+      <a class="hide-mid" href="#ablauf">Ablauf</a>
+      <a href="#praxis">Praxis</a>
+      <a class="hide-mid" href="#fragen">Fragen</a>
+    </div>
+    <a class="btn dark" href="tel:+491726347706">Anrufen</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="title">
+    {{SPINE_HERO}}
+    <div class="spine-tip is-idle"><b>Wo tut es weh?</b><span class="count"></span><span class="sym">Zeigen Sie auf die Wirbelsäule oder tippen Sie einen Wirbel an.</span><a class="go" href="#wo">Beschwerden ansehen</a></div>
+    <div class="hero-copy">
+      <h1 id="title"><span class="line">Zweite Meinung</span> <span class="line">zur Wirbelsäule</span></h1>
+      <p class="hero-lede" data-rise style="--i:1">Dr. med. Christoph Manicke, Neurochirurg in&nbsp;Kiel. Unabhängige Beratung vor und nach Operationen an der Wirbelsäule.</p>
+      <div class="hero-actions" data-rise style="--i:2">
+        <a class="btn" href="tel:+491726347706">Termin vereinbaren: 0172&nbsp;6347706</a>
+      </div>
+      <div class="hero-facts" data-rise style="--i:3">
+        <div><b>Nach Vereinbarung</b><span>Telefonisch oder per <a class="link" href="mailto:christoph.manicke@gmx.de">E-Mail</a></span></div>
+        <div><b>Burgstraße&nbsp;2, Kiel</b><span>4.&nbsp;Stock, mit Aufzug</span></div>
+        <div><b>Privatpraxis</b><span>Privat Versicherte und Selbstzahler</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro" aria-labelledby="intro-title">
+    <h2 id="intro-title" data-reveal>Erst verstehen, dann entscheiden.</h2>
+    <p class="statement" data-reveal style="--i:1">Eine Operation an der Wirbelsäule lässt sich nicht zurücknehmen. Prüfen Sie Ihre Bilder und Ihre Wege vorher in Ruhe.</p>
+  </section>
+
+  <section class="where" id="wo" aria-labelledby="where-title">
+    <div class="grid">
+      <div class="left">
+        <h2 id="where-title" data-reveal>Wo es wehtut</h2>
+        <p data-reveal style="--i:1">Wählen Sie den Abschnitt, in dem Ihre Beschwerden sitzen. Sie sehen, was dort typischerweise dahintersteckt und wobei ich berate.</p>
+        <div class="rows" role="group" aria-label="Abschnitt der Wirbelsäule wählen" data-reveal style="--i:2">
+          <button type="button" class="row" data-region="hws" aria-pressed="false"><span class="txt"><b>Halswirbelsäule</b><span>7 Wirbel, Nacken bis Schulter</span></span></button>
+          <button type="button" class="row" data-region="bws" aria-pressed="false"><span class="txt"><b>Brustwirbelsäule</b><span>12 Wirbel, zwischen den Schulterblättern</span></span></button>
+          <button type="button" class="row" data-region="lws" aria-pressed="true"><span class="txt"><b>Lendenwirbelsäule</b><span>5 Wirbel, unterer Rücken</span></span></button>
+          <button type="button" class="row" data-region="isg" aria-pressed="false"><span class="txt"><b>Kreuzbein und Becken</b><span>Kreuz-Darmbein-Gelenke</span></span></button>
+        </div>
+      </div>
+      <div class="right">
+        <div class="preview" data-reveal style="--i:2">
+          {{SPINE_MINI}}
+          <div class="shots">
+            <figure data-region="hws"><img src="assets/v3/back-anatomy.webp" width="900" height="1333" alt="Anatomisches Modell von Nacken und Rücken mit Muskeln" loading="lazy"></figure>
+            <figure data-region="bws"><img src="assets/v2/bell-vertebrae.webp" width="600" height="465" alt="Kupferstich einzelner Wirbel von Andrew Bell, 1798" loading="lazy"></figure>
+            <figure data-region="lws" class="is-on"><img src="assets/v2/mri-t2-lumbar.webp" width="620" height="760" alt="MRT der Lendenwirbelsäule in seitlicher Ansicht" loading="lazy"></figure>
+            <figure data-region="isg"><img src="assets/v3/pelvis-model.webp" width="900" height="1350" alt="Modell von Kreuzbein und Becken" loading="lazy"></figure>
+          </div>
+        </div>
+        <div class="detail" aria-live="polite">
+          <div class="panel-r" data-region="hws" hidden>
+            <h3>Halswirbelsäule</h3>
+            <p class="sym">Nackenschmerz, der in Schulter und Arm ausstrahlt, Kribbeln oder Kraftverlust in den Händen, manchmal ein unsicherer Gang.</p>
+            <ul class="bullets"><li><b>Bandscheibenvorfall</b> <span>mit Schmerz bis in Arm und Finger</span></li><li><b>Enger Wirbelkanal</b> <span>mit Druck auf das Halsmark</span></li></ul>
+          </div>
+          <div class="panel-r" data-region="bws" hidden>
+            <h3>Brustwirbelsäule</h3>
+            <p class="sym">Gürtelförmiger Schmerz zwischen den Schulterblättern oder um den Brustkorb, nach einem Sturz oder bei Osteoporose.</p>
+            <ul class="bullets"><li><b>Wirbelbruch bei Osteoporose</b> <span>nach geringer Belastung</span></li><li><b>Raumforderung am Rückenmark</b> <span>Einordnung von MRT- und CT-Befunden</span></li></ul>
+          </div>
+          <div class="panel-r" data-region="lws">
+            <h3>Lendenwirbelsäule</h3>
+            <p class="sym">Kreuzschmerz, der ins Gesäß und Bein zieht, Taubheit am Fuß, Beine, die beim Gehen nach wenigen Minuten schwer werden.</p>
+            <ul class="bullets"><li><b>Bandscheibenvorfall, Ischias</b> <span>mit Schmerz bis ins Bein</span></li><li><b>Spinalkanalstenose</b> <span>mit kurzer Gehstrecke</span></li><li><b>Wirbelgleiten</b> <span>mit Belastungsschmerz</span></li></ul>
+          </div>
+          <div class="panel-r" data-region="isg" hidden>
+            <h3>Kreuzbein und Becken</h3>
+            <p class="sym">Tiefer, einseitiger Schmerz über dem Gesäß, schlimmer beim Aufstehen, Treppensteigen oder langen Sitzen.</p>
+            <ul class="bullets"><li><b>Schmerz am Kreuz-Darmbein-Gelenk</b> <span>oft mit Ausstrahlung ins Gesäß</span></li><li><b>Facettengelenke</b> <span>Schmerz beim Zurückbeugen</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specimens" id="leistungen" aria-labelledby="spec-title">
+    <div class="grid">
+      <div class="head">
+        <h2 id="spec-title" data-reveal>Wobei ich berate</h2>
+        <p data-reveal style="--i:1">Alle Erkrankungen des neurochirurgischen Fachgebiets, mit dem Schwerpunkt Wirbelsäule.</p>
+      </div>
+      <div class="tiles">
+        <article class="tile" data-reveal style="--i:1"><div class="card" style="--c:#ebe9e5"><div><img src="assets/v2/mri-stir.webp" width="600" height="771" alt="MRT der Lendenwirbelsäule, STIR-Sequenz" loading="lazy"></div></div><h3>Zweitmeinung vor der OP</h3><p>Eine unabhängige Einschätzung, bevor Sie zustimmen.</p></article>
+        <article class="tile wide" data-reveal style="--i:2"><div class="card" style="--c:#c0e2bf"><div><img src="assets/v3/spine-model-hands.webp" width="864" height="540" alt="Hände halten ein Modell der Wirbelsäule mit Becken" loading="lazy"></div></div><h3>Nach einer Operation</h3><p>Beratung, wenn Beschwerden geblieben oder neu aufgetreten sind.</p></article>
+        <article class="tile" data-reveal style="--i:3"><div class="card" style="--c:#5d6c67"><div><img src="assets/v2/disc-herniation.webp" width="600" height="886" alt="MRT mit einem Bandscheibenvorfall zwischen dem vierten und fünften Lendenwirbel" loading="lazy"></div></div><h3>Konservativ oder operativ</h3><p>Das ganze Behandlungsspektrum, nicht nur der Eingriff.</p></article>
+        <article class="tile" data-reveal style="--i:2"><div class="card" style="--c:#c0e2bf"><div><img src="assets/v2/mri-t2-disc.webp" width="800" height="800" alt="Bandscheibe im MRT, Nahaufnahme" loading="lazy"></div></div><h3>Bandscheibe und Wirbelkanal</h3><p>Vorfall, Stenose, Wirbelgleiten.</p></article>
+        <article class="tile" data-reveal style="--i:3"><div class="card" style="--c:#ebe9e5"><div><img src="assets/v3/pelvis-model.webp" width="900" height="1350" alt="Modell von Kreuzbein und Becken" loading="lazy"></div></div><h3>Das ganze Fachgebiet</h3><p>Erkrankungen der Nerven und Wirbel, vom Hals bis zum Becken.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="ablauf" aria-labelledby="steps-title">
+    <div class="grid">
+      <h2 id="steps-title" data-reveal>So läuft die Zweitmeinung</h2>
+      <p class="lead" data-reveal style="--i:1">Vom ersten Anruf bis zu einer klaren Einschätzung, in vier Schritten. Tippen Sie auf einen Schritt, um ihn zu öffnen.</p>
+    </div>
+    <div class="strip" data-reveal style="--i:2">
+      <div class="stage is-open" style="--c:#003b39">
+        <button type="button" aria-expanded="true" aria-controls="st-1"><span class="name-v">Anrufen</span></button>
+        <div class="body" id="st-1"><div class="txt"><h3>Anrufen</h3><p>Termine nach Vereinbarung unter 0172&nbsp;6347706 oder per E-Mail. Am Telefon klären wir, worum es geht und was Sie mitbringen.</p></div><figure><img src="assets/v3/kiel-aerial-1000.webp" width="1000" height="563" alt="Kiel von oben mit Rathausturm und Kleinem Kiel" loading="lazy"></figure></div>
+      </div>
+      <div class="stage" style="--c:#0d4d49">
+        <button type="button" aria-expanded="false" aria-controls="st-2"><span class="name-v">Mitbringen</span></button>
+        <div class="body" id="st-2"><div class="txt"><h3>Mitbringen</h3><p>MRT- oder CT-Bilder auf CD oder als Link, Arztbriefe, die OP-Empfehlung, falls es eine gibt, und Ihre Medikamentenliste.</p></div><figure><img src="assets/v2/mri-t2-full.webp" width="1024" height="1024" alt="MRT der ganzen Lendenwirbelsäule" loading="lazy"></figure></div>
+      </div>
+      <div class="stage" style="--c:#245f5a">
+        <button type="button" aria-expanded="false" aria-controls="st-3"><span class="name-v">Besprechen</span></button>
+        <div class="body" id="st-3"><div class="txt"><h3>Besprechen</h3><p>Ihre Geschichte, die Untersuchung und die Bilder, nebeneinander. Sie erfahren, was eine Operation leisten kann und welche Wege es sonst gibt.</p></div><figure><img src="assets/v3/back-anatomy.webp" width="900" height="1333" alt="Anatomisches Modell des Rückens" loading="lazy"></figure></div>
+      </div>
+      <div class="stage" style="--c:#9ec4bd; --ci:#1b1b1b">
+        <button type="button" aria-expanded="false" aria-controls="st-4"><span class="name-v">Entscheiden</span></button>
+        <div class="body" id="st-4"><div class="txt"><h3>Entscheiden</h3><p>Mit einer klaren Einschätzung entscheiden Sie selbst, in Ruhe und mit allen Informationen.</p></div><figure><img src="assets/v3/beach-walk.webp" width="1000" height="1376" alt="Zwei Menschen gehen am Ostseestrand spazieren" loading="lazy"></figure></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="practice" id="praxis" aria-labelledby="practice-title">
+    <div class="panel">
+      <h2 id="practice-title" data-reveal>Zeit für Ihre Fragen</h2>
+      <div class="texts">
+        <div data-reveal style="--i:1">
+          <h3>Die Praxis</h3>
+          <p>Burgstraße&nbsp;2 in der Kieler Innenstadt. Die Praxis liegt im 4.&nbsp;Stock und ist mit dem Aufzug erreichbar. Sprechstunde nach Vereinbarung.</p>
+        </div>
+        <div data-reveal style="--i:2">
+          <h3>Der Arzt</h3>
+          <p>Dr. med. Christoph Manicke ist Neurochirurg mit dem Schwerpunkt Wirbelsäulenerkrankungen.</p>
+          <p class="voice">„Liebe Patientin, lieber Patient, ich freue mich, Sie in meiner Praxis in Kiel begrüßen zu dürfen!“</p>
+        </div>
+        <a class="btn" data-reveal style="--i:3" href="tel:+491726347706">Termin vereinbaren</a>
+      </div>
+      <figure class="portrait" data-reveal style="--i:2"><img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="faq" id="fragen" aria-labelledby="faq-title">
+    <div class="grid">
+      <h2 id="faq-title" data-reveal>Häufige Fragen</h2>
+      <div class="drawer" data-reveal style="--i:1">
+        {{FAQ}}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt" aria-labelledby="contact-title">
+    <div class="grid">
+      <div class="coupon">
+        <div class="side">
+          <h2 id="contact-title">Anfrage vorbereiten</h2>
+          <p>Ihr E-Mail-Programm öffnet sich mit einer fertigen Nachricht. Den Abschnitt übernehmen wir aus Ihrer Auswahl oben.</p>
+          <p class="fine">Lieber sprechen? <a class="link" href="tel:+491726347706">0172&nbsp;6347706</a></p>
+        </div>
+        <form class="request" action="mailto:christoph.manicke@gmx.de" method="get">
+          <div class="field"><label class="sr-only" for="f-name">Ihr Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ihr Name, z.&nbsp;B. Anna Petersen…" required></div>
+          <div class="field"><label class="sr-only" for="f-tel">Telefon für den Rückruf</label><input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="Telefon für den Rückruf, z.&nbsp;B. 0431&nbsp;…"></div>
+          <div class="field"><label class="sr-only" for="f-topic">Ihr Anliegen</label><select id="f-topic" name="anliegen"><option>Zweitmeinung vor einer Operation</option><option>Beschwerden nach einer Operation</option><option>Beratung bei Rückenbeschwerden</option><option>Andere neurochirurgische Frage</option></select><span class="chev" aria-hidden="true"></span></div>
+          <div class="field"><label class="sr-only" for="f-region">Abschnitt der Wirbelsäule</label><select id="f-region" name="abschnitt"><option value="Lendenwirbelsäule">Lendenwirbelsäule</option><option value="Halswirbelsäule">Halswirbelsäule</option><option value="Brustwirbelsäule">Brustwirbelsäule</option><option value="Kreuzbein und Becken">Kreuzbein und Becken</option><option value="noch unklar">Noch unklar</option></select><span class="chev" aria-hidden="true"></span></div>
+          <button type="submit" class="submit">E-Mail öffnen</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot" aria-labelledby="foot-title">
+  <h2 id="foot-title" class="sr-only">Dr. med. Christoph Manicke</h2>
+  <svg class="blocks" viewBox="0 0 1400 300" role="img" aria-label="Manicke"><g class="blk" style="--k:0"><rect x="0.0" y="114.0" width="194.9" height="186.0" rx="58.5" fill="#003b39"/><text x="97.4" y="207.0" dy="0.35em" text-anchor="middle">M</text></g><g class="blk" style="--k:1"><rect x="200.9" y="96.0" width="194.9" height="204.0" rx="58.5" fill="#0d4d49"/><text x="298.3" y="198.0" dy="0.35em" text-anchor="middle">A</text></g><g class="blk" style="--k:2"><rect x="401.7" y="78.0" width="194.9" height="222.0" rx="58.5" fill="#003b39"/><text x="499.1" y="189.0" dy="0.35em" text-anchor="middle">N</text></g><g class="blk" style="--k:3"><rect x="602.6" y="60.0" width="194.9" height="240.0" rx="58.5" fill="#245f5a"/><text x="700.0" y="180.0" dy="0.35em" text-anchor="middle">I</text></g><g class="blk" style="--k:4"><rect x="803.4" y="39.0" width="194.9" height="261.0" rx="58.5" fill="#003b39"/><text x="900.9" y="169.5" dy="0.35em" text-anchor="middle">C</text></g><g class="blk" style="--k:5"><rect x="1004.3" y="21.0" width="194.9" height="279.0" rx="58.5" fill="#0d4d49"/><text x="1101.7" y="160.5" dy="0.35em" text-anchor="middle">K</text></g><g class="blk" style="--k:6"><rect x="1205.1" y="0.0" width="194.9" height="300.0" rx="58.5" fill="#003b39"/><text x="1302.6" y="150.0" dy="0.35em" text-anchor="middle">E</text></g></svg>
+  <div class="grid foot-cols">
+    <nav aria-label="Seite"><a class="link" href="#wo">Wo es wehtut</a><a class="link" href="#leistungen">Leistungen</a><a class="link" href="#ablauf">Ablauf</a></nav>
+    <nav aria-label="Mehr"><a class="link" href="#praxis">Praxis</a><a class="link" href="#fragen">Fragen</a><a class="link" href="#kontakt">Anfrage</a></nav>
+    <nav aria-label="Rechtliches"><a class="link" href="impressum.html">Impressum</a><a class="link" href="datenschutz.html">Datenschutz</a><a class="link" href="#bildnachweis">Bildnachweis</a></nav>
+    <div class="contactline">
+      <p><a href="tel:+491726347706">0172&nbsp;6347706</a></p>
+      <p><a class="link" href="mailto:christoph.manicke@gmx.de">christoph.manicke@gmx.de</a></p>
+      <p>Burgstraße&nbsp;2, 24103&nbsp;Kiel, 4.&nbsp;Stock · Sprechstunde nach Vereinbarung</p>
+    </div>
+  </div>
+  <p class="credits" id="bildnachweis">Bilder: MRT-Aufnahmen der Lendenwirbelsäule (CC BY-SA 4.0) und Bandscheibenvorfall L4/L5 (gemeinfrei) sowie Wirbel, Kupferstich von A. Bell, 1798, Wellcome Collection (CC BY 4.0), alle über <a class="link" href="https://commons.wikimedia.org">Wikimedia Commons</a>, zugeschnitten. Über <a class="link" href="https://unsplash.com">Unsplash</a>: Kiel von oben, Marvin Radke; Rückenmodell, Brecht Corbeel; Becken und Kreuzbein, Otto Norin; Wirbelsäulenmodell, Navy Medicine; Ostseestrand, Inka Kapturewska.</p>
+  <div class="foot-last">
+    <span>© 2026 Dr. med. Christoph Manicke, Kiel</span>
+    <a class="btn dark" href="tel:+491726347706">Anrufen</a>
+  </div>
+</footer>
+
+<script>
+// Phone menu.
+(() => {
+  const bar = document.querySelector('.bar');
+  const btn = bar.querySelector('.nav-toggle');
+  const set = (open) => { bar.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', String(open)); };
+  btn.addEventListener('click', () => set(!bar.classList.contains('is-open')));
+  bar.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => set(false)));
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && bar.classList.contains('is-open')) { set(false); btn.focus(); } });
+  addEventListener('click', (e) => { if (!bar.contains(e.target)) set(false); });
+})();
+
+// Entrances, once.
+(() => {
+  const els = document.querySelectorAll('[data-reveal], .mini-spine, .blocks');
+  if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('is-in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  els.forEach((el) => io.observe(el));
+})();
+
+// Regions: the hero spine, the rows in "Wo es wehtut", the coupon and the URL (?bereich=) share one state.
+(() => {
+  const info = {
+    hws: { name: 'Halswirbelsäule', count: '7 Wirbel, Nacken bis Schulter', sym: 'Nackenschmerz, der in Schulter und Arm ausstrahlt, Kribbeln in den Händen.' },
+    bws: { name: 'Brustwirbelsäule', count: '12 Wirbel, zwischen den Schulterblättern', sym: 'Gürtelförmiger Schmerz um den Brustkorb, etwa nach einem Sturz.' },
+    lws: { name: 'Lendenwirbelsäule', count: '5 Wirbel, unterer Rücken', sym: 'Kreuzschmerz, der ins Bein zieht, schwere Beine beim Gehen.' },
+    isg: { name: 'Kreuzbein und Becken', count: 'Kreuz-Darmbein-Gelenke', sym: 'Tiefer, einseitiger Schmerz über dem Gesäß, schlimmer beim Aufstehen.' },
+  };
+  const rows = [...document.querySelectorAll('.row')];
+  const box = document.querySelector('.rows');
+  const miniSegs = document.querySelectorAll('.mini-spine .seg');
+  const shots = document.querySelectorAll('.shots figure');
+  const panels = document.querySelectorAll('.panel-r');
+  const regionSelect = document.querySelector('#f-region');
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const fromUrl = new URLSearchParams(location.search).get('bereich');
+  let chosen = info[fromUrl] ? fromUrl : 'lws';
+
+  const show = (r) => {
+    miniSegs.forEach((s) => s.classList.toggle('is-on', s.dataset.region === r));
+    shots.forEach((f) => f.classList.toggle('is-on', f.dataset.region === r));
+    panels.forEach((p) => (p.hidden = p.dataset.region !== r));
+  };
+  const pick = (r, { updateUrl = true } = {}) => {
+    chosen = r;
+    rows.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.region === r)));
+    box.classList.add('has-pick');
+    if (regionSelect) regionSelect.value = info[r].name;
+    show(r);
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.set('bereich', r);
+      history.replaceState(null, '', url);
+    }
+  };
+
+  rows.forEach((b) => {
+    b.addEventListener('click', () => pick(b.dataset.region));
+    b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(b.dataset.region); });
+    b.addEventListener('focus', () => show(b.dataset.region));
+  });
+  box.addEventListener('pointerleave', () => show(chosen));
+  miniSegs.forEach((s) => s.addEventListener('click', () => pick(s.dataset.region)));
+
+  // the hero spine: the effect follows the pointer vertebra by vertebra; the box belongs to the section under it
+  const hero = document.querySelector('.hero');
+  const tip = document.querySelector('.spine-tip');
+  const go = tip.querySelector('.go');
+  const spines = [...document.querySelectorAll('.hero-spine, .hero-spine-h')];
+  const idle = { b: tip.querySelector('b').textContent, sym: tip.querySelector('.sym').textContent };
+  const SIGMA = 58; // in spine units: about three vertebrae either side feel the pointer
+  const model = spines.map((sv) => {
+    const horizontal = sv.classList.contains('hero-spine-h');
+    const verts = [...sv.querySelectorAll('.v')].map((el) => {
+      const n = (k) => parseFloat(el.getAttribute(k)); // from the geometry itself, so a hidden spine still has its centres
+      return { el, c: horizontal ? n('x') + n('width') / 2 : n('y') + n('height') / 2, region: el.closest('.seg').dataset.region };
+    });
+    return { sv, horizontal, verts };
+  });
+  let hideTimer, current = null, frame = 0, lastPointer = 'mouse';
+
+  const toSpine = (m, clientX, clientY) => {
+    const p = new DOMPoint(clientX, clientY).matrixTransform(m.sv.getScreenCTM().inverse());
+    return m.horizontal ? p.x : p.y;
+  };
+  const light = (m, pos) => {
+    m.sv.classList.add('spine-live');
+    let near = m.verts[0];
+    for (const v of m.verts) {
+      const d = v.c - pos;
+      v.el.style.setProperty('--i', Math.exp(-(d * d) / (2 * SIGMA * SIGMA)).toFixed(3));
+      if (Math.abs(d) < Math.abs(near.c - pos)) near = v;
+    }
+    return near.region;
+  };
+  const dark = () => model.forEach((m) => { m.sv.classList.remove('spine-live'); m.verts.forEach((v) => v.el.style.removeProperty('--i')); });
+
+  const placeTip = (m, region) => {
+    if (m.horizontal) return; // on phones the box sits under the spine
+    const seg = m.sv.querySelector(`.seg[data-region="${region}"]`);
+    const h = hero.getBoundingClientRect();
+    const r = seg.getBoundingClientRect();
+    const bar = document.querySelector('.bar').offsetHeight;
+    const half = tip.offsetHeight / 2;
+    const want = r.top + r.height / 2 - h.top;
+    const min = bar + 16 + half - h.top;
+    const max = Math.min(h.height, innerHeight - h.top) - 16 - half;
+    const top = Math.min(Math.max(want, min), Math.max(min, max));
+    tip.style.top = `${top}px`;
+    const facts = document.querySelector('.hero-facts').getBoundingClientRect();
+    const overlapsFacts = top + half > facts.top - h.top && top - half < facts.bottom - h.top;
+    const left = r.left - h.left - tip.offsetWidth + 28;
+    const maxLeft = h.width - tip.offsetWidth - 24; // never past the right margin
+    tip.style.left = `${Math.max(16, Math.min(maxLeft, overlapsFacts ? Math.max(left, facts.right - h.left + 24) : left))}px`;
+  };
+  // the box changes only when the pointer crosses into another section, so it stays put while you move to it
+  const showRegion = (m, region) => {
+    clearTimeout(hideTimer);
+    if (region !== current) {
+      current = region;
+      tip.classList.toggle('is-idle', !region);
+      tip.querySelector('b').textContent = region ? info[region].name : idle.b;
+      tip.querySelector('.count').textContent = region ? info[region].count : '';
+      tip.querySelector('.sym').textContent = region ? info[region].sym : idle.sym;
+      if (region) go.href = `?bereich=${region}#wo`;
+      if (m) placeTip(m, region || 'bws');
+    }
+    tip.classList.add('is-shown');
+  };
+  const rest = () => {
+    dark();
+    current = undefined;
+    const m = model.find((x) => !x.horizontal && x.sv.getBoundingClientRect().width);
+    showRegion(m || null, null);
+  };
+  const hideSoon = () => { clearTimeout(hideTimer); hideTimer = setTimeout(rest, 420); };
+
+  const jump = (region) => {
+    pick(region);
+    document.querySelector('#wo').scrollIntoView({ behavior: still.matches ? 'auto' : 'smooth', block: 'start' });
+    const row = rows.find((b) => b.dataset.region === region);
+    if (row) setTimeout(() => row.focus({ preventScroll: true }), still.matches ? 0 : 600);
+  };
+
+  model.forEach((m) => {
+    m.sv.addEventListener('pointerdown', (e) => { lastPointer = e.pointerType; });
+    m.sv.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      const x = e.clientX, y = e.clientY;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => showRegion(m, light(m, toSpine(m, x, y))));
+    });
+    m.sv.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hideSoon(); });
+    m.sv.querySelectorAll('.seg').forEach((seg) => {
+      const region = seg.dataset.region;
+      const centre = () => { const vs = m.verts.filter((v) => v.region === region); return (vs[0].c + vs[vs.length - 1].c) / 2; };
+      seg.addEventListener('focus', () => { light(m, centre()); showRegion(m, region); });
+      seg.addEventListener('blur', () => { if (!tip.contains(document.activeElement)) hideSoon(); });
+      seg.addEventListener('click', (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // a new tab keeps the link's own ?bereich=
+        e.preventDefault();
+        if (lastPointer === 'touch' || lastPointer === 'pen') {
+          // a tap previews: the vertebrae around the finger light up and the box offers the jump
+          light(m, toSpine(m, e.clientX, e.clientY));
+          showRegion(m, region);
+          lastPointer = 'mouse';
+          return;
+        }
+        jump(region);
+      });
+    });
+  });
+  // the box is a place you can go to: hovering or focusing it keeps it open
+  tip.addEventListener('pointerenter', () => clearTimeout(hideTimer));
+  tip.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hideSoon(); });
+  tip.addEventListener('focusin', () => clearTimeout(hideTimer));
+  tip.addEventListener('focusout', (e) => { if (!e.relatedTarget || !e.relatedTarget.closest('.seg, .spine-tip')) hideSoon(); });
+  go.addEventListener('click', (e) => {
+    if (!current || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+    e.preventDefault();
+    jump(current);
+  });
+  setTimeout(rest, still.matches ? 0 : 1700);
+  addEventListener('resize', () => { if (!current) rest(); });
+
+  pick(chosen, { updateUrl: false });
+})();
+
+// Ablauf: one stage open at a time.
+(() => {
+  const stages = [...document.querySelectorAll('.stage')];
+  stages.forEach((st) => st.querySelector('button').addEventListener('click', () => {
+    stages.forEach((o) => { const open = o === st; o.classList.toggle('is-open', open); o.querySelector('button').setAttribute('aria-expanded', String(open)); });
+  }));
+})();
+
+// FAQ: one card open at a time; the first is open on load.
+(() => {
+  const cards = [...document.querySelectorAll('.fcard')];
+  const open = (c) => cards.forEach((o) => { const on = o === c; o.querySelector('button').setAttribute('aria-expanded', String(on)); o.querySelector('.answer').hidden = !on; });
+  cards.forEach((c) => c.querySelector('button').addEventListener('click', () => open(c)));
+  if (cards.length) open(cards[0]);
+})();
+
+// The coupon: a ready-written e-mail.
+(() => {
+  const form = document.querySelector('.request');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = form.elements;
+    const body = `Guten Tag Herr Dr. Manicke,\n\nich bitte um einen Termin.\nAnliegen: ${f.anliegen.value}\nAbschnitt: ${f.abschnitt.value}\nRückruf unter: ${f.telefon.value.trim() || '—'}\n\nMit freundlichen Grüßen\n${f.name.value.trim()}`;
+    location.href = `mailto:christoph.manicke@gmx.de?subject=${encodeURIComponent('Terminanfrage: ' + f.anliegen.value)}&body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+</body>
+</html>
