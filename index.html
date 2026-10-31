@@ -157,15 +157,23 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .points > div { padding: 24px clamp(16px, 2vw, 32px) 0 0; }
 .points > div + div { padding-left: clamp(16px, 2vw, 32px); border-left: 1px solid var(--rule); }
 .points p { margin-top: 10px; color: #2b3345; }
-.where { margin-top: clamp(36px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: baseline; }
-.where address { font-style: normal; font-size: var(--step-lead); line-height: 1.3; font-weight: 520; }
-.where small { display: block; font-size: var(--step-small); color: var(--slate); font-weight: 400; margin-top: 4px; }
 
 .horizon { position: relative; height: clamp(320px, 52vw, 560px); background: var(--navy); overflow: hidden; color: #fff; }
 .horizon > img { object-position: 50% 56%; }
 .horizon::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 16, 36, 0.78), rgba(10, 16, 36, 0) 62%); }
 .horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: clamp(28px, 5vw, 56px); }
 .horizon blockquote { margin: 0; max-width: 17em; font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance; text-shadow: 0 2px 24px rgba(10, 16, 36, 0.5); }
+
+/* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
+.mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
+.mapsec .map { position: absolute; inset: 0; transform: scale(var(--z)); transform-origin: 50% 52%; will-change: transform; }
+.mapsec .map img { width: 100%; height: 100%; object-fit: cover; }
+.map-pin { position: absolute; left: 50%; top: 50%; width: 52px; height: 70px; translate: -50% -100%; filter: drop-shadow(0 8px 10px rgba(16, 26, 53, 0.3)); }
+.map-card { position: absolute; left: max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))); bottom: clamp(24px, 6svh, 64px); width: min(440px, calc(100% - 2 * var(--margin))); padding: clamp(24px, 3vw, 40px); background: #fff; border-top: 6px solid var(--sea); box-shadow: 0 30px 60px -30px rgba(16, 26, 53, 0.5); }
+.map-card h2 { font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem); }
+.map-card p { margin-top: 14px; color: #2b3345; }
+.map-card address { margin-top: 14px; font-style: normal; font-weight: 560; font-size: var(--step-lead); line-height: 1.3; }
+.map-card .tlink { display: inline-block; margin-top: 22px; }
 
 /* ---------- faq ---------- */
 .faq details { border-bottom: 1px solid var(--rule); }
@@ -189,27 +197,29 @@ details[open] .plus::after { transform: rotate(0); }
 .contact dd { margin: 2px 0 0; font-size: var(--step-lead); line-height: 1.3; }
 .contact dd a { text-decoration: none; border-bottom: 2px solid var(--sea); }
 .contact dd a:hover { border-color: #8fcfdc; }
-.request { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 32px; align-content: start; }
+.request { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 28px; align-content: start; padding: clamp(24px, 3.4vw, 48px); background: #fff; color: var(--ink); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.55); border-top: 6px solid var(--sea); }
 .request .hp { position: absolute; left: -9999px; }
 .cell { position: relative; display: flex; flex-direction: column; gap: 6px; }
 .cell.msg, .consent, .request .submit-row { grid-column: 1 / -1; }
-.cell label { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: #8fcfdc; }
-.cell .opt { text-transform: none; letter-spacing: 0; font-weight: 400; color: #b8c4d8; }
-.cell input, .cell select, .cell textarea { width: 100%; padding: 10px 0 12px; border: 0; border-bottom: 2px solid rgba(255, 255, 255, 0.4); border-radius: 0; background: transparent; color: #fff; font: inherit; font-size: 1.125rem; appearance: none; transition: border-color 180ms; }
+.cell label { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--navy); }
+.cell .opt { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--slate); }
+.cell input, .cell select, .cell textarea { width: 100%; padding: 10px 0 12px; border: 0; border-bottom: 2px solid rgba(16, 26, 53, 0.35); border-radius: 0; background: transparent; color: var(--ink); font: inherit; font-size: 1.125rem; appearance: none; transition: border-color 180ms; }
 .cell textarea { resize: vertical; min-height: 3.2em; }
-.cell input::placeholder, .cell textarea::placeholder { color: #8f9bb4; }
-.cell input:hover, .cell select:hover, .cell textarea:hover { border-color: rgba(255, 255, 255, 0.7); }
-.cell input:focus, .cell select:focus, .cell textarea:focus { outline: none; border-color: #8fcfdc; }
+.cell input::placeholder, .cell textarea::placeholder { color: #7a8497; }
+.cell input:hover, .cell select:hover, .cell textarea:hover { border-color: var(--navy); }
+.cell input:focus, .cell select:focus, .cell textarea:focus { outline: none; border-color: var(--sea); background: var(--sea-pale); }
 .cell select option { color: var(--ink); }
-.cell .chev { position: absolute; right: 2px; bottom: 20px; width: 10px; height: 10px; border-right: 2px solid #8fcfdc; border-bottom: 2px solid #8fcfdc; transform: rotate(45deg); pointer-events: none; }
-.consent { display: flex; gap: 14px; align-items: flex-start; font-size: var(--step-small); color: #dbe3f0; line-height: 1.45; }
+.cell .chev { position: absolute; right: 2px; bottom: 20px; width: 10px; height: 10px; border-right: 2px solid var(--sea-2); border-bottom: 2px solid var(--sea-2); transform: rotate(45deg); pointer-events: none; }
+.consent { display: flex; gap: 14px; align-items: flex-start; font-size: var(--step-small); color: #2b3345; line-height: 1.45; }
 .consent input { appearance: auto; flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--sea); }
-.consent a { color: #fff; text-underline-offset: 0.2em; }
+.consent a { color: var(--navy); text-underline-offset: 0.2em; }
 .submit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; }
 .submit-row .btn { cursor: pointer; }
+.request .btn.submit { background: var(--navy); border-color: var(--navy); color: #fff; }
+.request .btn.submit:hover { background: var(--sea-2); border-color: var(--sea-2); }
 .submit-row .btn:disabled { opacity: 0.6; cursor: wait; }
-.form-status { font-size: var(--step-small); color: #bfe6ee; }
-.fine { grid-column: 1 / -1; font-size: var(--step-small); color: #b8c4d8; }
+.form-status { font-size: var(--step-small); color: var(--sea-2); font-weight: 560; }
+.fine { grid-column: 1 / -1; font-size: var(--step-small); color: var(--slate); }
 
 /* ---------- footer ---------- */
 .foot { background: var(--paper); padding-block: 40px 28px; font-size: var(--step-small); }
@@ -406,10 +416,6 @@ details[open] .plus::after { transform: rotate(0); }
           <div data-reveal style="--i:2"><h3>Verständlich</h3><p>Ich erkläre Ihre Bilder und Befunde so, dass Sie sie verstehen, und zeige Ihnen alle Wege, nicht nur den Eingriff.</p></div>
           <div data-reveal style="--i:3"><h3>Menschlich</h3><p>Es geht um Sie und Ihren Alltag, nicht nur um Ihr MRT.</p></div>
         </div>
-        <div class="where" data-reveal>
-          <address>Burgstraße&nbsp;2, 4.&nbsp;Stock<br>24103&nbsp;Kiel<small>In der Kieler Innenstadt, zwischen Altem Markt und Schloss. Mit dem Aufzug erreichbar.</small></address>
-          <a class="tlink" href="https://www.openstreetmap.org/search?query=Burgstra%C3%9Fe%202%2C%2024103%20Kiel" rel="noopener">Auf der Karte öffnen</a>
-        </div>
       </div>
     </div>
   </section>
@@ -488,13 +494,23 @@ details[open] .plus::after { transform: rotate(0); }
         </div>
         <label class="consent"><input type="checkbox" name="einwilligung" value="ja" required> <span>Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
         <div class="submit-row">
-          <button type="submit" class="btn is-light submit">Anfrage senden <svg class="arrow" aria-hidden="true"><use href="#arrow"></use></svg></button>
+          <button type="submit" class="btn submit">Anfrage senden <svg class="arrow" aria-hidden="true"><use href="#arrow"></use></svg></button>
           <p class="form-status" role="status" aria-live="polite"></p>
         </div>
         <div class="fine">
           <p>Bitte schreiben Sie keine Befunde oder Diagnosen in die Nachricht. Ihre Anfrage geht verschlüsselt direkt an die Praxis.</p>
         </div>
       </form>
+    </div>
+  </section>
+  <section class="mapsec" aria-labelledby="map-title">
+    <div class="map"><img src="assets/kiel-karte.webp" width="1600" height="1600" alt="Stadtplan der Kieler Altstadt an der Förde, mit einer Markierung auf der Burgstraße&nbsp;2" loading="lazy"></div>
+    <svg class="map-pin" viewBox="0 0 64 86" aria-hidden="true"><path d="M32 84C32 84 4 50 4 30a28 28 0 0 1 56 0c0 20-28 54-28 54z" fill="#101a35" stroke="#f7f7f5" stroke-width="4"/><circle cx="32" cy="30" r="11" fill="#287f91"/></svg>
+    <div class="map-card" data-reveal>
+      <h2 id="map-title">So finden Sie mich</h2>
+      <address>Burgstraße&nbsp;2, 4.&nbsp;Stock<br>24103&nbsp;Kiel</address>
+      <p>In der Kieler Innenstadt, zwischen Altem Markt und Schloss. Mit dem Aufzug erreichbar.</p>
+      <a class="tlink" href="https://www.openstreetmap.org/?mlat=54.32433&amp;mlon=10.14184#map=18/54.32433/10.14184" rel="noopener">Auf der Karte öffnen</a>
     </div>
   </section>
 </main>
@@ -531,6 +547,21 @@ details[open] .plus::after { transform: rotate(0); }
     if (a && e.isIntersecting) { links.forEach((l) => l.removeAttribute('aria-current')); a.setAttribute('aria-current', 'true'); }
   }), { rootMargin: '-35% 0px -60% 0px' });
   map.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
+})();
+
+// The map eases in from a closer view to the street as it scrolls into view.
+(() => {
+  const sec = document.querySelector('.mapsec');
+  if (!sec || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let tick = false;
+  const update = () => {
+    tick = false;
+    const r = sec.getBoundingClientRect();
+    const t = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight + r.height * 0.4)));
+    sec.style.setProperty('--z', (1.9 - 0.9 * t).toFixed(3));
+  };
+  addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
 })();
 
 // A topic row preselects its topic in the request form.
