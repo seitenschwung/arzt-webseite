@@ -223,15 +223,25 @@ details[open] .plus::after { transform: rotate(0); }
 .form-status { font-size: var(--step-small); color: var(--sea-2); font-weight: 560; }
 
 /* ---------- footer ---------- */
-.foot { background: var(--paper); padding-block: 40px 28px; font-size: var(--step-small); }
-.foot .wrap { display: grid; gap: 28px; }
-.foot-logo { width: 48px; height: 39px; }
-.foot-top { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
-.foot nav { display: flex; gap: 28px; }
-.foot a { text-decoration: none; font-weight: 560; }
-.foot a:hover { color: var(--sea-2); text-decoration: underline; text-underline-offset: 0.25em; }
-.credits { max-width: 60em; color: var(--slate); font-size: 1rem; line-height: 1.5; }
-.credits a { font-weight: 400; text-decoration: underline; }
+.foot { position: relative; overflow: hidden; background: var(--navy); color: #fff; padding-block: clamp(56px, 8vw, 112px) 32px; font-size: var(--step-small); }
+.foot .wrap { position: relative; z-index: 1; display: grid; gap: clamp(24px, 3vw, 40px); }
+.foot-sky { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 0%, rgba(40, 127, 145, 0.35), rgba(40, 127, 145, 0) 70%); }
+.calm { margin: 0; font-size: clamp(3.4rem, 1rem + 11vw, 12.5rem); font-weight: 680; font-stretch: 120%; letter-spacing: -0.055em; line-height: 0.9; color: #fff; }
+.calm em { font-style: normal; color: #8fcfdc; }
+.horizon-line { position: relative; height: 2px; background: rgba(255, 255, 255, 0.35); }
+.horizon-line span { position: absolute; right: clamp(24px, 8vw, 140px); bottom: 2px; width: 44px; height: 22px; border-radius: 44px 44px 0 0; background: #8fcfdc; }
+.foot-cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr auto; gap: 28px clamp(24px, 4vw, 64px); align-items: start; }
+.who-foot { display: flex; gap: 16px; align-items: flex-start; }
+.foot-logo { flex: none; width: 56px; height: 46px; --logo-c: #fff; --logo-m: #8fcfdc; --logo-weight: 3px; }
+.who-foot b { display: block; font-size: 1.125rem; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; }
+.who-foot p, .foot address, .foot-mail { margin: 0; line-height: 1.5; color: #c7d2e6; }
+.foot address { font-style: normal; }
+.foot address span { color: #fff; }
+.foot nav { display: grid; gap: 6px; }
+.foot a { color: #fff; text-decoration: none; font-weight: 560; }
+.foot a:hover { color: #8fcfdc; text-decoration: underline; text-underline-offset: 0.25em; }
+.credits { margin: 0; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.2); max-width: 70em; color: #aebbd3; font-size: 1rem; line-height: 1.5; }
+.credits a { font-weight: 400; text-decoration: underline; color: #dbe3f0; }
 
 /* ---------- motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
@@ -256,6 +266,7 @@ details[open] .plus::after { transform: rotate(0); }
   .hero-photo { position: relative; inset: auto; min-height: clamp(260px, 52vw, 420px); }
   .hero-photo::after { display: none; }
   .first { min-height: 0; }
+  .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-copy { padding-inline: var(--margin); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
@@ -282,6 +293,7 @@ details[open] .plus::after { transform: rotate(0); }
   .request { grid-template-columns: minmax(0, 1fr); }
   .answer { padding-right: 0; }
   .topic:hover { padding-inline: 0; background: transparent; }
+  .foot-cols { grid-template-columns: minmax(0, 1fr); }
   .how-list { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .topic { grid-template-columns: 2rem minmax(0, 1fr); }
   }
@@ -476,15 +488,22 @@ details[open] .plus::after { transform: rotate(0); }
   </section>
 </main>
 
-<footer class="foot">
+<footer class="foot on-navy">
+  <div class="foot-sky" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="foot-top">
-      <svg class="logo foot-logo" aria-hidden="true"><use href="#cm"></use></svg>
-      <p><b>Dr. med. Christoph Manicke</b> · Neurochirurgie, Schwerpunkt Wirbelsäule · Burgstraße&nbsp;2, 24103&nbsp;Kiel</p>
+    <p class="calm" aria-label="Alles in Ruhe.">Alles in <em>Ruhe.</em></p>
+    <div class="horizon-line" aria-hidden="true"><span></span></div>
+    <div class="foot-cols">
+      <div class="who-foot">
+        <svg class="logo foot-logo" aria-hidden="true"><use href="#cm"></use></svg>
+        <p><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie<br>Schwerpunkt Wirbelsäule</p>
+      </div>
+      <address>Burgstraße&nbsp;2, 4.&nbsp;Stock<br>24103&nbsp;Kiel<br><span>Sprechstunde nach Vereinbarung</span></address>
+      <p class="foot-mail"><a href="mailto:christoph.manicke@gmx.de">christoph.manicke@gmx.de</a><br><a href="#kontakt">Zum Anfrageformular</a></p>
       <nav aria-label="Rechtliches">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <a href="#top">Nach oben</a>
+        <a href="#top">Nach oben ↑</a>
       </nav>
     </div>
     <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm, Joseph Sintum, <a href="https://unsplash.com/photos/vrqypTgxRiw">Unsplash</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
