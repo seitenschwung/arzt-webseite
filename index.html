@@ -102,12 +102,12 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .hero .lede { max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
 .hero-photo { position: relative; min-height: 420px; background: var(--navy); overflow: hidden; }
-.hero-photo > img, .horizon > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 38% 50%; }
-.hero-photo .cap { position: absolute; right: 18px; bottom: 14px; font-size: 0.8125rem; letter-spacing: 0.04em; color: rgba(255, 255, 255, 0.78); }
-.hero-person { position: absolute; z-index: 2; left: 0; bottom: 0; display: flex; align-items: flex-end; gap: 16px; transform: translateX(calc(-1 * clamp(40px, 5vw, 76px))); }
-.hero-person img { width: clamp(108px, 11vw, 168px); aspect-ratio: 528 / 700; object-fit: cover; border: 6px solid var(--paper); background: var(--paper); }
-.hero-person p { padding-bottom: 16px; color: #fff; font-size: var(--step-small); line-height: 1.3; text-shadow: 0 1px 12px rgba(10, 16, 36, 0.7); }
-.hero-person b { display: block; font-weight: 640; font-stretch: var(--wide); font-size: 1.0625rem; }
+.hero-photo > img, .horizon > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% 50%; }
+.hero-photo .cap { position: absolute; right: 0; bottom: 0; padding: 7px 14px; font-size: 0.8125rem; letter-spacing: 0.04em; background: var(--paper); color: var(--slate); }
+.byline { display: flex; align-items: center; gap: 18px; }
+.byline img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--sea); }
+.byline p { font-size: var(--step-small); line-height: 1.3; color: var(--slate); }
+.byline b { display: block; color: var(--ink); font-weight: 640; font-stretch: var(--wide); font-size: 1.125rem; letter-spacing: -0.01em; }
 
 .facts { border-bottom: 1px solid var(--rule); }
 .facts ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -140,8 +140,8 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 /* ---------- about ---------- */
 .about .body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4.5vw, 72px); align-items: start; }
 .portrait { position: relative; }
-.portrait img { width: 100%; aspect-ratio: 528 / 700; object-fit: cover; }
-.portrait::after { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 2px solid var(--sea); z-index: -1; }
+.portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; }
+.portrait::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
 .about h2 { max-width: 12em; }
 .about .text { margin-top: 22px; max-width: 34em; }
 .path { margin-top: clamp(32px, 4vw, 52px); border-left: 2px solid var(--navy); }
@@ -236,8 +236,6 @@ details[open] .plus::after { transform: rotate(0); }
   .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
   .hero-copy { padding-inline: var(--margin); }
   .hero-photo { min-height: clamp(300px, 56vw, 460px); }
-  .hero-person { left: var(--margin); transform: none; bottom: 0; }
-  .hero-person img { width: clamp(96px, 20vw, 140px); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
   .row { grid-template-columns: minmax(0, 1fr) auto; }
@@ -311,17 +309,17 @@ details[open] .plus::after { transform: rotate(0); }
       <p class="label" data-rise style="--i:0">Neurochirurgie in Kiel · Schwerpunkt Wirbelsäule</p>
       <h1 id="title" data-rise style="--i:1">Nur operieren, <em>wenn es wirklich sein muss.</em></h1>
       <p class="lede" data-rise style="--i:2">Gründliche Diagnostik, ehrliche Beratung, eine Operation erst, wenn sie unvermeidbar ist.</p>
-      <div class="hero-actions" data-rise style="--i:3">
+      <div class="byline" data-rise style="--i:3">
+        <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke">
+        <p><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie</p>
+      </div>
+      <div class="hero-actions" data-rise style="--i:4">
         <a class="btn" href="#kontakt">Gespräch anfragen <svg class="arrow" aria-hidden="true"><use href="#arrow"></use></svg></a>
         <a class="tlink" href="tel:+491726347706">oder anrufen: 0172&nbsp;634&nbsp;77&nbsp;06</a>
       </div>
     </div>
     <figure class="hero-photo">
-      <img src="assets/wintermorgen-am-eingang-zur-kieler-forde-2400.webp" width="2400" height="1599" alt="Die Kieler Förde bei Sonnenaufgang, über dem dunklen Wasser färbt sich der Himmel violett und orange" fetchpriority="high">
-      <div class="hero-person" data-rise style="--i:4">
-        <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke">
-        <p><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie</p>
-      </div>
+      <img src="assets/kiel-hafen-1400.webp" srcset="assets/kiel-hafen-1400.webp 1400w, assets/kiel-hafen.webp 2800w" sizes="(max-width: 1080px) 100vw, 46vw" width="2800" height="1120" alt="Der Kieler Hafen an der Förde mit Fähren am Anleger und dem Fernsehturm im Hintergrund" fetchpriority="high">
       <figcaption class="cap">Kieler Förde</figcaption>
     </figure>
   </section>
@@ -511,7 +509,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bild: „Wintermorgen am Eingang zur Kieler Förde“, Dan Kollmann, <a href="https://commons.wikimedia.org/wiki/File:Wintermorgen_am_Eingang_zur_Kieler_F%C3%B6rde.jpg">Wikimedia Commons</a>, CC BY-SA 4.0, zugeschnitten und verkleinert.</p>
+    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. „Wintermorgen am Eingang zur Kieler Förde“, Dan Kollmann, <a href="https://commons.wikimedia.org/wiki/File:Wintermorgen_am_Eingang_zur_Kieler_F%C3%B6rde.jpg">Wikimedia Commons</a>, CC BY-SA 4.0, zugeschnitten und verkleinert.</p>
   </div>
 </footer>
 
