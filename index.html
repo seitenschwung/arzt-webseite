@@ -174,11 +174,10 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 
 /* ---------- the Förde band ---------- */
 
-.horizon { position: relative; height: clamp(320px, 52vw, 560px); background: var(--navy); overflow: hidden; color: #fff; }
-.horizon > img { object-position: 50% 75%; }
-.horizon::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 16, 36, 0.85), rgba(10, 16, 36, 0.3) 70%), rgba(16, 26, 53, 0.12); }
-.horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: clamp(28px, 5vw, 56px); }
-.horizon blockquote { margin: 0; max-width: 17em; font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance; text-shadow: 0 2px 24px rgba(10, 16, 36, 0.5); }
+.horizon { position: relative; height: clamp(320px, 52vw, 560px); background: #cfd8e6; overflow: hidden; color: var(--navy); }
+.horizon > img { object-position: 50% 42%; }
+.horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; padding-top: clamp(28px, 6vw, 72px); }
+.horizon blockquote { margin: 0; max-width: 17em; font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
@@ -442,8 +441,8 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="horizon on-navy" aria-label="Kieler Förde">
-    <img src="assets/foerde-abends.webp" width="2048" height="1536" alt="" loading="lazy">
+  <section class="horizon" aria-label="Kieler Förde">
+    <img src="assets/leuchtturm.webp" width="2400" height="1471" alt="" loading="lazy">
     <div class="wrap">
       <blockquote data-reveal><!-- TODO Manicke: Originalsatz zur Selbstständigkeit einsetzen -->„Sie entscheiden. Ich gebe Ihnen die Orientierung dafür.“</blockquote>
     </div>
@@ -544,7 +543,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. „Kieler Förde Abends“, Dirk Ingo Franke, 2004, <a href="https://commons.wikimedia.org/wiki/File:Kieler_F%C3%B6rde_Abends.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/1.0">CC BY-SA 1.0</a>, zugeschnitten, abgedunkelt und verkleinert.</p>
+    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm, Paulius Dragunas, <a href="https://unsplash.com/photos/Nhs0sLAn1Is">Unsplash</a>, zugeschnitten und verkleinert.</p>
   </div>
 </footer>
 
