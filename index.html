@@ -145,26 +145,25 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .how-list li:nth-child(2) b { color: var(--sea-2); }
 .how-list span { display: block; margin-top: 8px; font-size: var(--step-small); line-height: 1.4; color: #1f2740; }
 
-/* ---------- about: a framed card, portrait on the right, the career as a dark bar ---------- */
+/* ---------- about: a short dark strip behind the portrait on the left, text and timeline on the right ---------- */
 .about { padding-block: var(--section); border-bottom: 1px solid var(--rule); }
-.about-frame { border: 2px solid var(--navy); padding: 8px; background: var(--paper); }
-.about-inner { border: 1px solid var(--navy); background: #fff; overflow: hidden; }
-.about-main { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(28px, 5vw, 80px); align-items: center; padding: clamp(32px, 5vw, 72px) clamp(24px, 5vw, 80px) clamp(32px, 4vw, 56px); }
+.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.about-visual { position: relative; min-height: clamp(420px, 40vw, 540px); }
+.about-visual .strip { position: absolute; left: 0; top: 0; bottom: 0; width: 60%; background: var(--navy); }
+.portrait { position: absolute; z-index: 1; left: 60%; top: 40%; width: min(300px, 56%); margin: 0; translate: -50% -50%; }
+.portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; border: 7px solid var(--paper); background: var(--paper); }
+.portrait::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
+.who { position: absolute; left: clamp(20px, 2.4vw, 32px); bottom: clamp(20px, 2.4vw, 32px); width: calc(60% - 2 * clamp(20px, 2.4vw, 32px)); font-size: var(--step-small); line-height: 1.4; color: #c7d2e6; }
+.who b { display: block; margin-bottom: 4px; color: #fff; font-size: var(--step-lead); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
 .about-body h2 { margin-top: 16px; max-width: 12em; }
 .about-body .text { margin-top: 22px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; }
-.portrait { margin: 0; width: clamp(200px, 21vw, 290px); }
-.portrait > img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 7px #fff, 0 0 0 9px var(--navy); }
-.who { margin-top: 24px; font-size: var(--step-small); line-height: 1.4; color: var(--slate); text-align: center; }
-.who b { display: block; color: var(--navy); font-size: var(--step-lead); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
-.route { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); background: var(--navy); color: #fff; padding: 0 clamp(24px, 5vw, 80px); counter-reset: st; }
-.route li { position: relative; padding: 36px clamp(10px, 1.2vw, 18px) 28px 0; }
-.route li::before { content: ""; position: absolute; left: 0; right: 0; top: 17px; height: 2px; background: rgba(255, 255, 255, 0.35); }
-.route li::after { content: ""; position: absolute; left: 0; top: 11px; width: 14px; height: 14px; background: var(--navy); border: 2px solid #8fcfdc; }
-.route li:last-child::after { background: #8fcfdc; }
-.route li:last-child::before { background: linear-gradient(to right, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0)); }
-.route b { display: block; font-size: 1.0625rem; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; line-height: 1.2; }
-.route li:last-child b { color: #8fcfdc; }
-.route span { display: block; margin-top: 5px; font-size: 0.875rem; line-height: 1.35; color: #c7d2e6; }
+.path { margin-top: clamp(28px, 3.4vw, 44px); border-left: 2px solid var(--navy); }
+.path li { position: relative; padding: 0 0 20px 28px; }
+.path li:last-child { padding-bottom: 0; }
+.path li::before { content: ""; position: absolute; left: -7px; top: 0.5em; width: 12px; height: 12px; background: var(--paper); border: 2px solid var(--sea); }
+.path li:last-child::before { background: var(--sea); }
+.path b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; }
+.path span { display: block; font-size: var(--step-small); color: var(--slate); }
 
 /* ---------- the Förde band ---------- */
 
@@ -258,8 +257,8 @@ details[open] .plus::after { transform: rotate(0); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
   .topics { grid-template-columns: minmax(0, 1fr); }
-  .about-main { grid-template-columns: minmax(0, 1fr); justify-items: start; }
-  .route { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-visual { min-height: 440px; max-width: 560px; }
   .how { grid-template-columns: minmax(0, 1fr); }
   .how-label { max-width: none; }
 }
@@ -284,7 +283,6 @@ details[open] .plus::after { transform: rotate(0); }
   .request { grid-template-columns: minmax(0, 1fr); }
   .answer { padding-right: 0; }
   .topic:hover { padding-inline: 0; background: transparent; }
-  .route { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .how-list { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .topic { grid-template-columns: 2rem minmax(0, 1fr); }
   }
@@ -386,29 +384,26 @@ details[open] .plus::after { transform: rotate(0); }
   </section>
 
   <section class="about" id="ueber-mich" aria-labelledby="about-title">
-    <div class="wrap">
-      <div class="about-frame">
-        <div class="about-inner">
-          <div class="about-main">
-            <div class="about-body">
-              <p class="label" data-reveal>Über mich</p>
-              <h2 id="about-title" data-reveal style="--i:1">Fast wäre alles anders gekommen.</h2>
-              <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</p>
-            </div>
-            <figure class="portrait" data-reveal style="--i:1">
-              <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke" loading="lazy">
-              <figcaption class="who"><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie · Kiel</figcaption>
-            </figure>
-          </div>
-          <ol class="route" aria-label="Mein Weg" data-reveal>
-            <li><b>Studium</b><span>Humanmedizin. Statt nach Italien ging es in den Hörsaal.</span></li>
-            <li><b>Facharzt</b><span>Neurochirurgie, Schwerpunkt Wirbelsäule</span></li>
-            <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
-            <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
-            <li><b>Praxis</b><span>Gemeinschaftspraxis Neurozentrum Kiel</span></li>
-            <li><b>Heute</b><span>Eigene Privatpraxis, Burgstraße 2, Kiel</span></li>
-          </ol>
-        </div>
+    <div class="wrap about-grid">
+      <div class="about-visual" data-reveal>
+        <div class="strip" aria-hidden="true"></div>
+        <figure class="portrait">
+          <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke" loading="lazy">
+        </figure>
+        <p class="who"><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie<br>Kiel</p>
+      </div>
+      <div class="about-body">
+        <p class="label" data-reveal>Über mich</p>
+        <h2 id="about-title" data-reveal style="--i:1">Fast wäre alles anders gekommen.</h2>
+        <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</p>
+        <ol class="path" aria-label="Mein Weg" data-reveal style="--i:3">
+          <li><b>Studium der Humanmedizin</b><span>Statt nach Italien ging es in den Hörsaal.</span></li>
+          <li><b>Facharzt für Neurochirurgie</b><span>Schwerpunkt Wirbelsäule</span></li>
+          <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
+          <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
+          <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
+          <li><b>Heute: eigene Privatpraxis</b><span>Burgstraße 2, Kiel. Zweitmeinung zur Wirbelsäule</span></li>
+        </ol>
       </div>
     </div>
   </section>
