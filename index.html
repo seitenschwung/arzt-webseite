@@ -25,7 +25,7 @@
   --rule: rgba(16, 26, 53, 0.22);
   --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --wide: 114%;
-  --step-small: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  --step-small: 1rem;
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
   --step-lead: clamp(1.1875rem, 1.05rem + 0.55vw, 1.5rem);
   --step-head: clamp(2rem, 1.3rem + 2.8vw, 3.75rem);
@@ -57,7 +57,7 @@ a { color: inherit; }
 h1, h2, h3 { font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.03em; line-height: 1.02; text-wrap: balance; }
 h2 { font-size: var(--step-head); }
 h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
-.label { display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; font-stretch: 100%; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sea-2); }
+.label { display: flex; align-items: center; gap: 14px; font-size: 1rem; font-weight: 600; font-stretch: 100%; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea-2); }
 .label::before { content: ""; width: 36px; height: 2px; background: currentColor; }
 .on-navy .label { color: var(--sea-pale); }
 
@@ -87,7 +87,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .brand { display: flex; align-items: center; gap: 16px; text-decoration: none; }
 .logo { width: 58px; height: 47px; flex: none; overflow: visible; --logo-c: var(--navy); --logo-m: var(--sea); --logo-weight: 3px; }
 .brand b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.015em; line-height: 1.1; font-size: 1.125rem; }
-.brand small { display: block; margin-top: 3px; font-size: 0.875rem; color: var(--slate); line-height: 1.1; }
+.brand small { display: block; margin-top: 3px; font-size: 1rem; color: var(--slate); line-height: 1.1; }
 .nav { display: flex; gap: clamp(20px, 3vw, 44px); }
 .nav a { position: relative; padding: 8px 0; font-weight: 520; text-decoration: none; }
 .nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 3px; background: var(--sea); transform: scaleX(0); transform-origin: left; transition: transform 260ms var(--ease); }
@@ -97,13 +97,14 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 /* ---------- hero: text on paper, the Förde runs off the right edge ---------- */
 .hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); min-height: min(820px, calc(100svh - var(--bar) - 40px)); border-bottom: 1px solid var(--rule); }
 .hero-copy { display: flex; flex-direction: column; justify-content: center; gap: 30px; padding: clamp(48px, 7vw, 96px) clamp(24px, 4vw, 64px) clamp(48px, 6vw, 80px) max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))); }
-.hero h1 { font-size: var(--step-display); font-weight: 680; letter-spacing: -0.04em; line-height: 0.98; }
+.hero h1 .ln { display: block; }
+.hero h1 { font-size: clamp(2.4rem, 1rem + 3.5vw, 4.5rem); font-weight: 680; letter-spacing: -0.04em; line-height: 0.98; }
 .hero h1 em { font-style: normal; color: var(--sea-2); }
 .hero .lede { max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
 .hero-photo { position: relative; min-height: 420px; background: var(--navy); overflow: hidden; }
 .hero-photo > img, .horizon > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% 50%; }
-.hero-photo .cap { position: absolute; right: 0; bottom: 0; padding: 7px 14px; font-size: 0.8125rem; letter-spacing: 0.04em; background: var(--paper); color: var(--slate); }
+.hero-photo .cap { position: absolute; right: 0; bottom: 0; padding: 7px 14px; font-size: 1rem; letter-spacing: 0.04em; background: var(--paper); color: var(--slate); }
 .byline { display: flex; align-items: center; gap: 18px; }
 .byline img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--sea); }
 .byline p { font-size: var(--step-small); line-height: 1.3; color: var(--slate); }
@@ -134,11 +135,11 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .topics li { border-bottom: 1px solid var(--rule); }
 .topic { position: relative; display: grid; grid-template-columns: 2rem minmax(0, 1fr); align-items: baseline; gap: 4px 12px; padding: 22px 0 24px; text-decoration: none; transition: background 200ms var(--ease), padding 200ms var(--ease); }
 .topic:hover { background: var(--sea-pale); padding-inline: 14px; }
-.topic .no { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
+.topic .no { font-size: 1rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
 .topic b { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.55rem); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
 .topic .t { grid-column: 2; max-width: 30em; color: #2b3345; font-size: var(--step-small); line-height: 1.4; }
 .how { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px clamp(24px, 4vw, 56px); padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px); background: var(--sea-pale); }
-.how-label { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sea-2); }
+.how-label { font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea-2); }
 .how-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
 .how-list li { padding: 2px clamp(16px, 2.2vw, 32px); border-left: 2px solid var(--navy); }
 .how-list b { display: block; font-size: clamp(1.5rem, 1rem + 1.7vw, 2.4rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.04em; line-height: 1.05; }
@@ -169,9 +170,9 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 /* ---------- the Förde band ---------- */
 
 .horizon { position: relative; height: clamp(320px, 52vw, 560px); background: #cfd8e6; overflow: hidden; color: var(--navy); }
-.horizon > img { object-position: 50% 42%; }
+.horizon > img { object-position: 50% 6%; }
 .horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; padding-top: clamp(28px, 6vw, 72px); }
-.horizon blockquote { margin: 0; max-width: 17em; font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
+.horizon blockquote { margin: 0; max-width: min(11em, 44vw); font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
@@ -202,7 +203,7 @@ details[open] .plus::after { transform: rotate(0); }
 .contact h2 { margin-top: 18px; }
 .contact .lead { margin-top: 22px; font-size: var(--step-lead); line-height: 1.4; color: #dbe3f0; max-width: 24em; }
 .contact dl { margin: 40px 0 0; display: grid; gap: 18px; border-top: 1px solid rgba(255, 255, 255, 0.28); padding-top: 24px; }
-.contact dt { font-size: 0.8125rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8fcfdc; font-weight: 600; }
+.contact dt { font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8fcfdc; font-weight: 600; }
 .contact dd { margin: 2px 0 0; font-size: var(--step-lead); line-height: 1.3; }
 .contact dd a { text-decoration: none; border-bottom: 2px solid var(--sea); }
 .contact dd a:hover { border-color: #8fcfdc; }
@@ -210,7 +211,7 @@ details[open] .plus::after { transform: rotate(0); }
 .request .hp { position: absolute; left: -9999px; }
 .cell { position: relative; display: flex; flex-direction: column; gap: 6px; }
 .cell.msg, .consent, .request .submit-row { grid-column: 1 / -1; }
-.cell label { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--navy); }
+.cell label { font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--navy); }
 .cell .opt { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--slate); }
 .cell input, .cell select, .cell textarea { width: 100%; padding: 10px 0 12px; border: 0; border-bottom: 2px solid rgba(16, 26, 53, 0.35); border-radius: 0; background: transparent; color: var(--ink); font: inherit; font-size: 1.125rem; appearance: none; transition: border-color 180ms; }
 .cell textarea { resize: vertical; min-height: 3.2em; }
@@ -237,7 +238,7 @@ details[open] .plus::after { transform: rotate(0); }
 .foot nav { display: flex; gap: 28px; }
 .foot a { text-decoration: none; font-weight: 560; }
 .foot a:hover { color: var(--sea-2); text-decoration: underline; text-underline-offset: 0.25em; }
-.credits { max-width: 60em; color: var(--slate); font-size: 0.8125rem; line-height: 1.5; }
+.credits { max-width: 60em; color: var(--slate); font-size: 1rem; line-height: 1.5; }
 .credits a { font-weight: 400; text-decoration: underline; }
 
 /* ---------- motion ---------- */
@@ -271,7 +272,7 @@ details[open] .plus::after { transform: rotate(0); }
   .brand small { display: none; }
   .logo { width: 48px; height: 39px; }
   .nav { order: 3; width: 100%; justify-content: space-between; gap: 8px; padding-bottom: 4px; font-size: var(--step-small); }
-  .site-head .btn { padding: 12px 16px; font-size: 0.9375rem; }
+  .site-head .btn { padding: 12px 16px; font-size: 1rem; }
   .site-head .btn .arrow { display: none; }
   html { scroll-padding-top: 120px; }
   .facts ul { grid-template-columns: minmax(0, 1fr); }
@@ -296,7 +297,6 @@ details[open] .plus::after { transform: rotate(0); }
 <div class="util">
   <div class="wrap">
     <div class="group">
-      <a class="item" href="tel:+491726347706">0172&nbsp;634&nbsp;77&nbsp;06</a>
       <a class="item" href="mailto:christoph.manicke@gmx.de">christoph.manicke@gmx.de</a>
     </div>
     <div class="group">
@@ -326,15 +326,14 @@ details[open] .plus::after { transform: rotate(0); }
   <section class="hero" aria-labelledby="title">
     <div class="hero-copy">
       <p class="label" data-rise style="--i:0">Neurochirurgie in Kiel · Schwerpunkt Wirbelsäule</p>
-      <h1 id="title" data-rise style="--i:1">Nur operieren, <em>wenn es wirklich sein muss.</em></h1>
-      <p class="lede" data-rise style="--i:2">Gründliche Diagnostik, ehrliche Beratung, eine Operation erst, wenn sie unvermeidbar ist.</p>
+      <h1 id="title" data-rise style="--i:1"><span class="ln">Eine Operation</span> <span class="ln">erst, <em>wenn sie</em></span> <span class="ln"><em>unvermeidbar ist.</em></span></h1>
+      <p class="lede" data-rise style="--i:2">Gründliche Diagnostik und ehrliche Beratung, mit Zeit für Ihre Fragen.</p>
       <div class="byline" data-rise style="--i:3">
         <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke">
         <p><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie</p>
       </div>
       <div class="hero-actions" data-rise style="--i:4">
         <a class="btn" href="#kontakt">Gespräch anfragen <svg class="arrow" aria-hidden="true"><use href="#arrow"></use></svg></a>
-        <a class="tlink" href="tel:+491726347706">oder anrufen: 0172&nbsp;634&nbsp;77&nbsp;06</a>
       </div>
     </div>
     <figure class="hero-photo">
@@ -408,8 +407,8 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="horizon" aria-label="Kieler Förde">
-    <img src="assets/leuchtturm.webp" width="2400" height="1471" alt="" loading="lazy">
+  <section class="horizon" aria-label="Leuchtturm Bülk an der Kieler Förde">
+    <img src="assets/leuchtturm-buelk.webp" width="2400" height="1754" alt="" loading="lazy">
     <div class="wrap">
       <blockquote data-reveal><!-- TODO Manicke: Originalsatz zur Selbstständigkeit einsetzen -->„Sie entscheiden. Ich gebe Ihnen die Orientierung dafür.“</blockquote>
     </div>
@@ -510,7 +509,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm, Paulius Dragunas, <a href="https://unsplash.com/photos/Nhs0sLAn1Is">Unsplash</a>, zugeschnitten und verkleinert.</p>
+    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. „Leuchtturm Bülk“, Holger Ellgaard, 2014, <a href="https://commons.wikimedia.org/wiki/File:Leuchtturm_B%C3%BClk_2014a.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de">CC BY-SA 3.0</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
   </div>
 </footer>
 

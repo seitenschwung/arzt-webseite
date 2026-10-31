@@ -23,7 +23,7 @@ a:hover { color: var(--accent); }
 .skip { position: absolute; left: var(--margin); top: -4rem; padding: 10px 18px; background: #101a35; color: var(--accent-ink); text-decoration: none; z-index: 10; }
 .skip:focus { top: 12px; }
 
-.bar { border-bottom: 1px solid rgba(16, 26, 53, 0.22); display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 18px var(--margin); font-size: 0.9375rem; }
+.bar { border-bottom: 1px solid rgba(16, 26, 53, 0.22); display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 18px var(--margin); font-size: 1rem; }
 .bar a { text-decoration: none; }
 .bar .home { font-weight: 600; }
 
@@ -38,7 +38,7 @@ li + li { margin-top: 0.3em; }
 .note { margin-top: 56px; padding: 20px 22px; background: var(--surface); }
 mark.todo { background: var(--todo); color: var(--ink); padding: 0 0.2em; }
 
-footer { padding: 0 var(--margin) 30px; display: flex; justify-content: space-between; gap: 24px; font-size: 0.9375rem; color: var(--muted); }
+footer { padding: 0 var(--margin) 30px; display: flex; justify-content: space-between; gap: 24px; font-size: 1rem; color: var(--muted); }
 footer a { color: var(--ink); text-decoration: none; }
 footer nav { display: flex; gap: 24px; }
 @media (max-width: 767px) {
