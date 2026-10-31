@@ -89,27 +89,26 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 
 /* ---------- hero: text on paper, the Förde runs off the right edge ---------- */
 .first { display: flex; flex-direction: column; min-height: calc(100svh - var(--bar)); }
-.hero { flex: 1 1 auto; display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); border-bottom: 1px solid var(--rule); }
-.hero-copy { display: flex; flex-direction: column; justify-content: center; gap: clamp(12px, 2.4vh, 30px); padding: clamp(20px, 4vh, 72px) clamp(24px, 4vw, 64px) clamp(20px, 4vh, 64px) max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))); }
+.hero { position: relative; flex: 1 1 auto; display: flex; align-items: center; }
+.hero-copy { display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; width: min(56%, 820px); gap: clamp(12px, 2.4vh, 30px); padding: clamp(20px, 4vh, 72px) clamp(24px, 4vw, 64px) clamp(20px, 4vh, 64px) max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))); }
 .hero h1 .ln { display: block; }
 .hero h1 { font-size: clamp(2.2rem, min(1rem + 3.5vw, 9vh), 4.5rem); font-weight: 680; letter-spacing: -0.04em; line-height: 0.98; }
 .hero h1 em { font-style: normal; color: var(--sea-2); }
 .hero .lede { max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
-.hero-photo { position: relative; min-height: 0; background: var(--navy); overflow: hidden; }
-.hero-photo > img, .horizon > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 68% 50%; }
+.hero-photo { position: absolute; inset: 0; margin: 0; z-index: 0; background: var(--navy); overflow: hidden; }
+.hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247, 247, 245, 0.96) 0%, rgba(247, 247, 245, 0.93) 44%, rgba(247, 247, 245, 0.6) 56%, rgba(247, 247, 245, 0) 70%); }
+.hero-photo > img, .horizon > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .hero-photo .cap { position: absolute; right: 0; bottom: 0; padding: 7px 14px; font-size: 1rem; letter-spacing: 0.04em; background: var(--paper); color: var(--slate); }
 .byline { display: flex; align-items: center; gap: 18px; }
 .byline img { width: clamp(64px, 10vh, 88px); height: clamp(64px, 10vh, 88px); border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--sea); }
 .byline p { font-size: var(--step-small); line-height: 1.3; color: var(--slate); }
 .byline b { display: block; color: var(--ink); font-weight: 640; font-stretch: var(--wide); font-size: 1.125rem; letter-spacing: -0.01em; }
 
-.facts { border-bottom: 1px solid var(--rule); }
-.facts ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.facts li { padding: clamp(14px, 2.2vh, 22px) clamp(16px, 2vw, 32px) clamp(14px, 2.4vh, 24px) 0; }
-.facts li + li { padding-left: clamp(16px, 2vw, 32px); border-left: 1px solid var(--rule); }
-.facts b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; }
-.facts span { display: block; margin-top: 2px; font-size: var(--step-small); color: var(--slate); }
+
+/* ---------- one line of practice facts under the hero ---------- */
+.info { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 28px; padding: 16px var(--margin); background: var(--navy); color: #fff; font-size: 1.0625rem; line-height: 1.35; text-align: center; }
+.info span + span::before { content: "·"; margin-right: 28px; color: #8fcfdc; }
 
 /* ---------- stance: one sentence on navy ---------- */
 .stance { background: var(--navy); color: #fff; padding-block: var(--section); }
@@ -251,12 +250,14 @@ details[open] .plus::after { transform: rotate(0); }
   .hero .lede { font-size: 1.0625rem; line-height: 1.35; }
   .hero-copy { gap: 10px; padding-block: 16px; }
   .byline img { width: 56px; height: 56px; }
-  .facts li { padding-block: 12px; }
-}
+  }
 @media (max-width: 1080px) {
-  .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .hero { display: block; }
+  .hero-copy { width: auto; }
+  .hero-photo { position: relative; inset: auto; min-height: clamp(260px, 52vw, 420px); }
+  .hero-photo::after { display: none; }
+  .first { min-height: 0; }
   .hero-copy { padding-inline: var(--margin); }
-  .hero-photo { min-height: clamp(300px, 56vw, 460px); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
   .topics { grid-template-columns: minmax(0, 1fr); }
@@ -276,10 +277,7 @@ details[open] .plus::after { transform: rotate(0); }
   .site-head .btn { padding: 12px 16px; font-size: 1rem; }
   .site-head .btn .arrow { display: none; }
   html { scroll-padding-top: 120px; }
-  .facts ul { grid-template-columns: minmax(0, 1fr); }
-  .facts li, .facts li + li { padding: 16px 0; border-left: 0; }
-  .facts li + li { border-top: 1px solid var(--rule); }
-}
+      }
 @media (max-width: 620px) {
     .hero-actions .btn { width: 100%; justify-content: space-between; }
   .request { grid-template-columns: minmax(0, 1fr); }
@@ -326,21 +324,12 @@ details[open] .plus::after { transform: rotate(0); }
       </div>
     </div>
     <figure class="hero-photo">
-      <img src="assets/kiel-hafen-1400.webp" srcset="assets/kiel-hafen-1400.webp 1400w, assets/kiel-hafen.webp 2800w" sizes="(max-width: 1080px) 100vw, 46vw" width="2800" height="1120" alt="Der Kieler Hafen an der Förde mit Fähren am Anleger und dem Fernsehturm im Hintergrund" fetchpriority="high">
+      <img src="assets/kiel-hafen-1400.webp" srcset="assets/kiel-hafen-1400.webp 1400w, assets/kiel-hafen.webp 2800w" sizes="100vw" width="2800" height="1120" alt="Der Kieler Hafen an der Förde mit Fähren am Anleger und dem Fernsehturm im Hintergrund" fetchpriority="high">
       <figcaption class="cap">Kieler Förde</figcaption>
     </figure>
   </section>
 
-  <div class="facts">
-    <div class="wrap">
-      <ul>
-        <li><b>Termin nach Vereinbarung</b><span>Anfrage über das Formular, ich melde mich persönlich</span></li>
-        <li><b>Burgstraße&nbsp;2, Kiel</b><span>4.&nbsp;Stock, mit Aufzug, zwischen Altem Markt und Schloss</span></li>
-        <li><b>Privatpraxis</b><span>Privat Versicherte und Selbstzahler</span></li>
-      </ul>
-    </div>
-  </div>
-
+  <p class="info"><span>Privatpraxis für Privat Versicherte und Selbstzahler</span><span>Burgstraße&nbsp;2, 4.&nbsp;Stock, mit Aufzug</span><span>zwischen Altem Markt und Schloss</span></p>
   </div>
 
   <section class="stance on-navy" aria-label="Haltung">
