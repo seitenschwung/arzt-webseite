@@ -137,33 +137,41 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .row p { color: #2b3345; max-width: 34em; }
 .row .go { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
 
-/* ---------- about + practice: one composition, the steps climb down to the right ---------- */
-.about { overflow-x: clip; }
-.about .wrap { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-.about .side { grid-column: 1 / 4; }
-.intro-row { grid-column: 4 / -1; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4.5vw, 72px); align-items: start; }
-.portrait { position: relative; margin: 0 14px 0 0; }
-.portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; }
-.portrait::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
-.portrait .tag { position: absolute; left: -2%; bottom: 6%; max-width: 11em; padding: 12px 16px; background: var(--navy); color: #fff; font-size: var(--step-small); font-weight: 560; font-stretch: var(--wide); line-height: 1.25; transform: rotate(-3deg); box-shadow: 0 14px 30px -14px rgba(16, 26, 53, 0.6); }
-.story h2 { max-width: 11em; }
-.story .text { margin-top: 22px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; }
-.path { margin-top: clamp(28px, 3.4vw, 44px); border-left: 2px solid var(--navy); }
-.path li { position: relative; padding: 0 0 18px 28px; }
-.path li:last-child { padding-bottom: 0; }
-.path li::before { content: ""; position: absolute; left: -7px; top: 0.5em; width: 12px; height: 12px; background: var(--paper); border: 2px solid var(--sea); }
-.path li:last-child::before { background: var(--sea); }
-.path b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; }
-.path span { display: block; font-size: var(--step-small); color: var(--slate); }
+/* ---------- about: a dark card with the portrait straddling its edge ---------- */
+.about { border-bottom: 1px solid var(--rule); }
+.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+.about-card { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: clamp(56px, 8vw, 120px) 0 clamp(56px, 8vw, 120px) max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))); background: var(--navy); color: #fff; }
+.portrait { position: relative; align-self: flex-end; width: min(440px, 88%); margin-right: calc(-1 * clamp(40px, 6.5vw, 110px)); }
+.portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; border: 8px solid var(--paper); background: var(--paper); }
+.portrait::after { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
+.who { font-size: var(--step-small); line-height: 1.45; color: #c7d2e6; }
+.who b { display: block; margin-bottom: 4px; color: #fff; font-size: var(--step-lead); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
+.about-body { padding: clamp(56px, 8vw, 120px) max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))) clamp(56px, 8vw, 120px) clamp(72px, 11vw, 190px); }
+.about-body h2 { margin-top: 18px; max-width: 11em; }
+.about-body .text { margin-top: 24px; max-width: 30em; font-size: var(--step-lead); line-height: 1.4; }
+.pull { margin: 22px 0 0; padding-left: 22px; border-left: 4px solid var(--sea); max-width: 22em; font-size: clamp(1.4rem, 1rem + 1.6vw, 2.25rem); font-weight: 600; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.15; color: var(--sea-2); text-wrap: balance; }
+.path-h { margin-top: clamp(36px, 5vw, 60px); font-size: 0.8125rem; font-weight: 600; font-stretch: 100%; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); }
+.path { margin-top: 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 44px); counter-reset: st; border-top: 2px solid var(--navy); }
+.path li { counter-increment: st; position: relative; padding: 14px 0 14px 38px; border-bottom: 1px solid var(--rule); }
+.path li::before { content: counter(st, decimal-leading-zero); position: absolute; left: 0; top: 17px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; color: var(--sea-2); }
+.path li:last-child::before { color: #fff; background: var(--sea); padding: 1px 3px; left: -3px; }
+.path b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; line-height: 1.25; }
+.path span { display: block; margin-top: 2px; font-size: var(--step-small); color: var(--slate); line-height: 1.35; }
 
-.time { position: relative; grid-column: 1 / 8; grid-row: 2; margin-top: calc(-1 * clamp(120px, 17vw, 300px)); padding: clamp(36px, 5vw, 72px) clamp(20px, 3vw, 48px) clamp(36px, 5vw, 72px) 0; isolation: isolate; }
-.time::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: calc(50% - 50vw); right: 0; background: var(--sea-pale); }
-.time h2 { margin-top: 14px; max-width: 9em; }
-.steps { margin-top: clamp(28px, 4vw, 52px); }
-.steps li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 6px clamp(16px, 2.4vw, 36px); margin-left: calc(var(--k) * clamp(0px, 4.2vw, 76px)); padding: 22px 0 24px; border-top: 2px solid var(--navy); }
-.steps .no { grid-row: 1; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
-.steps b { grid-column: 2; font-size: clamp(1.9rem, 1rem + 2.9vw, 3.75rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.045em; line-height: 1; }
-.steps p { grid-column: 2; max-width: 30em; color: #2b3345; }
+/* ---------- time for questions: a dial, and three plain promises ---------- */
+.time { position: relative; overflow: hidden; background: var(--sea-pale); padding-block: var(--section); border-bottom: 1px solid var(--rule); }
+.time .dial { position: absolute; z-index: 0; right: calc(-1 * clamp(80px, 12vw, 200px)); top: 50%; width: min(66vw, 760px); height: auto; translate: 0 -50%; color: var(--sea); opacity: 0.45; }
+.time .h-hour, .time .h-min { transform-origin: 260px 260px; transform-box: view-box; }
+.time .h-hour { transform: rotate(305deg); }
+.time .h-min { transform: rotate(60deg); }
+.time .wrap { position: relative; z-index: 1; }
+.time h2 { margin-top: 16px; font-size: clamp(2.5rem, 1.2rem + 5.2vw, 5.75rem); letter-spacing: -0.045em; line-height: 0.98; max-width: 7em; }
+.steps { margin-top: clamp(36px, 5vw, 68px); max-width: 52rem; }
+.steps li { display: grid; grid-template-columns: 3.2rem minmax(0, 1.05fr) minmax(0, 1fr); align-items: baseline; gap: 6px clamp(16px, 2.4vw, 36px); padding: 24px 0 26px; border-top: 2px solid var(--navy); }
+.steps li:last-child { border-bottom: 2px solid var(--navy); }
+.steps .no { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
+.steps b { font-size: clamp(1.9rem, 1rem + 2.9vw, 3.5rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.045em; line-height: 1; }
+.steps p { color: #1f2740; }
 
 /* ---------- the Förde band ---------- */
 
@@ -257,9 +265,10 @@ details[open] .plus::after { transform: rotate(0); }
   .hero-photo { min-height: clamp(300px, 56vw, 460px); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
-  .about .wrap { grid-template-columns: minmax(0, 1fr); }
-  .about .side, .intro-row, .time { grid-column: 1; grid-row: auto; }
-  .time { margin-top: clamp(8px, 2vw, 24px); }
+  .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-card { padding: 56px var(--margin) 72px; }
+  .portrait { align-self: flex-start; width: min(72vw, 360px); margin-right: 0; margin-bottom: 8px; }
+  .about-body { padding: 56px var(--margin); }
   .row { grid-template-columns: minmax(0, 1fr) auto; }
   .row p { grid-column: 1 / -1; grid-row: 2; }
 }
@@ -274,12 +283,10 @@ details[open] .plus::after { transform: rotate(0); }
   .site-head .btn { padding: 12px 16px; font-size: 0.9375rem; }
   .site-head .btn .arrow { display: none; }
   html { scroll-padding-top: 120px; }
-  .intro-row { grid-template-columns: minmax(0, 1fr); }
-  .time { padding-right: 0; }
-  .time::before { right: calc(50% - 50vw); }
-  .steps li { margin-left: 0; grid-template-columns: minmax(0, 1fr); }
-  .steps b, .steps p { grid-column: 1; }
-  .portrait { max-width: 340px; margin-right: 18px; }
+  .path { grid-template-columns: minmax(0, 1fr); }
+  .steps li { grid-template-columns: 2.4rem minmax(0, 1fr); }
+  .steps p { grid-column: 2; }
+  .time .dial { width: 110vw; right: -45vw; opacity: 0.3; }
   .facts ul { grid-template-columns: minmax(0, 1fr); }
   .facts li, .facts li + li { padding: 16px 0; border-left: 0; }
   .facts li + li { border-top: 1px solid var(--rule); }
@@ -396,37 +403,42 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="sec about" id="ueber-mich" aria-labelledby="about-title">
-    <div class="wrap">
-      <div class="side"><p class="label">Über mich</p></div>
-      <div class="intro-row">
+  <section class="about" id="ueber-mich" aria-labelledby="about-title">
+    <div class="about-grid">
+      <aside class="about-card on-navy">
         <figure class="portrait" data-reveal>
           <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke" loading="lazy">
-          <figcaption class="tag">Moin, ich bin Christoph Manicke.</figcaption>
         </figure>
-        <div class="story">
-          <h2 id="about-title" data-reveal>Fast wäre alles anders gekommen.</h2>
-          <p class="text" data-reveal style="--i:1">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl Tischler.</p>
-          <ol class="path" aria-label="Mein Weg" data-reveal style="--i:2">
-            <li><b>Studium der Humanmedizin</b><span>Statt nach Italien ging es in den Hörsaal.</span></li>
-            <li><b>Facharzt für Neurochirurgie</b><span>Schwerpunkt Wirbelsäule</span></li>
-            <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
-            <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
-            <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
-            <li><b>Heute: eigene Privatpraxis</b><span>Burgstraße 2, Kiel. Zweitmeinung zur Wirbelsäule</span></li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="time" id="praxis" aria-labelledby="practice-title">
-        <p class="label" data-reveal>So berate ich</p>
-        <h2 id="practice-title" data-reveal>Zeit für Ihre&nbsp;Fragen</h2>
-        <ol class="steps">
-          <li style="--k:0" data-reveal><span class="no">01</span><b>Ausführlich</b><p>Wir nehmen uns die Zeit, die Ihre Fragen brauchen. Niemand drängt Sie zu einer Entscheidung.</p></li>
-          <li style="--k:1" data-reveal><span class="no">02</span><b>Verständlich</b><p>Ich erkläre Ihre Bilder und Befunde so, dass Sie sie verstehen, und zeige Ihnen alle Wege, nicht nur den Eingriff.</p></li>
-          <li style="--k:2" data-reveal><span class="no">03</span><b>Menschlich</b><p>Es geht um Sie und Ihren Alltag, nicht nur um Ihr MRT.</p></li>
+        <p class="who" data-reveal style="--i:1"><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie<br>Schwerpunkt Wirbelsäule · Kiel</p>
+      </aside>
+      <div class="about-body">
+        <p class="label" data-reveal>Über mich</p>
+        <h2 id="about-title" data-reveal style="--i:1">Fast wäre alles anders gekommen.</h2>
+        <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien.</p>
+        <blockquote class="pull" data-reveal style="--i:3">Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</blockquote>
+        <h3 class="path-h" data-reveal>Mein Weg</h3>
+        <ol class="path" aria-label="Mein Weg" data-reveal>
+          <li><b>Studium der Humanmedizin</b><span>Statt nach Italien ging es in den Hörsaal.</span></li>
+          <li><b>Facharzt für Neurochirurgie</b><span>Schwerpunkt Wirbelsäule</span></li>
+          <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
+          <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
+          <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
+          <li><b>Heute: eigene Privatpraxis</b><span>Burgstraße 2, Kiel. Zweitmeinung zur Wirbelsäule</span></li>
         </ol>
       </div>
+    </div>
+  </section>
+
+  <section class="time" id="praxis" aria-labelledby="practice-title">
+    <svg class="dial" viewBox="0 0 520 520" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="square"><circle cx="260" cy="260" r="252" stroke-width="1.5"/><path d="M260.0 24.0L260.0 50.0" stroke-width="3"/><path d="M284.7 25.3L283.4 37.2" stroke-width="1.5"/><path d="M309.1 29.2L306.6 40.9" stroke-width="1.5"/><path d="M332.9 35.6L329.2 47.0" stroke-width="1.5"/><path d="M356.0 44.4L351.1 55.4" stroke-width="1.5"/><path d="M378.0 55.6L365.0 78.1" stroke-width="3"/><path d="M398.7 69.1L391.7 78.8" stroke-width="1.5"/><path d="M417.9 84.6L409.9 93.5" stroke-width="1.5"/><path d="M435.4 102.1L426.5 110.1" stroke-width="1.5"/><path d="M450.9 121.3L441.2 128.3" stroke-width="1.5"/><path d="M464.4 142.0L441.9 155.0" stroke-width="3"/><path d="M475.6 164.0L464.6 168.9" stroke-width="1.5"/><path d="M484.4 187.1L473.0 190.8" stroke-width="1.5"/><path d="M490.8 210.9L479.1 213.4" stroke-width="1.5"/><path d="M494.7 235.3L482.8 236.6" stroke-width="1.5"/><path d="M496.0 260.0L470.0 260.0" stroke-width="3"/><path d="M494.7 284.7L482.8 283.4" stroke-width="1.5"/><path d="M490.8 309.1L479.1 306.6" stroke-width="1.5"/><path d="M484.4 332.9L473.0 329.2" stroke-width="1.5"/><path d="M475.6 356.0L464.6 351.1" stroke-width="1.5"/><path d="M464.4 378.0L441.9 365.0" stroke-width="3"/><path d="M450.9 398.7L441.2 391.7" stroke-width="1.5"/><path d="M435.4 417.9L426.5 409.9" stroke-width="1.5"/><path d="M417.9 435.4L409.9 426.5" stroke-width="1.5"/><path d="M398.7 450.9L391.7 441.2" stroke-width="1.5"/><path d="M378.0 464.4L365.0 441.9" stroke-width="3"/><path d="M356.0 475.6L351.1 464.6" stroke-width="1.5"/><path d="M332.9 484.4L329.2 473.0" stroke-width="1.5"/><path d="M309.1 490.8L306.6 479.1" stroke-width="1.5"/><path d="M284.7 494.7L283.4 482.8" stroke-width="1.5"/><path d="M260.0 496.0L260.0 470.0" stroke-width="3"/><path d="M235.3 494.7L236.6 482.8" stroke-width="1.5"/><path d="M210.9 490.8L213.4 479.1" stroke-width="1.5"/><path d="M187.1 484.4L190.8 473.0" stroke-width="1.5"/><path d="M164.0 475.6L168.9 464.6" stroke-width="1.5"/><path d="M142.0 464.4L155.0 441.9" stroke-width="3"/><path d="M121.3 450.9L128.3 441.2" stroke-width="1.5"/><path d="M102.1 435.4L110.1 426.5" stroke-width="1.5"/><path d="M84.6 417.9L93.5 409.9" stroke-width="1.5"/><path d="M69.1 398.7L78.8 391.7" stroke-width="1.5"/><path d="M55.6 378.0L78.1 365.0" stroke-width="3"/><path d="M44.4 356.0L55.4 351.1" stroke-width="1.5"/><path d="M35.6 332.9L47.0 329.2" stroke-width="1.5"/><path d="M29.2 309.1L40.9 306.6" stroke-width="1.5"/><path d="M25.3 284.7L37.2 283.4" stroke-width="1.5"/><path d="M24.0 260.0L50.0 260.0" stroke-width="3"/><path d="M25.3 235.3L37.2 236.6" stroke-width="1.5"/><path d="M29.2 210.9L40.9 213.4" stroke-width="1.5"/><path d="M35.6 187.1L47.0 190.8" stroke-width="1.5"/><path d="M44.4 164.0L55.4 168.9" stroke-width="1.5"/><path d="M55.6 142.0L78.1 155.0" stroke-width="3"/><path d="M69.1 121.3L78.8 128.3" stroke-width="1.5"/><path d="M84.6 102.1L93.5 110.1" stroke-width="1.5"/><path d="M102.1 84.6L110.1 93.5" stroke-width="1.5"/><path d="M121.3 69.1L128.3 78.8" stroke-width="1.5"/><path d="M142.0 55.6L155.0 78.1" stroke-width="3"/><path d="M164.0 44.4L168.9 55.4" stroke-width="1.5"/><path d="M187.1 35.6L190.8 47.0" stroke-width="1.5"/><path d="M210.9 29.2L213.4 40.9" stroke-width="1.5"/><path d="M235.3 25.3L236.6 37.2" stroke-width="1.5"/><path class="h-hour" d="M260 260L260 140" stroke-width="9"/><path class="h-min" d="M260 260L260 70" stroke-width="5"/></g><circle cx="260" cy="260" r="11" fill="currentColor"/></svg>
+    <div class="wrap">
+      <p class="label" data-reveal>So berate ich</p>
+      <h2 id="practice-title" data-reveal style="--i:1">Zeit für Ihre&nbsp;Fragen</h2>
+      <ol class="steps">
+        <li data-reveal><span class="no">01</span><b>Ausführlich</b><p>Wir nehmen uns die Zeit, die Ihre Fragen brauchen. Niemand drängt Sie zu einer Entscheidung.</p></li>
+        <li data-reveal><span class="no">02</span><b>Verständlich</b><p>Ich erkläre Ihre Bilder und Befunde so, dass Sie sie verstehen, und zeige Ihnen alle Wege, nicht nur den Eingriff.</p></li>
+        <li data-reveal><span class="no">03</span><b>Menschlich</b><p>Es geht um Sie und Ihren Alltag, nicht nur um Ihr MRT.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -437,23 +449,6 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="sec faq" id="fragen" aria-labelledby="faq-title">
-    <div class="wrap">
-      <div class="side"><p class="label">Fragen</p></div>
-      <div>
-        <h2 id="faq-title" data-reveal style="margin-bottom: clamp(28px, 4vw, 48px)">Häufige Fragen</h2>
-        <div class="list" data-reveal style="--i:1">
-          <details name="faq"><summary>Wer kann in die Sprechstunde kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis ist eine Privatpraxis für privat Versicherte und Selbstzahler. Gesetzlich Versicherte können als Selbstzahler kommen.</p></details>
-          <details name="faq"><summary>Wie bekomme ich einen Termin?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Schreiben Sie mir über das Anfrageformular. Ich melde mich persönlich bei Ihnen, und wir finden in Ruhe einen Termin.</p></details>
-          <details name="faq"><summary>Was kostet eine Zweitmeinung?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ). Ob Ihre Versicherung die Kosten übernimmt, klären Sie am besten vorher mit ihr.</p></details>
-          <details name="faq"><summary>Was soll ich mitbringen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ihre aktuellen MRT- oder CT-Bilder auf CD oder als Link, Arztbriefe und Befunde, die schriftliche OP-Empfehlung, falls es eine gibt, und eine Liste Ihrer Medikamente.</p></details>
-          <details name="faq"><summary>Ich bin schon operiert. Kann ich trotzdem kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, etwa wenn Beschwerden geblieben oder neu aufgetreten sind.</p></details>
-          <details name="faq"><summary>Was unterscheidet Neurochirurgie von Orthopädie?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Beide behandeln die Wirbelsäule. Die Neurochirurgie kommt vom Nervensystem her: Sie ist dort gefragt, wo Nervenwurzeln oder Rückenmark bedrängt werden.</p></details>
-          <details name="faq"><summary>Ist die Praxis barrierefrei erreichbar?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis liegt im 4.&nbsp;Stock der Burgstraße&nbsp;2 und ist mit einem Aufzug erreichbar.</p></details>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section class="contact on-navy" id="kontakt" aria-labelledby="contact-title">
     <div class="wrap">
@@ -517,6 +512,23 @@ details[open] .plus::after { transform: rotate(0); }
       <address>Burgstraße&nbsp;2, 4.&nbsp;Stock<br>24103&nbsp;Kiel</address>
       <p>In der Kieler Innenstadt, zwischen Altem Markt und Schloss. Mit dem Aufzug erreichbar.</p>
       <a class="tlink" href="https://www.openstreetmap.org/?mlat=54.32433&amp;mlon=10.14184#map=18/54.32433/10.14184" rel="noopener">Auf der Karte öffnen</a>
+    </div>
+  </section>
+  <section class="sec faq" id="fragen" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="side"><p class="label">Fragen</p></div>
+      <div>
+        <h2 id="faq-title" data-reveal style="margin-bottom: clamp(28px, 4vw, 48px)">Häufige Fragen</h2>
+        <div class="list" data-reveal style="--i:1">
+          <details name="faq"><summary>Wer kann in die Sprechstunde kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis ist eine Privatpraxis für privat Versicherte und Selbstzahler. Gesetzlich Versicherte können als Selbstzahler kommen.</p></details>
+          <details name="faq"><summary>Wie bekomme ich einen Termin?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Schreiben Sie mir über das Anfrageformular. Ich melde mich persönlich bei Ihnen, und wir finden in Ruhe einen Termin.</p></details>
+          <details name="faq"><summary>Was kostet eine Zweitmeinung?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ). Ob Ihre Versicherung die Kosten übernimmt, klären Sie am besten vorher mit ihr.</p></details>
+          <details name="faq"><summary>Was soll ich mitbringen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ihre aktuellen MRT- oder CT-Bilder auf CD oder als Link, Arztbriefe und Befunde, die schriftliche OP-Empfehlung, falls es eine gibt, und eine Liste Ihrer Medikamente.</p></details>
+          <details name="faq"><summary>Ich bin schon operiert. Kann ich trotzdem kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, etwa wenn Beschwerden geblieben oder neu aufgetreten sind.</p></details>
+          <details name="faq"><summary>Was unterscheidet Neurochirurgie von Orthopädie?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Beide behandeln die Wirbelsäule. Die Neurochirurgie kommt vom Nervensystem her: Sie ist dort gefragt, wo Nervenwurzeln oder Rückenmark bedrängt werden.</p></details>
+          <details name="faq"><summary>Ist die Praxis barrierefrei erreichbar?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis liegt im 4.&nbsp;Stock der Burgstraße&nbsp;2 und ist mit einem Aufzug erreichbar.</p></details>
+        </div>
+      </div>
     </div>
   </section>
 </main>
