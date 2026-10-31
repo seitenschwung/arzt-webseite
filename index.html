@@ -158,19 +158,13 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .path b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; }
 .path span { display: block; font-size: var(--step-small); color: var(--slate); }
 
-/* ---------- time for questions: a dial, and three plain promises ---------- */
-.time { position: relative; overflow: hidden; background: var(--sea-pale); padding-block: var(--section); border-bottom: 1px solid var(--rule); }
-.time .dial { position: absolute; z-index: 0; right: calc(-1 * clamp(110px, 15vw, 250px)); top: 50%; width: min(66vw, 760px); height: auto; translate: 0 -50%; color: var(--sea-2); opacity: 0.4; }
-.time .needle { transform-origin: 260px 260px; transform-box: view-box; transform: rotate(38deg); }
-.time .dial text { font-family: var(--font); font-stretch: 112%; }
-.time .wrap { position: relative; z-index: 1; }
-.time h2 { margin-top: 16px; font-size: clamp(2.5rem, 1.2rem + 5.2vw, 5.75rem); letter-spacing: -0.045em; line-height: 0.98; max-width: 7em; }
-.steps { margin-top: clamp(36px, 5vw, 68px); max-width: 52rem; }
-.steps li { display: grid; grid-template-columns: 3.2rem minmax(0, 1.05fr) minmax(0, 1fr); align-items: baseline; gap: 6px clamp(16px, 2.4vw, 36px); padding: 24px 0 26px; border-top: 2px solid var(--navy); }
-.steps li:last-child { border-bottom: 2px solid var(--navy); }
-.steps .no { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
-.steps b { font-size: clamp(1.9rem, 1rem + 2.9vw, 3.5rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.045em; line-height: 1; }
-.steps p { color: #1f2740; }
+/* ---------- three promises in the left column of the consultation list ---------- */
+#beratung .wrap { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+.trio { margin-top: clamp(28px, 4vw, 48px); border-top: 2px solid var(--navy); }
+.trio li { padding: 18px 0 20px; border-bottom: 1px solid var(--rule); }
+.trio b { display: block; font-size: clamp(1.9rem, 1rem + 2.4vw, 3.1rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.045em; line-height: 1; color: var(--navy); }
+.trio li:nth-child(2) b { color: var(--sea-2); }
+.trio span { display: block; margin-top: 10px; max-width: 22em; font-size: var(--step-small); line-height: 1.45; color: #2b3345; }
 
 /* ---------- the Förde band ---------- */
 
@@ -263,6 +257,7 @@ details[open] .plus::after { transform: rotate(0); }
   .hero-photo { min-height: clamp(300px, 56vw, 460px); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
+  #beratung .wrap { grid-template-columns: minmax(0, 1fr); }
   .about-grid { grid-template-columns: minmax(0, 1fr); }
   .about-card { order: 0; padding: 56px var(--margin) 72px; }
   .about-body { order: 1; }
@@ -284,9 +279,6 @@ details[open] .plus::after { transform: rotate(0); }
   .site-head .btn { padding: 12px 16px; font-size: 0.9375rem; }
   .site-head .btn .arrow { display: none; }
   html { scroll-padding-top: 120px; }
-  .steps li { grid-template-columns: 2.4rem minmax(0, 1fr); }
-  .steps p { grid-column: 2; }
-  .time .dial { width: 110vw; right: -45vw; opacity: 0.3; }
   .facts ul { grid-template-columns: minmax(0, 1fr); }
   .facts li, .facts li + li { padding: 16px 0; border-left: 0; }
   .facts li + li { border-top: 1px solid var(--rule); }
@@ -373,7 +365,14 @@ details[open] .plus::after { transform: rotate(0); }
 
   <section class="sec" id="beratung" aria-labelledby="beratung-title">
     <div class="wrap">
-      <div class="side"><p class="label">Beratung</p></div>
+      <div class="side">
+        <p class="label">Beratung</p>
+        <ul class="trio" aria-label="So berate ich">
+          <li data-reveal><b>Ausführlich</b><span>Wir nehmen uns die Zeit, die Ihre Fragen brauchen. Niemand drängt Sie zu einer Entscheidung.</span></li>
+          <li data-reveal style="--i:1"><b>Verständlich</b><span>Ich erkläre Ihre Bilder und Befunde so, dass Sie sie verstehen, und zeige Ihnen alle Wege, nicht nur den Eingriff.</span></li>
+          <li data-reveal style="--i:2"><b>Menschlich</b><span>Es geht um Sie und Ihren Alltag, nicht nur um Ihr MRT.</span></li>
+        </ul>
+      </div>
       <div>
         <h2 class="intro-h" id="beratung-title" data-reveal>Wobei ich berate</h2>
         <p class="intro-p" data-reveal style="--i:1">Zum ganzen neurochirurgischen Fachgebiet, mit dem Schwerpunkt Wirbelsäule. Sie erfahren, welche Wege es gibt, ohne und mit Operation, und was jeweils dafür und dagegen spricht.</p>
@@ -425,19 +424,6 @@ details[open] .plus::after { transform: rotate(0); }
           <li><b>Heute: eigene Privatpraxis</b><span>Burgstraße 2, Kiel. Zweitmeinung zur Wirbelsäule</span></li>
         </ol>
       </div>
-    </div>
-  </section>
-
-  <section class="time" id="praxis" aria-labelledby="practice-title">
-    <svg class="dial" viewBox="0 0 520 520" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-linecap="square"><circle cx="260" cy="260" r="256" stroke-width="1.5"/><circle cx="260" cy="260" r="150" stroke-width="1" stroke-dasharray="2 7"/><path d="M281.3 16.9L280.6 24.9" stroke-width="1.4"/><path d="M302.4 19.7L301.0 27.6" stroke-width="1.4"/><path d="M323.2 24.3L319.5 37.8" stroke-width="1.4"/><path d="M343.5 30.7L340.7 38.2" stroke-width="1.4"/><path d="M363.1 38.9L359.7 46.1" stroke-width="1.4"/><path d="M382.0 48.7L375.0 60.8" stroke-width="1.4"/><path d="M400.0 60.1L395.4 66.7" stroke-width="1.4"/><path d="M416.8 73.1L411.7 79.2" stroke-width="1.4"/><path d="M432.5 87.5L415.6 104.4" stroke-width="2.6"/><path d="M446.9 103.2L440.8 108.3" stroke-width="1.4"/><path d="M459.9 120.0L453.3 124.6" stroke-width="1.4"/><path d="M471.3 138.0L459.2 145.0" stroke-width="1.4"/><path d="M481.1 156.9L473.9 160.3" stroke-width="1.4"/><path d="M489.3 176.5L481.8 179.3" stroke-width="1.4"/><path d="M495.7 196.8L482.2 200.5" stroke-width="1.4"/><path d="M500.3 217.6L492.4 219.0" stroke-width="1.4"/><path d="M503.1 238.7L495.1 239.4" stroke-width="1.4"/><path d="M503.1 281.3L495.1 280.6" stroke-width="1.4"/><path d="M500.3 302.4L492.4 301.0" stroke-width="1.4"/><path d="M495.7 323.2L482.2 319.5" stroke-width="1.4"/><path d="M489.3 343.5L481.8 340.7" stroke-width="1.4"/><path d="M481.1 363.1L473.9 359.7" stroke-width="1.4"/><path d="M471.3 382.0L459.2 375.0" stroke-width="1.4"/><path d="M459.9 400.0L453.3 395.4" stroke-width="1.4"/><path d="M446.9 416.8L440.8 411.7" stroke-width="1.4"/><path d="M432.5 432.5L415.6 415.6" stroke-width="2.6"/><path d="M416.8 446.9L411.7 440.8" stroke-width="1.4"/><path d="M400.0 459.9L395.4 453.3" stroke-width="1.4"/><path d="M382.0 471.3L375.0 459.2" stroke-width="1.4"/><path d="M363.1 481.1L359.7 473.9" stroke-width="1.4"/><path d="M343.5 489.3L340.7 481.8" stroke-width="1.4"/><path d="M323.2 495.7L319.5 482.2" stroke-width="1.4"/><path d="M302.4 500.3L301.0 492.4" stroke-width="1.4"/><path d="M281.3 503.1L280.6 495.1" stroke-width="1.4"/><path d="M238.7 503.1L239.4 495.1" stroke-width="1.4"/><path d="M217.6 500.3L219.0 492.4" stroke-width="1.4"/><path d="M196.8 495.7L200.5 482.2" stroke-width="1.4"/><path d="M176.5 489.3L179.3 481.8" stroke-width="1.4"/><path d="M156.9 481.1L160.3 473.9" stroke-width="1.4"/><path d="M138.0 471.3L145.0 459.2" stroke-width="1.4"/><path d="M120.0 459.9L124.6 453.3" stroke-width="1.4"/><path d="M103.2 446.9L108.3 440.8" stroke-width="1.4"/><path d="M87.5 432.5L104.4 415.6" stroke-width="2.6"/><path d="M73.1 416.8L79.2 411.7" stroke-width="1.4"/><path d="M60.1 400.0L66.7 395.4" stroke-width="1.4"/><path d="M48.7 382.0L60.8 375.0" stroke-width="1.4"/><path d="M38.9 363.1L46.1 359.7" stroke-width="1.4"/><path d="M30.7 343.5L38.2 340.7" stroke-width="1.4"/><path d="M24.3 323.2L37.8 319.5" stroke-width="1.4"/><path d="M19.7 302.4L27.6 301.0" stroke-width="1.4"/><path d="M16.9 281.3L24.9 280.6" stroke-width="1.4"/><path d="M16.9 238.7L24.9 239.4" stroke-width="1.4"/><path d="M19.7 217.6L27.6 219.0" stroke-width="1.4"/><path d="M24.3 196.8L37.8 200.5" stroke-width="1.4"/><path d="M30.7 176.5L38.2 179.3" stroke-width="1.4"/><path d="M38.9 156.9L46.1 160.3" stroke-width="1.4"/><path d="M48.7 138.0L60.8 145.0" stroke-width="1.4"/><path d="M60.1 120.0L66.7 124.6" stroke-width="1.4"/><path d="M73.1 103.2L79.2 108.3" stroke-width="1.4"/><path d="M87.5 87.5L104.4 104.4" stroke-width="2.6"/><path d="M103.2 73.1L108.3 79.2" stroke-width="1.4"/><path d="M120.0 60.1L124.6 66.7" stroke-width="1.4"/><path d="M138.0 48.7L145.0 60.8" stroke-width="1.4"/><path d="M156.9 38.9L160.3 46.1" stroke-width="1.4"/><path d="M176.5 30.7L179.3 38.2" stroke-width="1.4"/><path d="M196.8 24.3L200.5 37.8" stroke-width="1.4"/><path d="M217.6 19.7L219.0 27.6" stroke-width="1.4"/><path d="M238.7 16.9L239.4 24.9" stroke-width="1.4"/><path d="M339.2 180.8L284.0 260.0L339.2 339.2L260.0 284.0L180.8 339.2L236.0 260.0L180.8 180.8L260.0 236.0Z" stroke-width="1.5"/><path d="M260.0 84.0L281.2 238.8L436.0 260.0L281.2 281.2L260.0 436.0L238.8 281.2L84.0 260.0L238.8 238.8Z" stroke-width="2"/></g><g fill="currentColor" font-size="34" font-weight="700" font-family="inherit"><text x="260.0" y="61.0" text-anchor="middle">N</text><text x="472.0" y="273.0" text-anchor="middle">O</text><text x="260.0" y="485.0" text-anchor="middle">S</text><text x="48.0" y="273.0" text-anchor="middle">W</text></g><g class="needle"><path d="M260 98L276 260H244Z" fill="currentColor"/><path d="M260 422L276 260H244Z" fill="none" stroke="currentColor" stroke-width="2.5"/></g><circle cx="260" cy="260" r="12" fill="var(--sea-pale)" stroke="currentColor" stroke-width="4"/></svg>
-    <div class="wrap">
-      <p class="label" data-reveal>So berate ich</p>
-      <h2 id="practice-title" data-reveal style="--i:1">Zeit für Ihre&nbsp;Fragen</h2>
-      <ol class="steps">
-        <li data-reveal><span class="no">01</span><b>Ausführlich</b><p>Wir nehmen uns die Zeit, die Ihre Fragen brauchen. Niemand drängt Sie zu einer Entscheidung.</p></li>
-        <li data-reveal><span class="no">02</span><b>Verständlich</b><p>Ich erkläre Ihre Bilder und Befunde so, dass Sie sie verstehen, und zeige Ihnen alle Wege, nicht nur den Eingriff.</p></li>
-        <li data-reveal><span class="no">03</span><b>Menschlich</b><p>Es geht um Sie und Ihren Alltag, nicht nur um Ihr MRT.</p></li>
-      </ol>
     </div>
   </section>
 
@@ -503,7 +489,7 @@ details[open] .plus::after { transform: rotate(0); }
       </form>
     </div>
   </section>
-  <section class="mapsec" aria-labelledby="map-title">
+  <section class="mapsec" id="praxis" aria-labelledby="map-title">
     <div class="map"><img src="assets/kiel-karte.webp" width="1600" height="1600" alt="Stadtplan der Kieler Altstadt an der Förde, mit einer Markierung auf der Burgstraße&nbsp;2" loading="lazy"></div>
     <svg class="map-pin" viewBox="0 0 64 86" aria-hidden="true"><path d="M32 84C32 84 4 50 4 30a28 28 0 0 1 56 0c0 20-28 54-28 54z" fill="#101a35" stroke="#f7f7f5" stroke-width="4"/><circle cx="32" cy="30" r="11" fill="#287f91"/></svg>
     <div class="map-card" data-reveal>
