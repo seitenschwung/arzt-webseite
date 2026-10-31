@@ -139,8 +139,9 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 
 /* ---------- about + practice: one composition, the steps climb down to the right ---------- */
 .about { overflow-x: clip; }
-.about .side { grid-column: 1 / -1; position: static; }
-.intro-row { grid-column: 1 / -1; margin-top: clamp(-8px, -1vw, 0px); display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4.5vw, 72px); align-items: start; }
+.about .wrap { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.about .side { grid-column: 1 / 4; }
+.intro-row { grid-column: 4 / -1; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 4.5vw, 72px); align-items: start; }
 .portrait { position: relative; margin: 0 14px 0 0; }
 .portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; }
 .portrait::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
@@ -155,13 +156,13 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .path b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; }
 .path span { display: block; font-size: var(--step-small); color: var(--slate); }
 
-.time { position: relative; grid-column: 1 / -1; margin-top: clamp(8px, 2vw, 24px); padding: clamp(36px, 5vw, 72px) clamp(20px, 4vw, 64px) clamp(36px, 5vw, 72px) 0; isolation: isolate; }
+.time { position: relative; grid-column: 1 / 8; grid-row: 2; margin-top: calc(-1 * clamp(120px, 17vw, 300px)); padding: clamp(36px, 5vw, 72px) clamp(20px, 3vw, 48px) clamp(36px, 5vw, 72px) 0; isolation: isolate; }
 .time::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: calc(50% - 50vw); right: 0; background: var(--sea-pale); }
 .time h2 { margin-top: 14px; max-width: 9em; }
 .steps { margin-top: clamp(28px, 4vw, 52px); }
-.steps li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 6px clamp(16px, 2.4vw, 36px); margin-left: calc(var(--k) * clamp(0px, 11vw, 190px)); padding: 22px 0 24px; border-top: 2px solid var(--navy); }
+.steps li { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 6px clamp(16px, 2.4vw, 36px); margin-left: calc(var(--k) * clamp(0px, 4.2vw, 76px)); padding: 22px 0 24px; border-top: 2px solid var(--navy); }
 .steps .no { grid-row: 1; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
-.steps b { grid-column: 2; font-size: clamp(2.1rem, 1.1rem + 4.2vw, 5rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.045em; line-height: 1; }
+.steps b { grid-column: 2; font-size: clamp(1.9rem, 1rem + 2.9vw, 3.75rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.045em; line-height: 1; }
 .steps p { grid-column: 2; max-width: 30em; color: #2b3345; }
 
 /* ---------- the Förde band ---------- */
@@ -256,6 +257,9 @@ details[open] .plus::after { transform: rotate(0); }
   .hero-photo { min-height: clamp(300px, 56vw, 460px); }
   .stance .wrap, .sec .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
   .sec .side { position: static; }
+  .about .wrap { grid-template-columns: minmax(0, 1fr); }
+  .about .side, .intro-row, .time { grid-column: 1; grid-row: auto; }
+  .time { margin-top: clamp(8px, 2vw, 24px); }
   .row { grid-template-columns: minmax(0, 1fr) auto; }
   .row p { grid-column: 1 / -1; grid-row: 2; }
 }
