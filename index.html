@@ -94,6 +94,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .hero h1 .ln { display: block; }
 .hero h1 { font-size: clamp(2.2rem, min(1rem + 3.5vw, 9vh), 4.5rem); font-weight: 680; letter-spacing: -0.04em; line-height: 0.98; }
 .hero h1 em { font-style: normal; color: var(--sea-2); }
+.hero .label::before { display: none; }
 .hero .lede { max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
 .hero-photo { position: absolute; inset: 0; margin: 0; z-index: 0; background: var(--navy); overflow: hidden; }
@@ -202,16 +203,16 @@ details[open] .plus::after { transform: rotate(0); }
 .request { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 28px; align-content: start; padding: clamp(24px, 3.4vw, 48px); background: #fff; color: var(--ink); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.55); border-top: 6px solid var(--sea); }
 .request .hp { position: absolute; left: -9999px; }
 .cell { position: relative; display: flex; flex-direction: column; gap: 6px; }
-.cell.msg, .consent, .request .submit-row { grid-column: 1 / -1; }
+.cell.msg, .cell.full, .consent, .request .submit-row { grid-column: 1 / -1; }
 .cell label { font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--navy); }
 .cell .opt { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--slate); }
 .cell input, .cell select, .cell textarea { width: 100%; padding: 10px 0 12px; border: 0; border-bottom: 2px solid rgba(16, 26, 53, 0.35); border-radius: 0; background: transparent; color: var(--ink); font: inherit; font-size: 1.125rem; appearance: none; transition: border-color 180ms; }
 .cell textarea { resize: vertical; min-height: 3.2em; }
 .cell input::placeholder, .cell textarea::placeholder { color: #7a8497; }
 .cell input:hover, .cell select:hover, .cell textarea:hover { border-color: var(--navy); }
-.cell input:focus, .cell select:focus, .cell textarea:focus { outline: none; border-color: var(--sea); background: var(--sea-pale); }
+.cell input:focus, .cell select:focus, .cell textarea:focus { outline: none; border-color: var(--sea); background-color: var(--sea-pale); }
+.cell select { padding-right: 34px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='10' viewBox='0 0 16 10'%3E%3Cpath d='M2 2l6 6 6-6' fill='none' stroke='%2322707f' stroke-width='2.4' stroke-linecap='square'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; background-size: 16px 10px; text-overflow: ellipsis; }
 .cell select option { color: var(--ink); }
-.cell .chev { position: absolute; right: 2px; bottom: 20px; width: 10px; height: 10px; border-right: 2px solid var(--sea-2); border-bottom: 2px solid var(--sea-2); transform: rotate(45deg); pointer-events: none; }
 .consent { display: flex; gap: 14px; align-items: flex-start; font-size: var(--step-small); color: #2b3345; line-height: 1.45; }
 .consent input { appearance: auto; flex: none; width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--sea); }
 .consent a { color: var(--navy); text-underline-offset: 0.2em; }
@@ -428,7 +429,7 @@ details[open] .plus::after { transform: rotate(0); }
           <label for="f-mail">Ihre E-Mail</label>
           <input id="f-mail" name="email" type="email" autocomplete="email" spellcheck="false" placeholder="anna@beispiel.de" required>
         </div>
-        <div class="cell">
+        <div class="cell full">
           <label for="f-topic">Ihr Anliegen</label>
           <select id="f-topic" name="anliegen">
             <option>Zweitmeinung vor einer Operation</option>
@@ -436,7 +437,6 @@ details[open] .plus::after { transform: rotate(0); }
             <option>Beratung bei Rückenbeschwerden</option>
             <option>Andere neurochirurgische Frage</option>
           </select>
-          <span class="chev" aria-hidden="true"></span>
         </div>
         <div class="cell">
           <label for="f-when">Wann passt es Ihnen?</label>
@@ -446,7 +446,6 @@ details[open] .plus::after { transform: rotate(0); }
             <option>Im nächsten Monat</option>
             <option>Ich bin flexibel</option>
           </select>
-          <span class="chev" aria-hidden="true"></span>
         </div>
         <div class="cell msg">
           <label for="f-msg">Ihre Nachricht <span class="opt">(freiwillig)</span></label>
