@@ -250,7 +250,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .stance .label { align-self: start; margin-top: 0.9em; }
 .stance-lead { margin-top: 22px; max-width: 38em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
 .spine-wrap { grid-column: 1 / -1; position: relative; margin-top: clamp(24px, 4vw, 56px); }
-.stance-spine { display: block; width: 100%; height: auto; }
+.stance-spine { display: block; width: 100%; height: auto; overflow: visible; }
 .spine-tip { position: absolute; top: 0; left: 0; z-index: 2; color: var(--navy); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; white-space: nowrap; pointer-events: none; writing-mode: vertical-rl; rotate: 180deg; opacity: 0; transition: opacity 220ms ease; }
 .spine-tip.is-below { writing-mode: horizontal-tb; rotate: none; color: #fff; font-weight: 600; letter-spacing: 0; }
 .spine-tip.is-on { opacity: 1; }
@@ -749,6 +749,8 @@ details[open] .plus::after { transform: rotate(0); }
     return { short: n, long: n };
   });
   const FADE = [1, 0.62, 0.36, 0.18, 0.07];
+  // How much the vertebrae around the pointer swell, [across, along] by distance: the chosen one most, then a fading swell either side.
+  const SWELL = [null, [1.1, 1.3], [1.06, 1.17], [1.03, 1.09], [1.01, 1.03]];
   const from = [255, 255, 255], to = [143, 207, 220];
   const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
   let hot = -1;
@@ -766,10 +768,14 @@ details[open] .plus::after { transform: rotate(0); }
     tip.classList.remove('is-below');
     tip.textContent = names[i].short;
     // The chosen vertebra grows just enough to hold its name upright; the name never goes below 16px.
-    const sy = Math.min(1.8, Math.max(1.04, (tip.offsetHeight + 16) / bh));
-    const sx = Math.min(1.25, 1 + (sy - 1) * 0.5);
+    const sy = Math.min(1.8, Math.max(1.4, (tip.offsetHeight + 16) / bh));
+    const sx = Math.min(1.25, Math.max(1.2, 1 + (sy - 1) * 0.5));
     const fits = tip.offsetHeight + 10 <= bh * sy && tip.offsetWidth + 6 <= bw * sx;
-    parts.forEach((p, j) => { p.style.transform = j === i && fits ? `scale(${sx}, ${sy})` : ''; });
+    parts.forEach((p, j) => {
+      const d = Math.abs(j - i);
+      const swell = d === 0 ? (fits ? [sx, sy] : [1.1, 1.3]) : SWELL[d];
+      p.style.transform = swell ? `scale(${swell[0]}, ${swell[1]})` : '';
+    });
     if (!fits) {
       tip.classList.add('is-below');
       tip.textContent = names[i].long;
