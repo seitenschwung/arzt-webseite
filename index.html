@@ -286,21 +286,20 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .topic b { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.65rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
 
 /* ---------- about: the whole section in navy, round portrait on the left, text and timeline on the right ---------- */
-.about { padding-block: var(--section); background: var(--navy); color: #fff; }
-.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
-.about-visual { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
-.portrait { position: relative; margin: 0; width: min(380px, 100%); }
+.about { padding-block: clamp(32px, 5svh, 64px); background: var(--navy); color: #fff; }
+.about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(26px, 5svh, 44px) clamp(32px, 6vw, 96px); align-items: center; }
+.about-visual { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.portrait { position: relative; margin: 0; width: min(280px, 29svh, 100%); }
 .portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; border: 8px solid var(--navy); box-shadow: 0 0 0 2px #8fcfdc; background: var(--paper); }
 .portrait::after { content: ""; position: absolute; inset: 20px -20px -20px 20px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
 .who { position: static; width: auto; font-size: var(--step-small); line-height: 1.4; color: #c7d2e6; }
 .who b { display: block; margin-bottom: 4px; color: #fff; font-size: var(--step-lead); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
 .about .label { color: #8fcfdc; }
 .about-body h2 { margin-top: 16px; max-width: 12em; color: #fff; }
-.about-body .text { margin-top: 22px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
-.path { margin-top: clamp(28px, 3.4vw, 44px); border-left: 2px solid rgba(255, 255, 255, 0.55); }
-.path li { position: relative; padding: 0 0 20px 28px; }
-.path li:last-child { padding-bottom: 0; }
-.path li::before { content: ""; position: absolute; left: -7px; top: 0.5em; width: 12px; height: 12px; background: var(--navy); border: 2px solid #8fcfdc; }
+.about-body .text { margin-top: 18px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
+.path { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 3svh, 26px) clamp(24px, 3vw, 44px); }
+.path li { position: relative; padding: 16px 0 0; border-top: 2px solid rgba(255, 255, 255, 0.55); }
+.path li::before { content: ""; position: absolute; left: 0; top: -8px; width: 14px; height: 14px; background: var(--navy); border: 2px solid #8fcfdc; }
 .path li:last-child::before { background: #8fcfdc; }
 .path b { display: block; font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.01em; color: #fff; }
 .path li:last-child b { color: #8fcfdc; }
@@ -443,6 +442,8 @@ details[open] .plus::after { transform: rotate(0); }
     .foot-cols { grid-template-columns: minmax(0, 1fr); }
   }
 @media (max-width: 960px) { .advice .wrap { grid-template-columns: minmax(0, 1fr); } .advice-head, .topics, .how { grid-column: 1; grid-row: auto; } .topics { order: 2; margin-top: 8px; grid-template-rows: none; } .how { order: 3; margin-top: 12px; } }
+@media (max-width: 900px) { .path { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .path { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 520px) { .topic { gap: 16px; } .topic::before { width: 30px; height: 12px; } }
 </style>
 </head>
@@ -536,15 +537,15 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="label" data-reveal>Über mich</p>
         <h2 id="about-title" data-reveal style="--i:1">Fast wäre alles anders gekommen.</h2>
         <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</p>
-        <ol class="path" aria-label="Mein Weg" data-reveal style="--i:3">
-          <li><b>Studium der Humanmedizin</b><span>Statt nach Italien ging es in den Hörsaal.</span></li>
-          <li><b>Facharzt für Neurochirurgie</b><span>Schwerpunkt Wirbelsäule</span></li>
-          <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
-          <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
-          <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
-          <li><b>Heute: persönliche Beratung aus Leidenschaft</b><span>Ich berate, weil ich es gern tue und mir Zeit für Sie nehmen kann.</span></li>
-        </ol>
       </div>
+      <ol class="path" aria-label="Mein Weg" data-reveal style="--i:3">
+        <li><b>Studium der Humanmedizin</b><span>Statt nach Italien ging es in den Hörsaal.</span></li>
+        <li><b>Facharzt für Neurochirurgie</b><span>Schwerpunkt Wirbelsäule</span></li>
+        <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
+        <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
+        <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
+        <li><b>Heute: persönliche Beratung aus Leidenschaft</b><span>Ich berate, weil ich es gern tue und mir Zeit für Sie nehmen kann.</span></li>
+      </ol>
     </div>
   </section>
 
