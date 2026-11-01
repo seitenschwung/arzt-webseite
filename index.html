@@ -254,7 +254,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .spine-tip { position: absolute; top: 0; left: 0; z-index: 2; color: var(--navy); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; white-space: nowrap; pointer-events: none; writing-mode: vertical-rl; rotate: 180deg; opacity: 0; transition: opacity 220ms ease; }
 .spine-tip.is-below { writing-mode: horizontal-tb; rotate: none; color: #fff; font-weight: 600; letter-spacing: 0; }
 .spine-tip.is-on { opacity: 1; }
-.stance-spine .v { fill: #fff; transition: fill 320ms ease; }
+.stance-spine .v { fill: #fff; transform-box: fill-box; transform-origin: center; transition: fill 320ms ease, fill-opacity 320ms ease, transform 380ms cubic-bezier(0.2, 0.7, 0.2, 1); }
 .stance-spine .v:nth-last-child(-n+3) { fill-opacity: 0.55; }
 @media (prefers-reduced-motion: no-preference) {
   .js .stance-spine .v { opacity: 0; }
@@ -751,25 +751,33 @@ details[open] .plus::after { transform: rotate(0); }
   const from = [255, 255, 255], to = [143, 207, 220];
   const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
   let hot = -1;
-  const paint = (center) => parts.forEach((part, i) => { part.style.fill = tint(center < 0 ? 0 : (FADE[Math.abs(i - center)] ?? 0)); });
-  const hide = () => { hot = -1; paint(-1); tip.classList.remove('is-on'); };
+  const paint = (center) => parts.forEach((part, i) => { part.style.fill = tint(center < 0 ? 0 : (FADE[Math.abs(i - center)] ?? 0)); part.style.fillOpacity = i === center ? 1 : ''; });
+  const hide = () => { hot = -1; paint(-1); parts.forEach((p) => { p.style.transform = ''; }); tip.classList.remove('is-on'); };
   const show = (i) => {
     if (hot === i) return;
     hot = i;
     paint(i);
-    const wrap = spine.parentElement.getBoundingClientRect();
-    const box = parts[i].getBoundingClientRect();
+    // Geometry from the drawing itself (not from the screen), so a growing neighbour never shifts the measurement.
+    const vb = spine.viewBox.baseVal;
+    const k = spine.getBoundingClientRect().width / vb.width;
+    const bb = parts[i].getBBox();
+    const bw = bb.width * k, bh = bb.height * k;
     tip.classList.remove('is-below');
     tip.textContent = names[i].short;
-    const fits = tip.offsetHeight <= box.height - 8 && tip.offsetWidth <= box.width;
+    // The chosen vertebra grows just enough to hold its name upright; the name never goes below 16px.
+    const sy = Math.min(1.8, Math.max(1.04, (tip.offsetHeight + 16) / bh));
+    const sx = Math.min(1.25, 1 + (sy - 1) * 0.5);
+    const fits = tip.offsetHeight + 10 <= bh * sy && tip.offsetWidth + 6 <= bw * sx;
+    parts.forEach((p, j) => { p.style.transform = j === i && fits ? `scale(${sx}, ${sy})` : ''; });
     if (!fits) {
       tip.classList.add('is-below');
       tip.textContent = names[i].long;
     }
     const w = tip.offsetWidth, h = tip.offsetHeight;
-    const cx = box.left - wrap.left + box.width / 2;
-    const x = fits ? cx - w / 2 : Math.min(Math.max(cx - w / 2, 0), wrap.width - w);
-    const y = fits ? box.top - wrap.top + box.height / 2 - h / 2 : box.bottom - wrap.top + 12;
+    const wrapW = spine.parentElement.getBoundingClientRect().width;
+    const cx = (bb.x + bb.width / 2) * k;
+    const x = fits ? cx - w / 2 : Math.min(Math.max(cx - w / 2, 0), wrapW - w);
+    const y = fits ? (bb.y - vb.y + bb.height / 2) * k - h / 2 : (bb.y - vb.y + bb.height) * k + 12;
     tip.style.translate = `${x}px ${y}px`;
     tip.classList.add('is-on');
   };
