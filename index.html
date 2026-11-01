@@ -251,11 +251,11 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .stance-lead { margin-top: 22px; max-width: 38em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
 .spine-wrap { grid-column: 1 / -1; position: relative; margin-top: clamp(24px, 4vw, 56px); }
 .stance-spine { display: block; width: 100%; height: auto; }
-.spine-tip { position: absolute; top: 0; left: 0; z-index: 2; padding: 8px 14px; background: #fff; color: var(--navy); font-size: 1rem; font-weight: 600; line-height: 1.2; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 140ms; }
+.spine-tip { position: absolute; top: 0; left: 0; z-index: 2; color: var(--navy); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; white-space: nowrap; pointer-events: none; writing-mode: vertical-rl; rotate: 180deg; opacity: 0; transition: opacity 220ms ease; }
+.spine-tip.is-below { writing-mode: horizontal-tb; rotate: none; color: #fff; font-weight: 600; letter-spacing: 0; }
 .spine-tip.is-on { opacity: 1; }
-.stance-spine .v { fill: #fff; transition: fill 140ms; }
+.stance-spine .v { fill: #fff; transition: fill 320ms ease; }
 .stance-spine .v:nth-last-child(-n+3) { fill-opacity: 0.55; }
-.stance-spine .v.is-hot { fill: #8fcfdc; fill-opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .js .stance-spine .v { opacity: 0; }
   .js .stance-spine.is-in .v { animation: vert 700ms var(--ease) both; animation-delay: calc(var(--n) * 40ms); }
@@ -734,35 +734,48 @@ details[open] .plus::after { transform: rotate(0); }
 })();
 
 // The spine on the dark section: hovering (or tapping) a vertebra names it, the way reports and scans do.
+// The chosen vertebra turns light blue and its neighbours fade out to white on both sides; the name stands upright inside it.
 (() => {
   const spine = document.querySelector('.stance-spine');
   const tip = document.querySelector('.spine-tip');
   if (!spine || !tip) return;
   const parts = [...spine.querySelectorAll('.v')];
   const names = parts.map((_, i) => {
-    if (i < 7) return `HWK ${i + 1} · ${['Atlas', 'Axis'][i] ?? 'Halswirbel'}`;
-    if (i < 19) return `BWK ${i - 6} · Brustwirbel`;
-    if (i < 24) return `LWK ${i - 18} · Lendenwirbel`;
-    return i < 26 ? 'Kreuzbein' : 'Steißbein';
+    if (i < 7) return { short: `HWK ${i + 1}`, long: `HWK ${i + 1} · ${['Atlas', 'Axis'][i] ?? 'Halswirbel'}` };
+    if (i < 19) return { short: `BWK ${i - 6}`, long: `BWK ${i - 6} · Brustwirbel` };
+    if (i < 24) return { short: `LWK ${i - 18}`, long: `LWK ${i - 18} · Lendenwirbel` };
+    const n = i < 26 ? 'Kreuzbein' : 'Steißbein';
+    return { short: n, long: n };
   });
-  let hot = null;
-  const hide = () => { hot?.classList.remove('is-hot'); hot = null; tip.classList.remove('is-on'); };
-  const show = (part) => {
-    if (hot === part) return;
-    hot?.classList.remove('is-hot');
-    hot = part;
-    part.classList.add('is-hot');
-    tip.textContent = names[parts.indexOf(part)];
+  const FADE = [1, 0.62, 0.36, 0.18, 0.07];
+  const from = [255, 255, 255], to = [143, 207, 220];
+  const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
+  let hot = -1;
+  const paint = (center) => parts.forEach((part, i) => { part.style.fill = tint(center < 0 ? 0 : (FADE[Math.abs(i - center)] ?? 0)); });
+  const hide = () => { hot = -1; paint(-1); tip.classList.remove('is-on'); };
+  const show = (i) => {
+    if (hot === i) return;
+    hot = i;
+    paint(i);
     const wrap = spine.parentElement.getBoundingClientRect();
-    const box = part.getBoundingClientRect();
-    const half = tip.offsetWidth / 2;
-    const x = Math.min(Math.max(box.left - wrap.left + box.width / 2, half), wrap.width - half);
-    tip.style.transform = `translate(${x - half}px, ${box.bottom - wrap.top + 10}px)`;
+    const box = parts[i].getBoundingClientRect();
+    tip.classList.remove('is-below');
+    tip.textContent = names[i].short;
+    const fits = tip.offsetHeight <= box.height - 8 && tip.offsetWidth <= box.width;
+    if (!fits) {
+      tip.classList.add('is-below');
+      tip.textContent = names[i].long;
+    }
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    const cx = box.left - wrap.left + box.width / 2;
+    const x = fits ? cx - w / 2 : Math.min(Math.max(cx - w / 2, 0), wrap.width - w);
+    const y = fits ? box.top - wrap.top + box.height / 2 - h / 2 : box.bottom - wrap.top + 12;
+    tip.style.translate = `${x}px ${y}px`;
     tip.classList.add('is-on');
   };
-  parts.forEach((part) => part.addEventListener('pointerenter', () => show(part)));
+  parts.forEach((part, i) => part.addEventListener('pointerenter', () => show(i)));
   spine.addEventListener('pointerleave', hide);
-  spine.addEventListener('pointerdown', (e) => { if (!e.target.classList?.contains('v')) hide(); else show(e.target); });
+  spine.addEventListener('pointerdown', (e) => { const i = parts.indexOf(e.target); if (i < 0) hide(); else show(i); });
   document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target)) hide(); });
 })();
 </script>
