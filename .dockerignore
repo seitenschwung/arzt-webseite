@@ -3,6 +3,9 @@
 !index.html
 !impressum.html
 !datenschutz.html
+!robots.txt
+!sitemap.xml
+!fancy/
 !assets/
 !mailer/
 !nginx.conf
