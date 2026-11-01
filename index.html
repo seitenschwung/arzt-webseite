@@ -309,12 +309,12 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 /* ---------- the Förde band ---------- */
 
 .horizon { position: relative; height: clamp(380px, 56vw, 620px); background: #cfd8e6; clip-path: inset(0); color: var(--navy); }
-.horizon > img { position: fixed; object-position: 50% 0%; }
+.horizon > img { position: fixed; object-position: 50% 36%; }
 .horizon::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(222, 232, 244, 0.94) 0, rgba(222, 232, 244, 0.8) 28%, rgba(222, 232, 244, 0) 58%); }
 @media (max-width: 760px) { .horizon blockquote { font-size: 1.3rem; max-width: 9em; } }
 @media (prefers-reduced-motion: reduce), (max-width: 760px) { .horizon { overflow: hidden; clip-path: none; } .horizon > img { position: absolute; } }
 .horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; padding-top: clamp(28px, 6vw, 72px); }
-.horizon blockquote { margin: 0 0 0 auto; text-align: right; max-width: min(12em, 42vw); font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
+.horizon blockquote { margin: 0; max-width: min(12em, 42vw); font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
@@ -548,8 +548,8 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="horizon" aria-label="Der Leuchtturm Friedrichsort an der Kieler Förde">
-    <img src="assets/leuchtturm-friedrichsort-kiel2014.webp" width="1920" height="1440" alt="" loading="lazy">
+  <section class="horizon" aria-label="Leuchtturm im Abendlicht">
+    <img src="assets/leuchtturm-sintum.webp" width="2400" height="3000" alt="" loading="lazy">
     <div class="wrap">
       <blockquote data-reveal><!-- TODO Manicke: Originalsatz zur Selbstständigkeit einsetzen -->„Sie entscheiden. Ich gebe Ihnen die Orientierung dafür.“</blockquote>
     </div>
@@ -659,7 +659,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben ↑</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm Friedrichsort, Dreizung, <a href="https://commons.wikimedia.org/wiki/File:Leuchtturm_Friedrichsort_Kiel2014.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/3.0/deed.de">CC BY 3.0</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
+    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm, Joseph Sintum, <a href="https://unsplash.com/photos/vrqypTgxRiw">Unsplash</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
   </div>
 </footer>
 
