@@ -574,6 +574,10 @@ details[open] .plus::after { transform: rotate(0); }
           <input id="f-mail" name="email" type="email" autocomplete="email" spellcheck="false" placeholder="anna@beispiel.de" required>
         </div>
         <div class="cell full">
+          <label for="f-tel">Ihre Handynummer <span class="opt">(freiwillig)</span></label>
+          <input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="z.&nbsp;B. 0171 1234567">
+        </div>
+        <div class="cell full">
           <label for="f-topic">Ihr Anliegen</label>
           <select id="f-topic" name="anliegen">
             <option>Zweitmeinung vor einer Operation</option>
@@ -697,7 +701,8 @@ details[open] .plus::after { transform: rotate(0); }
   const viaMail = () => {
     const f = form.elements;
     const note = f.nachricht.value.trim();
-    const body = `Guten Tag Herr Dr. Manicke,\n\nich bitte um ein Gespräch.\nMein Anliegen: ${f.anliegen.value}\nZeitraum: ${f.zeitraum.value}${note ? `\n\n${note}` : ''}\n\nSie erreichen mich unter ${f.email.value.trim()}.\n\nMit freundlichen Grüßen\n${f.name.value.trim()}`;
+    const tel = f.telefon.value.trim();
+    const body = `Guten Tag Herr Dr. Manicke,\n\nich bitte um ein Gespräch.\nMein Anliegen: ${f.anliegen.value}\nZeitraum: ${f.zeitraum.value}${note ? `\n\n${note}` : ''}\n\nSie erreichen mich unter ${f.email.value.trim()}${tel ? ` oder ${tel}` : ''}.\n\nMit freundlichen Grüßen\n${f.name.value.trim()}`;
     location.href = `mailto:christoph.manicke@gmx.de?subject=${encodeURIComponent('Anfrage: ' + f.anliegen.value)}&body=${encodeURIComponent(body)}`;
   };
   form.addEventListener('submit', async (e) => {
@@ -705,7 +710,7 @@ details[open] .plus::after { transform: rotate(0); }
     button.disabled = true;
     status.textContent = '';
     try {
-      const fields = ['name', 'email', 'anliegen', 'zeitraum', 'nachricht', 'einwilligung', 'website'];
+      const fields = ['name', 'email', 'telefon', 'anliegen', 'zeitraum', 'nachricht', 'einwilligung', 'website'];
       const body = Object.fromEntries(fields.map((k) => [k, form.elements[k].type === 'checkbox' ? (form.elements[k].checked ? 'ja' : '') : form.elements[k].value]));
       const res = await fetch('/api/anfrage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       if (res.ok) {

@@ -8,6 +8,9 @@ const SINGLE_LINE_BAD = /[\u0000-\u001f\u007f\u0085\u2028\u2029]/;
 // The message may contain line breaks and tabs, nothing else from the control range.
 const MULTI_LINE_BAD = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/;
 
+// A phone number: digits with an optional leading +, spaces, dashes, slashes, dots and brackets; at least six digits.
+const PHONE = /^(?=(?:\D*\d){6,})\+?[\d\s\-/().]+$/;
+
 // The choices offered by the form; anything else is refused.
 export const TOPICS = [
   'Zweitmeinung vor einer Operation',
@@ -20,6 +23,7 @@ export const TIMES = ['So bald wie möglich', 'In den nächsten zwei Wochen', 'I
 const FIELDS = {
   name: { max: 100, required: true },
   email: { max: 254, required: true },
+  telefon: { max: 30, required: false, phone: true },
   anliegen: { max: 80, required: true, oneOf: TOPICS },
   zeitraum: { max: 80, required: true, oneOf: TIMES },
   nachricht: { max: 2000, required: false, multiLine: true },
@@ -59,6 +63,7 @@ export function validate(body) {
     if (value.length > rule.max) return { ok: false, field };
     if ((rule.multiLine ? MULTI_LINE_BAD : SINGLE_LINE_BAD).test(value)) return { ok: false, field };
     if (rule.oneOf && !rule.oneOf.includes(value)) return { ok: false, field };
+    if (rule.phone && value && !PHONE.test(value)) return { ok: false, field };
     data[field] = value;
   }
   if (!isEmail(data.email)) return { ok: false, field: 'email' };
@@ -77,6 +82,7 @@ export function buildMail(data, config, now = new Date()) {
       '',
       `Name: ${data.name}`,
       `E-Mail: ${data.email}`,
+      ...(data.telefon ? [`Handynummer: ${data.telefon}`] : []),
       `Anliegen: ${data.anliegen}`,
       `Zeitraum: ${data.zeitraum}`,
       ...(data.nachricht ? ['', data.nachricht] : []),

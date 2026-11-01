@@ -40,6 +40,14 @@ test('validate accepts a normal German request with CRLF, umlauts and emoji', ()
   assert.equal(r.data.nachricht, good.nachricht);
 });
 
+test('validate accepts an optional phone number and refuses nonsense', () => {
+  assert.equal(validate({ ...good, telefon: '' }).ok, true);
+  assert.equal(validate({ ...good, telefon: '+49 (171) 123 45-67' }).data.telefon, '+49 (171) 123 45-67');
+  for (const bad of ['abc', '12345', '0171; rm -rf', '0171\n1234567', '1'.repeat(31)]) {
+    assert.deepEqual(validate({ ...good, telefon: bad }), { ok: false, field: 'telefon' });
+  }
+});
+
 test('validate trims and allows an empty optional message', () => {
   const r = validate({ ...good, name: '  Lea  ', nachricht: '' });
   assert.equal(r.ok, true);
