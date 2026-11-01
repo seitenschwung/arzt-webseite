@@ -127,13 +127,12 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .topics { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(28px, 4vw, 64px); border-top: 2px solid var(--navy); }
 .topics li { border-bottom: 1px solid var(--rule); }
 .topic { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: baseline; gap: 4px 12px; padding: 18px 0 20px; text-decoration: none; transition: background 200ms var(--ease), padding 200ms var(--ease); }
-.topic:hover { background: var(--sea-pale); padding-inline: 14px; }
+.topic:hover { background: var(--sea-pale); box-shadow: -14px 0 0 var(--sea-pale), 14px 0 0 var(--sea-pale); }
 .topic .no { font-size: 1rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
 .topic b { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.55rem); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
 .topic .ico { grid-row: 1 / span 2; align-self: center; width: 48px; height: 48px; color: var(--sea-2); }
 .topic .t { grid-column: 2; max-width: 30em; color: #2b3345; font-size: var(--step-small); line-height: 1.4; }
 .how { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 18px; padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px); background: var(--sea-pale); }
-.how-label { font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea-2); }
 .how-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
 .how-list li { padding: 2px clamp(16px, 2.2vw, 32px); border-left: 2px solid var(--navy); }
 .how-list b { display: block; font-size: clamp(1.5rem, 1rem + 1.7vw, 2.4rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.04em; line-height: 1.05; }
@@ -277,7 +276,6 @@ details[open] .plus::after { transform: rotate(0); }
   .about-grid { grid-template-columns: minmax(0, 1fr); }
   .about-visual { max-width: 360px; }
   .how { grid-template-columns: minmax(0, 1fr); }
-  .how-label { max-width: none; }
 }
 @media (max-width: 860px) {
   :root { --bar: 68px; }
@@ -295,7 +293,7 @@ details[open] .plus::after { transform: rotate(0); }
     .hero-actions .btn { width: 100%; justify-content: space-between; }
   .request { grid-template-columns: minmax(0, 1fr); }
   .answer { padding-right: 0; }
-  .topic:hover { padding-inline: 0; background: transparent; }
+  .topic:hover { box-shadow: none; background: transparent; }
   .foot-cols { grid-template-columns: minmax(0, 1fr); }
   .how-list { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   }
@@ -365,7 +363,6 @@ details[open] .plus::after { transform: rotate(0); }
         <li data-reveal style="--i:3"><a class="topic" href="#kontakt" data-topic="Andere neurochirurgische Frage"><svg class="ico" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 24L10 10M24 24l14-14M24 24L8 35M24 24l16 11"/><circle cx="24" cy="24" r="5" fill="#f7f7f5"/><circle cx="10" cy="10" r="3.5" fill="#f7f7f5"/><circle cx="38" cy="10" r="3.5" fill="#f7f7f5"/><circle cx="8" cy="35" r="3.5" fill="#f7f7f5"/><circle cx="40" cy="35" r="3.5" fill="#f7f7f5"/></svg><b>Andere neurochirurgische Frage</b><span class="t">Nerven, Nervenwurzeln, Rückenmark.</span></a></li>
       </ul>
       <div class="how" data-reveal>
-        <p class="how-label">So berate ich</p>
         <ul class="how-list">
           <li><b>Ausführlich</b></li>
           <li><b>Unabhängig</b></li>
