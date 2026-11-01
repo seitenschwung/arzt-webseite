@@ -278,11 +278,19 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .how-list li { display: flex; align-items: center; gap: 14px; padding: 0; text-align: left; }
 .how-list li::before { content: ""; flex: none; width: 20px; height: 8px; border-radius: 4px; background: #8fc3d0; }
 .how-list b { font-size: clamp(1.125rem, 1rem + 0.4vw, 1.3rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.02em; line-height: 1.1; color: #fff; }
-.topics { grid-column: 2; grid-row: 1 / 3; align-self: stretch; margin: 0; display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: clamp(6px, 0.8vw, 10px); }
+.topics { grid-column: 2; grid-row: 1 / 3; align-self: start; margin: 0; display: grid; gap: clamp(6px, 0.8vw, 10px); }
 .topics li { background: #eceff4; color: var(--navy); }
 .topics li { display: flex; }
 .topic { flex: 1; display: flex; align-items: center; gap: clamp(16px, 2vw, 26px); min-height: clamp(64px, 6vw, 84px); padding: clamp(14px, 1.6vw, 22px) clamp(20px, 2.2vw, 30px); }
 .topic::before { content: ""; flex: none; width: 28px; height: 11px; border-radius: 6px; background: var(--sea-2); opacity: 0.55; }
+.topics li { display: block; }
+.topics details { display: block; }
+.topics summary { cursor: pointer; list-style: none; }
+.topics summary::-webkit-details-marker { display: none; }
+.topics summary:hover b { color: var(--sea-2); }
+.topics .topic { justify-content: space-between; }
+.topics .topic::before { display: none; }
+.topic-text { padding: 0 clamp(20px, 2.2vw, 30px) clamp(16px, 1.8vw, 24px); max-width: 36em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
 .topic b { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.65rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
 
 /* ---------- about: the whole section in navy, round portrait on the left, text and timeline on the right ---------- */
@@ -508,10 +516,10 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="advice-sub" data-reveal style="--i:2">Das ganze neurochirurgische Fachgebiet, Schwerpunkt Wirbelsäule.</p>
       </header>
       <ul class="topics">
-        <li data-reveal><div class="topic"><b>Zweitmeinung vor einer Operation</b></div></li>
-        <li data-reveal style="--i:1"><div class="topic"><b>Beschwerden nach einer Operation</b></div></li>
-        <li data-reveal style="--i:2"><div class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b></div></li>
-        <li data-reveal style="--i:3"><div class="topic"><b>Andere neurochirurgische Frage</b></div></li>
+        <li data-reveal><details name="topics"><summary class="topic"><b>Zweitmeinung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt.</p></details></li>
+        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Beschwerden nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Die Beschwerden sind nach einem Eingriff geblieben oder wiedergekommen? Gemeinsam ordnen wir ein, woran es liegen kann und was als Nächstes sinnvoll ist.</p></details></li>
+        <li data-reveal style="--i:2"><details name="topics"><summary class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Schmerzen, Taubheit oder Kribbeln, die Sie schon länger begleiten? Ich nehme mir Zeit, die Ursache einzuordnen, und berate Sie zu den nächsten Schritten.</p></details></li>
+        <li data-reveal style="--i:3"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Frage</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
       </ul>
       <div class="how" data-reveal>
         <p class="how-title">So berate ich</p>
@@ -750,7 +758,7 @@ details[open] .plus::after { transform: rotate(0); }
   });
   const FADE = [1, 0.62, 0.36, 0.18, 0.07];
   // How much the vertebrae around the pointer swell, [across, along] by distance: the chosen one most, then a fading swell either side.
-  const SWELL = [null, [1.1, 1.3], [1.06, 1.17], [1.03, 1.09], [1.01, 1.03]];
+  const SWELL = [null, [1.05, 1.15], [1.03, 1.085], [1.015, 1.045], [1.005, 1.015]];
   const from = [255, 255, 255], to = [143, 207, 220];
   const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
   let hot = -1;
@@ -768,12 +776,12 @@ details[open] .plus::after { transform: rotate(0); }
     tip.classList.remove('is-below');
     tip.textContent = names[i].short;
     // The chosen vertebra grows just enough to hold its name upright; the name never goes below 16px.
-    const sy = Math.min(1.8, Math.max(1.4, (tip.offsetHeight + 16) / bh));
-    const sx = Math.min(1.25, Math.max(1.2, 1 + (sy - 1) * 0.5));
+    const sy = Math.min(1.4, Math.max(1.2, (tip.offsetHeight + 16) / bh));
+    const sx = Math.min(1.125, Math.max(1.1, 1 + (sy - 1) * 0.5));
     const fits = tip.offsetHeight + 10 <= bh * sy && tip.offsetWidth + 6 <= bw * sx;
     parts.forEach((p, j) => {
       const d = Math.abs(j - i);
-      const swell = d === 0 ? (fits ? [sx, sy] : [1.1, 1.3]) : SWELL[d];
+      const swell = d === 0 ? (fits ? [sx, sy] : [1.05, 1.15]) : SWELL[d];
       p.style.transform = swell ? `scale(${swell[0]}, ${swell[1]})` : '';
     });
     if (!fits) {
