@@ -266,15 +266,15 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .advice-head { display: grid; gap: 10px; }
 .advice-head h2 { max-width: none; }
 .advice-sub { margin-top: 4px; font-size: var(--step-lead); line-height: 1.3; color: #2b3345; }
-.topics { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.topics { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: repeat(3, minmax(clamp(110px, 12vw, 168px), 1fr)); }
 .topics li { background: var(--sea-pale); color: var(--navy); }
-.topics li:nth-child(2) { background: var(--sea-2); color: #fff; }
-.topics li:nth-child(3) { background: var(--navy); color: #fff; }
+.topics li:nth-child(1) { grid-row: 1 / 4; background: var(--sea-2); color: #fff; }
+.topics li:nth-child(2) { background: var(--navy); color: #fff; }
 .topics li:nth-child(4) { background: #e3e9f1; }
-.topics li:nth-child(2) .t, .topics li:nth-child(3) .t { color: #eef3f8; }
-.topic { height: 100%; min-height: clamp(200px, 20vw, 280px); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; padding: clamp(24px, 3vw, 44px); }
-.topic b { font-size: clamp(1.5rem, 1rem + 1.7vw, 2.4rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.04em; line-height: 1.05; }
-.topic .t { color: #1f2740; font-size: var(--step-lead); line-height: 1.45; }
+.topic { height: 100%; display: flex; align-items: center; padding: clamp(24px, 3vw, 44px); }
+.topic b { font-size: clamp(1.5rem, 1rem + 1.7vw, 2.4rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.04em; line-height: 1.08; }
+.topics li:nth-child(1) .topic { align-items: flex-end; }
+.topics li:nth-child(1) b { font-size: clamp(2.1rem, 1rem + 4vw, 4.2rem); line-height: 1.02; letter-spacing: -0.045em; max-width: 11ch; }
 .how { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 18px; padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px); background: var(--sea-pale); }
 .how-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
 .how-list li { padding: 2px clamp(16px, 2.2vw, 32px); text-align: center; }
@@ -441,7 +441,7 @@ details[open] .plus::after { transform: rotate(0); }
     .foot-cols { grid-template-columns: minmax(0, 1fr); }
   .how-list { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   }
-@media (max-width: 520px) { .topics { grid-template-columns: minmax(0, 1fr); } .topic { min-height: 0; } }
+@media (max-width: 700px) { .topics { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; } .topics li:nth-child(1) { grid-row: auto; } .topics li:nth-child(1) .topic { min-height: 200px; } .topic { min-height: 110px; } }
 </style>
 </head>
 <body>
@@ -506,10 +506,10 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="advice-sub" data-reveal style="--i:2">Das ganze neurochirurgische Fachgebiet, Schwerpunkt Wirbelsäule.</p>
       </header>
       <ul class="topics">
-        <li data-reveal><div class="topic"><b>Zweitmeinung vor einer Operation</b><span class="t">Ich prüfe Bilder und Befunde, bevor Sie entscheiden.</span></div></li>
-        <li data-reveal style="--i:1"><div class="topic"><b>Beschwerden nach einer Operation</b><span class="t">Beschwerden geblieben oder neu aufgetreten.</span></div></li>
-        <li data-reveal style="--i:2"><div class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="t">Was helfen kann, mit und ohne Operation.</span></div></li>
-        <li data-reveal style="--i:3"><div class="topic"><b>Andere neurochirurgische Frage</b><span class="t">Nerven, Nervenwurzeln, Rückenmark.</span></div></li>
+        <li data-reveal><div class="topic"><b>Zweitmeinung vor einer Operation</b></div></li>
+        <li data-reveal style="--i:1"><div class="topic"><b>Beschwerden nach einer Operation</b></div></li>
+        <li data-reveal style="--i:2"><div class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b></div></li>
+        <li data-reveal style="--i:3"><div class="topic"><b>Andere neurochirurgische Frage</b></div></li>
       </ul>
       <div class="how" data-reveal>
         <ul class="how-list">
