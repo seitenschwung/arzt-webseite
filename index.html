@@ -126,11 +126,12 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .advice-sub { margin-top: 4px; font-size: var(--step-lead); line-height: 1.3; color: #2b3345; }
 .topics { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(28px, 4vw, 64px); border-top: 2px solid var(--navy); }
 .topics li { border-bottom: 1px solid var(--rule); }
-.topic { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); align-items: baseline; gap: 4px 12px; padding: 18px 0 20px; text-decoration: none; transition: background 200ms var(--ease), padding 200ms var(--ease); }
+.topic { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: baseline; gap: 4px 12px; padding: 18px 0 20px; text-decoration: none; transition: background 200ms var(--ease), padding 200ms var(--ease); }
 .topic:hover { background: var(--sea-pale); padding-inline: 14px; }
 .topic .no { font-size: 1rem; font-weight: 600; letter-spacing: 0.14em; color: var(--sea-2); }
 .topic b { font-size: clamp(1.2rem, 1rem + 0.7vw, 1.55rem); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
-.topic .t { grid-column: 1; max-width: 30em; color: #2b3345; font-size: var(--step-small); line-height: 1.4; }
+.topic .ico { grid-row: 1 / span 2; align-self: center; width: 48px; height: 48px; color: var(--sea-2); }
+.topic .t { grid-column: 2; max-width: 30em; color: #2b3345; font-size: var(--step-small); line-height: 1.4; }
 .how { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 18px; padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px); background: var(--sea-pale); }
 .how-label { font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sea-2); }
 .how-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
@@ -358,10 +359,10 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="advice-sub" data-reveal style="--i:2">Das ganze neurochirurgische Fachgebiet, Schwerpunkt Wirbelsäule.</p>
       </header>
       <ul class="topics">
-        <li data-reveal><a class="topic" href="#kontakt" data-topic="Zweitmeinung vor einer Operation"><b>Zweitmeinung vor einer Operation</b><span class="t">Ich prüfe Bilder und Befunde, bevor Sie entscheiden.</span></a></li>
-        <li data-reveal style="--i:1"><a class="topic" href="#kontakt" data-topic="Beschwerden nach einer Operation"><b>Beschwerden nach einer Operation</b><span class="t">Beschwerden geblieben oder neu aufgetreten.</span></a></li>
-        <li data-reveal style="--i:2"><a class="topic" href="#kontakt" data-topic="Beratung bei Rückenbeschwerden"><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="t">Was helfen kann, mit und ohne Operation.</span></a></li>
-        <li data-reveal style="--i:3"><a class="topic" href="#kontakt" data-topic="Andere neurochirurgische Frage"><b>Andere neurochirurgische Frage</b><span class="t">Nerven, Nervenwurzeln, Rückenmark.</span></a></li>
+        <li data-reveal><a class="topic" href="#kontakt" data-topic="Zweitmeinung vor einer Operation"><svg class="ico" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 6h17l7 7v29H13z"/><path d="M30 6v7h7"/><path d="M19 29l4 4 9-10"/></svg><b>Zweitmeinung vor einer Operation</b><span class="t">Ich prüfe Bilder und Befunde, bevor Sie entscheiden.</span></a></li>
+        <li data-reveal style="--i:1"><a class="topic" href="#kontakt" data-topic="Beschwerden nach einer Operation"><svg class="ico" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-35 24 24)"><rect x="3" y="15" width="42" height="18" rx="9"/><rect x="17" y="15" width="14" height="18"/><circle cx="10" cy="24" r=".8"/><circle cx="38" cy="24" r=".8"/></g></svg><b>Beschwerden nach einer Operation</b><span class="t">Beschwerden geblieben oder neu aufgetreten.</span></a></li>
+        <li data-reveal style="--i:2"><a class="topic" href="#kontakt" data-topic="Beratung bei Rückenbeschwerden"><svg class="ico" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="17" y="4" width="14" height="6" rx="3"/><rect x="19" y="12" width="14" height="6" rx="3"/><rect x="20" y="20" width="14" height="6" rx="3"/><rect x="19" y="28" width="14" height="6" rx="3"/><rect x="17" y="36" width="14" height="6" rx="3"/></svg><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="t">Was helfen kann, mit und ohne Operation.</span></a></li>
+        <li data-reveal style="--i:3"><a class="topic" href="#kontakt" data-topic="Andere neurochirurgische Frage"><svg class="ico" viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 24L10 10M24 24l14-14M24 24L8 35M24 24l16 11"/><circle cx="24" cy="24" r="5" fill="#f7f7f5"/><circle cx="10" cy="10" r="3.5" fill="#f7f7f5"/><circle cx="38" cy="10" r="3.5" fill="#f7f7f5"/><circle cx="8" cy="35" r="3.5" fill="#f7f7f5"/><circle cx="40" cy="35" r="3.5" fill="#f7f7f5"/></svg><b>Andere neurochirurgische Frage</b><span class="t">Nerven, Nervenwurzeln, Rückenmark.</span></a></li>
       </ul>
       <div class="how" data-reveal>
         <p class="how-label">So berate ich</p>
