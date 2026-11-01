@@ -98,7 +98,7 @@
      "name": "Was kostet eine Zweitmeinung?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ). Ob Ihre Versicherung die Kosten übernimmt, klären Sie am besten vorher mit ihr."
+      "text": "Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ)."
      }
     },
     {
@@ -249,8 +249,12 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .stance p.big span { color: #8fcfdc; }
 .stance .label { align-self: start; margin-top: 0.9em; }
 .stance-lead { margin-top: 22px; max-width: 38em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
-.stance-spine { grid-column: 1 / -1; display: block; width: 100%; height: auto; margin-top: clamp(24px, 4vw, 56px); }
-.stance-spine .v { fill: #fff; }
+.spine-wrap { grid-column: 1 / -1; position: relative; margin-top: clamp(24px, 4vw, 56px); }
+.stance-spine { display: block; width: 100%; height: auto; overflow: visible; }
+.spine-tip { position: absolute; top: 0; left: 0; z-index: 2; color: var(--navy); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; white-space: nowrap; pointer-events: none; writing-mode: vertical-rl; rotate: 180deg; opacity: 0; transition: opacity 220ms ease; }
+.spine-tip.is-below { writing-mode: horizontal-tb; rotate: none; color: #fff; font-weight: 600; letter-spacing: 0; }
+.spine-tip.is-on { opacity: 1; }
+.stance-spine .v { fill: #fff; transform-box: fill-box; transform-origin: center; transition: fill 320ms ease, fill-opacity 320ms ease, transform 380ms cubic-bezier(0.2, 0.7, 0.2, 1); }
 .stance-spine .v:nth-last-child(-n+3) { fill-opacity: 0.55; }
 @media (prefers-reduced-motion: no-preference) {
   .js .stance-spine .v { opacity: 0; }
@@ -266,36 +270,43 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .advice-head { display: grid; gap: 10px; }
 .advice-head h2 { max-width: none; }
 .advice-sub { margin-top: 4px; font-size: var(--step-lead); line-height: 1.3; color: #2b3345; }
-.topics { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: repeat(3, minmax(clamp(110px, 12vw, 168px), 1fr)); }
-.topics li { background: var(--sea-pale); color: var(--navy); }
-.topics li:nth-child(1) { grid-row: 1 / 4; background: var(--sea-2); color: #fff; }
-.topics li:nth-child(2) { background: var(--navy); color: #fff; }
-.topics li:nth-child(4) { background: #e3e9f1; }
-.topic { height: 100%; display: flex; align-items: center; padding: clamp(24px, 3vw, 44px); }
-.topic b { font-size: clamp(1.5rem, 1rem + 1.7vw, 2.4rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.04em; line-height: 1.08; }
-.topics li:nth-child(1) .topic { align-items: flex-end; }
-.topics li:nth-child(1) b { font-size: clamp(2.1rem, 1rem + 4vw, 4.2rem); line-height: 1.02; letter-spacing: -0.045em; max-width: 11ch; }
-.how { margin-top: clamp(28px, 4vw, 48px); display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 18px; padding: clamp(24px, 3vw, 40px) clamp(20px, 3vw, 44px); background: var(--sea-pale); }
-.how-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
-.how-list li { padding: 2px clamp(16px, 2.2vw, 32px); text-align: center; }
-.how-list b { display: block; font-size: clamp(1.5rem, 1rem + 1.7vw, 2.4rem); font-weight: 660; font-stretch: 116%; letter-spacing: -0.04em; line-height: 1.05; }
-.how-list li:nth-child(2) b { color: var(--sea-2); }
-.how-list span { display: block; margin-top: 8px; font-size: var(--step-small); line-height: 1.4; color: #1f2740; }
+.advice .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px var(--margin); align-items: start; }
+.advice-head { grid-column: 1; grid-row: 1; }
+.how { grid-column: 1; grid-row: 2; display: block; padding: clamp(18px, 2vw, 26px) clamp(20px, 2.2vw, 28px); background: var(--navy); color: #fff; margin: 0; }
+.how-title { font-size: 1rem; font-weight: 600; color: #8fc3d0; margin-bottom: 10px; }
+.how-list { display: grid; gap: 6px; }
+.how-list li { display: flex; align-items: center; gap: 14px; padding: 0; text-align: left; }
+.how-list li::before { content: ""; flex: none; width: 20px; height: 8px; border-radius: 4px; background: #8fc3d0; }
+.how-list b { font-size: clamp(1.125rem, 1rem + 0.4vw, 1.3rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.02em; line-height: 1.1; color: #fff; }
+.topics { grid-column: 2; grid-row: 1 / 3; align-self: start; margin: 0; display: grid; gap: clamp(6px, 0.8vw, 10px); }
+.topics li { background: #eceff4; color: var(--navy); }
+.topics li { display: flex; }
+.topic { flex: 1; display: flex; align-items: center; gap: clamp(16px, 2vw, 26px); min-height: clamp(64px, 6vw, 84px); padding: clamp(14px, 1.6vw, 22px) clamp(20px, 2.2vw, 30px); }
+.topic::before { content: ""; flex: none; width: 28px; height: 11px; border-radius: 6px; background: var(--sea-2); opacity: 0.55; }
+.topics li { display: block; }
+.topics details { display: block; }
+.topics summary { cursor: pointer; list-style: none; }
+.topics summary::-webkit-details-marker { display: none; }
+.topics summary:hover b { color: var(--sea-2); }
+.topics .topic { justify-content: space-between; }
+.topics .topic::before { display: none; }
+.topic-text { padding: 0 clamp(20px, 2.2vw, 30px) clamp(16px, 1.8vw, 24px); max-width: 36em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
+.topic b { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.65rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
 
 /* ---------- about: the whole section in navy, round portrait on the left, text and timeline on the right ---------- */
-.about { padding-block: var(--section); background: var(--navy); color: #fff; }
+.about { padding-block: clamp(28px, 3.9svh, 64px); background: var(--navy); color: #fff; }
 .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
-.about-visual { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
-.portrait { position: relative; margin: 0; width: min(380px, 100%); }
+.about-visual { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.portrait { position: relative; margin: 0; width: min(400px, 44svh, 100%); }
 .portrait img { width: 100%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; object-position: 50% 22%; border: 8px solid var(--navy); box-shadow: 0 0 0 2px #8fcfdc; background: var(--paper); }
 .portrait::after { content: ""; position: absolute; inset: 20px -20px -20px 20px; border: 2px solid var(--sea); border-radius: 50%; z-index: -1; }
 .who { position: static; width: auto; font-size: var(--step-small); line-height: 1.4; color: #c7d2e6; }
 .who b { display: block; margin-bottom: 4px; color: #fff; font-size: var(--step-lead); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
 .about .label { color: #8fcfdc; }
-.about-body h2 { margin-top: 16px; max-width: 12em; color: #fff; }
-.about-body .text { margin-top: 22px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
-.path { margin-top: clamp(28px, 3.4vw, 44px); border-left: 2px solid rgba(255, 255, 255, 0.55); }
-.path li { position: relative; padding: 0 0 20px 28px; }
+.about-body h2 { font-size: clamp(1.9rem, 0.6rem + 4.3svh, 3.3rem); margin-top: 12px; max-width: 12em; color: #fff; }
+.about-body .text { margin-top: 16px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
+.path { margin-top: clamp(14px, 2.1svh, 30px); border-left: 2px solid rgba(255, 255, 255, 0.55); }
+.path li { position: relative; padding: 0 0 clamp(5px, 1.15svh, 17px) 28px; }
 .path li:last-child { padding-bottom: 0; }
 .path li::before { content: ""; position: absolute; left: -7px; top: 0.5em; width: 12px; height: 12px; background: var(--navy); border: 2px solid #8fcfdc; }
 .path li:last-child::before { background: #8fcfdc; }
@@ -346,7 +357,7 @@ details[open] .plus::after { transform: rotate(0); }
 .contact dd { margin: 2px 0 0; font-size: var(--step-lead); line-height: 1.3; }
 .contact dd a { text-decoration: none; border-bottom: 2px solid var(--sea); }
 .contact dd a:hover { border-color: #8fcfdc; }
-.request { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 28px; align-content: start; padding: clamp(24px, 3.4vw, 48px); background: #fff; color: var(--ink); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.55); border-top: 6px solid var(--sea); }
+.request { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; align-content: start; padding: clamp(24px, 3.4vw, 48px); background: #fff; color: var(--ink); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.55); border-top: 6px solid var(--sea); }
 .request .hp { position: absolute; left: -9999px; }
 .cell { position: relative; display: flex; flex-direction: column; gap: 6px; }
 .cell.msg, .cell.full, .consent, .request .submit-row { grid-column: 1 / -1; }
@@ -420,7 +431,6 @@ details[open] .plus::after { transform: rotate(0); }
   .sec .side { position: static; }
   .about-grid { grid-template-columns: minmax(0, 1fr); }
   .about-visual { max-width: 360px; }
-  .how { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 860px) {
   :root { --bar: 68px; }
@@ -439,9 +449,9 @@ details[open] .plus::after { transform: rotate(0); }
   .request { grid-template-columns: minmax(0, 1fr); }
   .answer { padding-right: 0; }
     .foot-cols { grid-template-columns: minmax(0, 1fr); }
-  .how-list { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   }
-@media (max-width: 700px) { .topics { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; } .topics li:nth-child(1) { grid-row: auto; } .topics li:nth-child(1) .topic { min-height: 200px; } .topic { min-height: 110px; } }
+@media (max-width: 960px) { .advice .wrap { grid-template-columns: minmax(0, 1fr); } .advice-head, .topics, .how { grid-column: 1; grid-row: auto; } .topics { order: 2; margin-top: 8px; grid-template-rows: none; } .how { order: 3; margin-top: 12px; } }
+@media (max-width: 520px) { .topic { gap: 16px; } .topic::before { width: 30px; height: 12px; } }
 </style>
 </head>
 <body>
@@ -494,7 +504,7 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="big" data-reveal style="--i:1">Unabhängige fachärztliche Beurteilung, <span>bevor Sie sich entscheiden.</span></p>
         <p class="stance-lead" data-reveal style="--i:2">Bei mir erhalten Sie eine Zweitmeinung zu Ihrer Wirbelsäulenerkrankung, außerhalb des offiziell geregelten, gesetzlichen Zweitmeinungsverfahrens. Ich nehme mir Zeit für ein ausführliches Gespräch und eine gründliche Untersuchung, sehe mir Ihre Bilder und Befunde an und berate Sie danach eingehend zu Ihrem Krankheitsbild. So lassen sich unklare Befunde besser einordnen, und Sie entscheiden mit mehr Sicherheit. Wenn ein Eingriff nach Ausschöpfung anderer Möglichkeiten ratsam oder nicht zu vermeiden ist, sage ich es Ihnen offen. Ist er nicht nötig, sage ich das ebenso.</p>
       </div>
-      <svg class="stance-spine" viewBox="0 80 1351 191" aria-hidden="true" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg>
+      <div class="spine-wrap"><svg class="stance-spine" viewBox="0 80 1351 191" aria-hidden="true" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg><div class="spine-tip" role="presentation"></div></div>
     </div>
   </section>
 
@@ -506,12 +516,13 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="advice-sub" data-reveal style="--i:2">Das ganze neurochirurgische Fachgebiet, Schwerpunkt Wirbelsäule.</p>
       </header>
       <ul class="topics">
-        <li data-reveal><div class="topic"><b>Zweitmeinung vor einer Operation</b></div></li>
-        <li data-reveal style="--i:1"><div class="topic"><b>Beschwerden nach einer Operation</b></div></li>
-        <li data-reveal style="--i:2"><div class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b></div></li>
-        <li data-reveal style="--i:3"><div class="topic"><b>Andere neurochirurgische Frage</b></div></li>
+        <li data-reveal><details name="topics"><summary class="topic"><b>Zweitmeinung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt.</p></details></li>
+        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Beschwerden nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Die Beschwerden sind nach einem Eingriff geblieben oder wiedergekommen? Gemeinsam ordnen wir ein, woran es liegen kann und was als Nächstes sinnvoll ist.</p></details></li>
+        <li data-reveal style="--i:2"><details name="topics"><summary class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Schmerzen, Taubheit oder Kribbeln, die Sie schon länger begleiten? Ich nehme mir Zeit, die Ursache einzuordnen, und berate Sie zu den nächsten Schritten.</p></details></li>
+        <li data-reveal style="--i:3"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Frage</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
       </ul>
       <div class="how" data-reveal>
+        <p class="how-title">So berate ich</p>
         <ul class="how-list">
           <li><b>Ausführlich</b></li>
           <li><b>Unabhängig</b></li>
@@ -539,7 +550,7 @@ details[open] .plus::after { transform: rotate(0); }
           <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
           <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
           <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
-          <li><b>Heute: persönliche Beratung aus Leidenschaft</b><span>Keine Praxis, die laufen muss: Ich berate, weil ich es gern tue und mir Zeit für Sie nehmen kann. Burgstraße 2, Kiel.</span></li>
+          <li><b>Heute: persönliche Beratung aus Leidenschaft</b><span>Ich berate, weil ich es gern tue und mir Zeit für Sie nehmen kann.</span></li>
         </ol>
       </div>
     </div>
@@ -575,6 +586,19 @@ details[open] .plus::after { transform: rotate(0); }
           <label for="f-mail">Ihre E-Mail</label>
           <input id="f-mail" name="email" type="email" autocomplete="email" spellcheck="false" placeholder="anna@beispiel.de" required>
         </div>
+        <div class="cell">
+          <label for="f-tel">Ihre Handynummer <span class="opt">(freiwillig)</span></label>
+          <input id="f-tel" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="z.&nbsp;B. 0171 1234567">
+        </div>
+        <div class="cell">
+          <label for="f-when">Wann passt es Ihnen?</label>
+          <select id="f-when" name="zeitraum">
+            <option>So bald wie möglich</option>
+            <option>In den nächsten zwei Wochen</option>
+            <option>Im nächsten Monat</option>
+            <option>Ich bin flexibel</option>
+          </select>
+        </div>
         <div class="cell full">
           <label for="f-topic">Ihr Anliegen</label>
           <select id="f-topic" name="anliegen">
@@ -582,15 +606,6 @@ details[open] .plus::after { transform: rotate(0); }
             <option>Beschwerden nach einer Operation</option>
             <option>Beratung bei Rückenbeschwerden</option>
             <option>Andere neurochirurgische Frage</option>
-          </select>
-        </div>
-        <div class="cell full">
-          <label for="f-when">Wann passt es Ihnen?</label>
-          <select id="f-when" name="zeitraum">
-            <option>So bald wie möglich</option>
-            <option>In den nächsten zwei Wochen</option>
-            <option>Im nächsten Monat</option>
-            <option>Ich bin flexibel</option>
           </select>
         </div>
         <div class="cell msg">
@@ -623,7 +638,7 @@ details[open] .plus::after { transform: rotate(0); }
         <div class="list" data-reveal style="--i:1">
           <details name="faq"><summary>Wer kann in die Sprechstunde kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis ist eine Privatpraxis für privat Versicherte und Selbstzahler. Gesetzlich Versicherte können als Selbstzahler kommen.</p></details>
           <details name="faq"><summary>Wie bekomme ich einen Termin?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Schreiben Sie mir über das Anfrageformular. Ich melde mich persönlich bei Ihnen, und wir finden in Ruhe einen Termin.</p></details>
-          <details name="faq"><summary>Was kostet eine Zweitmeinung?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ). Ob Ihre Versicherung die Kosten übernimmt, klären Sie am besten vorher mit ihr.</p></details>
+          <details name="faq"><summary>Was kostet eine Zweitmeinung?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ).</p></details>
           <details name="faq"><summary>Was soll ich mitbringen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ihre aktuellen MRT- oder CT-Bilder auf CD oder als Link, Arztbriefe und Befunde, die schriftliche OP-Empfehlung, falls es eine gibt, und eine Liste Ihrer Medikamente.</p></details>
           <details name="faq"><summary>Ich bin schon operiert. Kann ich trotzdem kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, etwa wenn Beschwerden geblieben oder neu aufgetreten sind.</p></details>
           <details name="faq"><summary>Was unterscheidet Neurochirurgie von Orthopädie?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Beide behandeln die Wirbelsäule. Die Neurochirurgie kommt vom Nervensystem her: Sie ist dort gefragt, wo Nervenwurzeln oder Rückenmark bedrängt werden.</p></details>
@@ -699,7 +714,8 @@ details[open] .plus::after { transform: rotate(0); }
   const viaMail = () => {
     const f = form.elements;
     const note = f.nachricht.value.trim();
-    const body = `Guten Tag Herr Dr. Manicke,\n\nich bitte um ein Gespräch.\nMein Anliegen: ${f.anliegen.value}\nZeitraum: ${f.zeitraum.value}${note ? `\n\n${note}` : ''}\n\nSie erreichen mich unter ${f.email.value.trim()}.\n\nMit freundlichen Grüßen\n${f.name.value.trim()}`;
+    const tel = f.telefon.value.trim();
+    const body = `Guten Tag Herr Dr. Manicke,\n\nich bitte um ein Gespräch.\nMein Anliegen: ${f.anliegen.value}\nZeitraum: ${f.zeitraum.value}${note ? `\n\n${note}` : ''}\n\nSie erreichen mich unter ${f.email.value.trim()}${tel ? ` oder ${tel}` : ''}.\n\nMit freundlichen Grüßen\n${f.name.value.trim()}`;
     location.href = `mailto:christoph.manicke@gmx.de?subject=${encodeURIComponent('Anfrage: ' + f.anliegen.value)}&body=${encodeURIComponent(body)}`;
   };
   form.addEventListener('submit', async (e) => {
@@ -707,7 +723,7 @@ details[open] .plus::after { transform: rotate(0); }
     button.disabled = true;
     status.textContent = '';
     try {
-      const fields = ['name', 'email', 'anliegen', 'zeitraum', 'nachricht', 'einwilligung', 'website'];
+      const fields = ['name', 'email', 'telefon', 'anliegen', 'zeitraum', 'nachricht', 'einwilligung', 'website'];
       const body = Object.fromEntries(fields.map((k) => [k, form.elements[k].type === 'checkbox' ? (form.elements[k].checked ? 'ja' : '') : form.elements[k].value]));
       const res = await fetch('/api/anfrage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       if (res.ok) {
@@ -724,6 +740,66 @@ details[open] .plus::after { transform: rotate(0); }
       button.disabled = false;
     }
   });
+})();
+
+// The spine on the dark section: hovering (or tapping) a vertebra names it, the way reports and scans do.
+// The chosen vertebra turns light blue and its neighbours fade out to white on both sides; the name stands upright inside it.
+(() => {
+  const spine = document.querySelector('.stance-spine');
+  const tip = document.querySelector('.spine-tip');
+  if (!spine || !tip) return;
+  const parts = [...spine.querySelectorAll('.v')];
+  const names = parts.map((_, i) => {
+    if (i < 7) return { short: `HWK ${i + 1}`, long: `HWK ${i + 1} · ${['Atlas', 'Axis'][i] ?? 'Halswirbel'}` };
+    if (i < 19) return { short: `BWK ${i - 6}`, long: `BWK ${i - 6} · Brustwirbel` };
+    if (i < 24) return { short: `LWK ${i - 18}`, long: `LWK ${i - 18} · Lendenwirbel` };
+    const n = i < 26 ? 'Kreuzbein' : 'Steißbein';
+    return { short: n, long: n };
+  });
+  const FADE = [1, 0.62, 0.36, 0.18, 0.07];
+  // How much the vertebrae around the pointer swell, [across, along] by distance: the chosen one most, then a fading swell either side.
+  const SWELL = [null, [1.05, 1.15], [1.03, 1.085], [1.015, 1.045], [1.005, 1.015]];
+  const from = [255, 255, 255], to = [143, 207, 220];
+  const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
+  let hot = -1;
+  const paint = (center) => parts.forEach((part, i) => { part.style.fill = tint(center < 0 ? 0 : (FADE[Math.abs(i - center)] ?? 0)); part.style.fillOpacity = i === center ? 1 : ''; });
+  const hide = () => { hot = -1; paint(-1); parts.forEach((p) => { p.style.transform = ''; }); tip.classList.remove('is-on'); };
+  const show = (i) => {
+    if (hot === i) return;
+    hot = i;
+    paint(i);
+    // Geometry from the drawing itself (not from the screen), so a growing neighbour never shifts the measurement.
+    const vb = spine.viewBox.baseVal;
+    const k = spine.getBoundingClientRect().width / vb.width;
+    const bb = parts[i].getBBox();
+    const bw = bb.width * k, bh = bb.height * k;
+    tip.classList.remove('is-below');
+    tip.textContent = names[i].short;
+    // The chosen vertebra grows just enough to hold its name upright; the name never goes below 16px.
+    const sy = Math.min(1.4, Math.max(1.2, (tip.offsetHeight + 16) / bh));
+    const sx = Math.min(1.125, Math.max(1.1, 1 + (sy - 1) * 0.5));
+    const fits = tip.offsetHeight + 10 <= bh * sy && tip.offsetWidth + 6 <= bw * sx;
+    parts.forEach((p, j) => {
+      const d = Math.abs(j - i);
+      const swell = d === 0 ? (fits ? [sx, sy] : [1.05, 1.15]) : SWELL[d];
+      p.style.transform = swell ? `scale(${swell[0]}, ${swell[1]})` : '';
+    });
+    if (!fits) {
+      tip.classList.add('is-below');
+      tip.textContent = names[i].long;
+    }
+    const w = tip.offsetWidth, h = tip.offsetHeight;
+    const wrapW = spine.parentElement.getBoundingClientRect().width;
+    const cx = (bb.x + bb.width / 2) * k;
+    const x = fits ? cx - w / 2 : Math.min(Math.max(cx - w / 2, 0), wrapW - w);
+    const y = fits ? (bb.y - vb.y + bb.height / 2) * k - h / 2 : (bb.y - vb.y + bb.height) * k + 12;
+    tip.style.translate = `${x}px ${y}px`;
+    tip.classList.add('is-on');
+  };
+  parts.forEach((part, i) => part.addEventListener('pointerenter', () => show(i)));
+  spine.addEventListener('pointerleave', hide);
+  spine.addEventListener('pointerdown', (e) => { const i = parts.indexOf(e.target); if (i < 0) hide(); else show(i); });
+  document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target)) hide(); });
 })();
 </script>
 </body>
