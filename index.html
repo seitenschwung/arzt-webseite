@@ -249,9 +249,13 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .stance p.big span { color: #8fcfdc; }
 .stance .label { align-self: start; margin-top: 0.9em; }
 .stance-lead { margin-top: 22px; max-width: 38em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
-.stance-spine { grid-column: 1 / -1; display: block; width: 100%; height: auto; margin-top: clamp(24px, 4vw, 56px); }
-.stance-spine .v { fill: #fff; }
+.spine-wrap { grid-column: 1 / -1; position: relative; margin-top: clamp(24px, 4vw, 56px); }
+.stance-spine { display: block; width: 100%; height: auto; }
+.spine-tip { position: absolute; top: 0; left: 0; z-index: 2; padding: 8px 14px; background: #fff; color: var(--navy); font-size: 1rem; font-weight: 600; line-height: 1.2; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity 140ms; }
+.spine-tip.is-on { opacity: 1; }
+.stance-spine .v { fill: #fff; transition: fill 140ms; }
 .stance-spine .v:nth-last-child(-n+3) { fill-opacity: 0.55; }
+.stance-spine .v.is-hot { fill: #8fcfdc; fill-opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .js .stance-spine .v { opacity: 0; }
   .js .stance-spine.is-in .v { animation: vert 700ms var(--ease) both; animation-delay: calc(var(--n) * 40ms); }
@@ -491,7 +495,7 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="big" data-reveal style="--i:1">Unabhängige fachärztliche Beurteilung, <span>bevor Sie sich entscheiden.</span></p>
         <p class="stance-lead" data-reveal style="--i:2">Bei mir erhalten Sie eine Zweitmeinung zu Ihrer Wirbelsäulenerkrankung, außerhalb des offiziell geregelten, gesetzlichen Zweitmeinungsverfahrens. Ich nehme mir Zeit für ein ausführliches Gespräch und eine gründliche Untersuchung, sehe mir Ihre Bilder und Befunde an und berate Sie danach eingehend zu Ihrem Krankheitsbild. So lassen sich unklare Befunde besser einordnen, und Sie entscheiden mit mehr Sicherheit. Wenn ein Eingriff nach Ausschöpfung anderer Möglichkeiten ratsam oder nicht zu vermeiden ist, sage ich es Ihnen offen. Ist er nicht nötig, sage ich das ebenso.</p>
       </div>
-      <svg class="stance-spine" viewBox="0 80 1351 191" aria-hidden="true" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg>
+      <div class="spine-wrap"><svg class="stance-spine" viewBox="0 80 1351 191" aria-hidden="true" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg><div class="spine-tip" role="presentation"></div></div>
     </div>
   </section>
 
@@ -727,6 +731,39 @@ details[open] .plus::after { transform: rotate(0); }
       button.disabled = false;
     }
   });
+})();
+
+// The spine on the dark section: hovering (or tapping) a vertebra names it, the way reports and scans do.
+(() => {
+  const spine = document.querySelector('.stance-spine');
+  const tip = document.querySelector('.spine-tip');
+  if (!spine || !tip) return;
+  const parts = [...spine.querySelectorAll('.v')];
+  const names = parts.map((_, i) => {
+    if (i < 7) return `HWK ${i + 1} · ${['Atlas', 'Axis'][i] ?? 'Halswirbel'}`;
+    if (i < 19) return `BWK ${i - 6} · Brustwirbel`;
+    if (i < 24) return `LWK ${i - 18} · Lendenwirbel`;
+    return i < 26 ? 'Kreuzbein' : 'Steißbein';
+  });
+  let hot = null;
+  const hide = () => { hot?.classList.remove('is-hot'); hot = null; tip.classList.remove('is-on'); };
+  const show = (part) => {
+    if (hot === part) return;
+    hot?.classList.remove('is-hot');
+    hot = part;
+    part.classList.add('is-hot');
+    tip.textContent = names[parts.indexOf(part)];
+    const wrap = spine.parentElement.getBoundingClientRect();
+    const box = part.getBoundingClientRect();
+    const half = tip.offsetWidth / 2;
+    const x = Math.min(Math.max(box.left - wrap.left + box.width / 2, half), wrap.width - half);
+    tip.style.transform = `translate(${x - half}px, ${box.bottom - wrap.top + 10}px)`;
+    tip.classList.add('is-on');
+  };
+  parts.forEach((part) => part.addEventListener('pointerenter', () => show(part)));
+  spine.addEventListener('pointerleave', hide);
+  spine.addEventListener('pointerdown', (e) => { if (!e.target.classList?.contains('v')) hide(); else show(e.target); });
+  document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target)) hide(); });
 })();
 </script>
 </body>
