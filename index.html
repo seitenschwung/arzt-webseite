@@ -276,6 +276,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .how-title { font-size: 1rem; font-weight: 600; color: #8fc3d0; margin-bottom: 10px; }
 .how-list { display: grid; gap: 6px; }
 .how-list li { display: flex; align-items: center; gap: 14px; padding: 0; text-align: left; }
+.how-note { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.25); font-size: var(--step-small); line-height: 1.4; color: #c7d2e6; }
 .how-list li::before { content: ""; flex: none; width: 20px; height: 8px; border-radius: 4px; background: #8fc3d0; }
 .how-list b { font-size: clamp(1.125rem, 1rem + 0.4vw, 1.3rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.02em; line-height: 1.1; color: #fff; }
 .topics { grid-column: 2; grid-row: 1 / 3; align-self: start; margin: 0; display: grid; gap: clamp(6px, 0.8vw, 10px); }
@@ -305,7 +306,8 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .about .label { color: #8fcfdc; }
 .about-body h2 { font-size: clamp(1.9rem, 0.6rem + 4.3svh, 3.3rem); margin-top: 12px; max-width: 12em; color: #fff; }
 .about-body .text { margin-top: 16px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
-.path { margin-top: clamp(14px, 2.1svh, 30px); border-left: 2px solid rgba(255, 255, 255, 0.55); }
+.path { position: relative; margin-top: clamp(14px, 2.1svh, 30px); border-left: 2px solid transparent; }
+.path::before { content: ""; position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.55); transform-origin: top; }
 .path li { position: relative; padding: 0 0 clamp(5px, 1.15svh, 17px) 28px; }
 .path li:last-child { padding-bottom: 0; }
 .path li::before { content: ""; position: absolute; left: -7px; top: 0.5em; width: 12px; height: 12px; background: var(--navy); border: 2px solid #8fcfdc; }
@@ -319,10 +321,10 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .horizon { position: relative; height: clamp(380px, 56vw, 620px); background: #cfd8e6; clip-path: inset(0); color: var(--navy); }
 .horizon > img { position: fixed; object-position: 50% 36%; }
 .horizon::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(222, 232, 244, 0.94) 0, rgba(222, 232, 244, 0.8) 28%, rgba(222, 232, 244, 0) 58%); }
-@media (max-width: 760px) { .horizon blockquote { font-size: 1.3rem; max-width: 9em; } }
+@media (max-width: 760px) { .horizon blockquote { font-size: 1.1rem; max-width: 15em; } }
 @media (prefers-reduced-motion: reduce), (max-width: 760px) { .horizon { overflow: hidden; clip-path: none; } .horizon > img { position: absolute; } }
 .horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; padding-top: clamp(28px, 6vw, 72px); }
-.horizon blockquote { margin: 0; max-width: min(12em, 42vw); font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
+.horizon blockquote { margin: 0; max-width: min(19em, 54vw); font-size: clamp(1.25rem, 0.9rem + 1.5vw, 2.4rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
@@ -408,6 +410,26 @@ details[open] .plus::after { transform: rotate(0); }
   .js .hero-photo > img { animation: settle 2200ms var(--ease) both; }
   .js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); transition-delay: calc(var(--i, 0) * 90ms); }
   .js [data-reveal].is-in { opacity: 1; transform: none; }
+  /* Lebensweg: die Linie wächst nach unten, die Stationen folgen nacheinander. */
+  .js .path::before { transform: scaleY(0); transition: transform 1500ms var(--ease) 200ms; }
+  .js .path.is-in::before { transform: none; }
+  .js .path li { opacity: 0; transform: translateX(-14px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); transition-delay: calc(var(--k, 0) * 230ms + 350ms); }
+  .js .path li::before { transform: scale(0); transition: transform 450ms cubic-bezier(0.3, 1.6, 0.5, 1); transition-delay: calc(var(--k, 0) * 230ms + 350ms); }
+  .js .path.is-in li { opacity: 1; transform: none; }
+  .js .path.is-in li::before { transform: none; }
+  .path li:nth-child(2) { --k: 1; } .path li:nth-child(3) { --k: 2; } .path li:nth-child(4) { --k: 3; } .path li:nth-child(5) { --k: 4; } .path li:nth-child(6) { --k: 5; }
+  /* Zitat: Wort für Wort. */
+  .js .horizon blockquote .w { display: inline-block; opacity: 0; transform: translateY(0.5em); filter: blur(6px); transition: opacity 700ms var(--ease), transform 700ms var(--ease), filter 700ms var(--ease); transition-delay: calc(var(--k) * 55ms + 150ms); }
+  .js .horizon blockquote.is-in .w { opacity: 1; transform: none; filter: none; }
+  /* Reiter öffnen weich (Chromium; anderswo springen sie wie bisher). */
+  :root { interpolate-size: allow-keywords; }
+  .topics details::details-content { block-size: 0; overflow: clip; transition: block-size 450ms var(--ease), content-visibility 450ms allow-discrete; }
+  .topics details[open]::details-content { block-size: auto; }
+  /* Lesefortschritt als dünne Linie ganz oben. */
+  @supports (animation-timeline: scroll()) {
+    body::before { content: ""; position: fixed; z-index: 100; inset: 0 0 auto 0; height: 3px; background: #8fc3d0; transform-origin: left; transform: scaleX(0); animation: progress linear both; animation-timeline: scroll(root); pointer-events: none; }
+    @keyframes progress { to { transform: scaleX(1); } }
+  }
   @keyframes rise { to { opacity: 1; transform: none; } }
   @keyframes settle { from { transform: scale(1.08); } to { transform: scale(1); } }
 }
@@ -516,18 +538,19 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="advice-sub" data-reveal style="--i:2">Das ganze neurochirurgische Fachgebiet, Schwerpunkt Wirbelsäule.</p>
       </header>
       <ul class="topics">
-        <li data-reveal><details name="topics"><summary class="topic"><b>Zweitmeinung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt.</p></details></li>
-        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Beschwerden nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Die Beschwerden sind nach einem Eingriff geblieben oder wiedergekommen? Gemeinsam ordnen wir ein, woran es liegen kann und was als Nächstes sinnvoll ist.</p></details></li>
+        <li data-reveal><details name="topics"><summary class="topic"><b>Zweitmeinung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt. Zu bereits geplanten Therapien gebe ich Ihnen außerhalb des gesetzlichen Zweitmeinungsverfahrens eine persönliche Einschätzung.</p></details></li>
+        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Beschwerden nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Die Beschwerden sind nach einem Eingriff geblieben oder wiedergekommen? Gemeinsam ordnen wir ein, woran es liegen kann und was als Nächstes sinnvoll ist. Beratung ist auch nach bereits durchgeführten Eingriffen möglich.</p></details></li>
         <li data-reveal style="--i:2"><details name="topics"><summary class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Schmerzen, Taubheit oder Kribbeln, die Sie schon länger begleiten? Ich nehme mir Zeit, die Ursache einzuordnen, und berate Sie zu den nächsten Schritten.</p></details></li>
         <li data-reveal style="--i:3"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Frage</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
       </ul>
       <div class="how" data-reveal>
         <p class="how-title">So berate ich</p>
         <ul class="how-list">
-          <li><b>Ausführlich</b></li>
-          <li><b>Unabhängig</b></li>
-          <li><b>Menschlich</b></li>
+          <li><b>Krankengeschichte</b></li>
+          <li><b>Untersuchung, ggf. MRT</b></li>
+          <li><b>Ausführliche Beratung</b></li>
         </ul>
+        <p class="how-note">Dank langjähriger Erfahrung in konservativer und operativer Behandlung erhalten Sie eine unabhängige Empfehlung, ob Sie von einer Operation profitieren könnten oder ein konservatives Vorgehen erfolgversprechender ist.</p>
       </div>
     </div>
   </section>
@@ -545,12 +568,12 @@ details[open] .plus::after { transform: rotate(0); }
         <h2 id="about-title" data-reveal style="--i:1">Fast wäre alles anders gekommen.</h2>
         <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</p>
         <ol class="path" aria-label="Mein Weg" data-reveal style="--i:3">
-          <li><b>Studium der Humanmedizin</b><span>Statt nach Italien ging es in den Hörsaal.</span></li>
-          <li><b>Facharzt für Neurochirurgie</b><span>Schwerpunkt Wirbelsäule</span></li>
-          <li><b>Oberarzt</b><span>St. Elisabeth-Krankenhaus Kiel</span></li>
-          <li><b>Belegarzt</b><span>St. Elisabeth-Krankenhaus und MVZ Lubinus, Kiel</span></li>
-          <li><b>Gemeinschaftspraxis</b><span>Neurozentrum Kiel</span></li>
-          <li><b>Heute: persönliche Beratung aus Leidenschaft</b><span>Ich berate, weil ich es gern tue und mir Zeit für Sie nehmen kann.</span></li>
+          <li><b>Studium der Humanmedizin</b><span>Bochum und Berlin</span></li>
+          <li><b>Seit 1987: Neurochirurgie</b><span>Facharztausbildung am Krankenhaus der Barmherzigen Brüder, Trier</span></li>
+          <li><b>Oberarzt</b><span>Klinikum Ludwigsburg</span></li>
+          <li><b>Eigene Praxis in Kiel</b><span>Belegärztlich operativ tätig im St. Elisabeth-Krankenhaus</span></li>
+          <li><b>Praxis an die Lubinusstiftung abgegeben</b><span>Operative Eingriffe bis zum Frühjahr 2026</span></li>
+          <li><b>Juli 2026: neue Praxisräume</b><span>Niederlassung in der Burgstraße 2, Kiel</span></li>
         </ol>
       </div>
     </div>
@@ -559,7 +582,7 @@ details[open] .plus::after { transform: rotate(0); }
   <section class="horizon" aria-label="Leuchtturm im Abendlicht">
     <img src="assets/leuchtturm-sintum.webp" width="2400" height="3000" alt="" loading="lazy">
     <div class="wrap">
-      <blockquote data-reveal><!-- TODO Manicke: Originalsatz zur Selbstständigkeit einsetzen -->„Sie entscheiden. Ich gebe Ihnen die Orientierung dafür.“</blockquote>
+      <blockquote data-reveal>„Der Schlüssel zur Genesung liegt nicht immer in der Wahl der neuesten Methoden, sondern im kritischen Umgang mit deren Einsatz.“</blockquote>
     </div>
   </section>
 
@@ -676,6 +699,13 @@ details[open] .plus::after { transform: rotate(0); }
 (() => {
   const items = document.querySelectorAll('[data-reveal]');
   if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { items.forEach((el) => el.classList.add('is-in')); return; }
+  // Zitat in Wörter teilen (Text bleibt zusammenhängend lesbar), damit es Wort für Wort einblenden kann.
+  const quote = document.querySelector('.horizon blockquote');
+  if (quote) {
+    const words = quote.textContent.trim().split(/\s+/);
+    quote.setAttribute('aria-label', words.join(' '));
+    quote.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true" style="--k:${i}">${w}</span>`).join(' ');
+  }
   const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   items.forEach((el) => io.observe(el));
 })();
