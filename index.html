@@ -319,17 +319,16 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 
 /* ---------- the Förde band ---------- */
 
-.horizon { position: relative; height: clamp(380px, 56vw, 620px); background: #cfd8e6; clip-path: inset(0); color: var(--navy); }
-.horizon > img { position: fixed; object-position: 50% 36%; }
-.horizon::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(222, 232, 244, 0.94) 0, rgba(222, 232, 244, 0.8) 28%, rgba(222, 232, 244, 0) 58%); }
+.horizon { position: relative; height: clamp(380px, 56vw, 620px); background: #1f4f8f; clip-path: inset(0); color: #fff; }
+.horizon > img { position: fixed; object-position: 50% 22%; }
+.horizon::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(10, 30, 70, 0.35) 0, rgba(10, 30, 70, 0) 55%); }
 @media (max-width: 760px) { .horizon blockquote { font-size: 1.1rem; max-width: 15em; } }
 @media (prefers-reduced-motion: reduce), (max-width: 760px) { .horizon { overflow: hidden; clip-path: none; } .horizon > img { position: absolute; } }
-.horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; padding-top: clamp(28px, 6vw, 72px); }
+.horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; text-align: right; padding-top: clamp(28px, 6vw, 72px); }
 .horizon blockquote { margin: 0; max-width: min(19em, 54vw); font-size: clamp(1.25rem, 0.9rem + 1.5vw, 2.4rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
+@media (max-width: 760px) { .horizon .wrap { justify-content: flex-end; padding-bottom: 28px; } .horizon > img { object-position: 50% 20%; } .horizon::before { background: linear-gradient(0deg, rgba(10, 30, 70, 0.8) 0, rgba(10, 30, 70, 0.55) 45%, rgba(10, 30, 70, 0) 80%); } }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
-.dusk { position: relative; height: clamp(260px, 38vw, 480px); overflow: hidden; background: #1f4f8f; }
-.dusk > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; }
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
 .mapsec .map { position: absolute; inset: 0; transform: scale(var(--z)); transform-origin: 50% 52%; will-change: transform; }
 .mapsec .map img { width: 100%; height: 100%; object-fit: cover; }
@@ -581,8 +580,8 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="horizon" aria-label="Leuchtturm im Abendlicht">
-    <img src="assets/leuchtturm-sintum.webp" width="2400" height="3000" alt="" loading="lazy">
+  <section class="horizon" aria-label="Vollmond über der Kieler Förde">
+    <img src="assets/kiel-mond-1200.webp" srcset="assets/kiel-mond-700.webp 700w, assets/kiel-mond-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" loading="lazy">
     <div class="wrap">
       <blockquote data-reveal>„Der Schlüssel zur Genesung liegt nicht immer in der Wahl der neuesten Methoden, sondern im kritischen Umgang mit deren Einsatz.“</blockquote>
     </div>
@@ -672,9 +671,6 @@ details[open] .plus::after { transform: rotate(0); }
       </div>
     </div>
   </section>
-  <section class="dusk" aria-label="Die Förde in der Abenddämmerung">
-    <img src="assets/kiel-mond-1200.webp" srcset="assets/kiel-mond-700.webp 700w, assets/kiel-mond-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="Vollmond über der Kieler Förde, davor ein beleuchteter Anleger" loading="lazy">
-  </section>
 </main>
 
 <footer class="foot on-navy">
@@ -695,7 +691,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben ↑</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bilder: Leuchtturm, Joseph Sintum, <a href="https://unsplash.com/photos/vrqypTgxRiw">Unsplash</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
+    <p class="credits" id="bildnachweis">Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
   </div>
 </footer>
 
