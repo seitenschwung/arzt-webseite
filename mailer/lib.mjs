@@ -13,10 +13,10 @@ const PHONE = /^(?=(?:\D*\d){6,})\+?[\d\s\-/().]+$/;
 
 // The choices offered by the form; anything else is refused.
 export const TOPICS = [
-  'Zweitmeinung vor einer Operation',
-  'Beschwerden nach einer Operation',
-  'Beratung bei Rückenbeschwerden',
+  'Nacken-, Rücken-, Arm- und Beinbeschwerden',
   'Andere neurochirurgische Frage',
+  'Zweitmeinung vor einer Operation',
+  'Beratung nach einer Operation',
 ];
 export const TIMES = ['So bald wie möglich', 'In den nächsten zwei Wochen', 'Im nächsten Monat', 'Ich bin flexibel'];
 
