@@ -327,6 +327,8 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .horizon blockquote { margin: 0; max-width: min(19em, 54vw); font-size: clamp(1.25rem, 0.9rem + 1.5vw, 2.4rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
+.dusk { position: relative; height: clamp(260px, 38vw, 480px); overflow: hidden; background: #1f4f8f; }
+.dusk > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; }
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
 .mapsec .map { position: absolute; inset: 0; transform: scale(var(--z)); transform-origin: 50% 52%; will-change: transform; }
 .mapsec .map img { width: 100%; height: 100%; object-fit: cover; }
@@ -512,7 +514,7 @@ details[open] .plus::after { transform: rotate(0); }
       </div>
     </div>
     <figure class="hero-photo">
-      <img src="assets/kiel-hafen-1400.webp" srcset="assets/kiel-hafen-1400.webp 1400w, assets/kiel-hafen.webp 2800w" sizes="100vw" width="2800" height="1120" alt="Der Kieler Hafen an der Förde mit Fähren am Anleger und dem Fernsehturm im Hintergrund" fetchpriority="high">
+      <img src="assets/kiel-foerde-abend-1600.webp" srcset="assets/kiel-foerde-abend-900.webp 900w, assets/kiel-foerde-abend-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Die Kieler Förde im Abendlicht mit Fischkutter am Anleger, einem Ruderboot und den Werftkränen im Hintergrund" fetchpriority="high">
     </figure>
   </section>
 
@@ -669,6 +671,9 @@ details[open] .plus::after { transform: rotate(0); }
       </div>
     </div>
   </section>
+  <section class="dusk" aria-label="Die Förde in der Abenddämmerung">
+    <img src="assets/kiel-mond-1200.webp" srcset="assets/kiel-mond-700.webp 700w, assets/kiel-mond-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="Vollmond über der Kieler Förde, davor ein beleuchteter Anleger" loading="lazy">
+  </section>
 </main>
 
 <footer class="foot on-navy">
@@ -689,7 +694,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben ↑</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm, Joseph Sintum, <a href="https://unsplash.com/photos/vrqypTgxRiw">Unsplash</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
+    <p class="credits" id="bildnachweis">Bilder: Leuchtturm, Joseph Sintum, <a href="https://unsplash.com/photos/vrqypTgxRiw">Unsplash</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
   </div>
 </footer>
 
