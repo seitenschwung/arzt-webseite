@@ -52,11 +52,11 @@
    "availableService": [
     {
      "@type": "MedicalProcedure",
-     "name": "Zweitmeinung vor einer Wirbelsäulenoperation"
+     "name": "Beratung vor einer Wirbelsäulenoperation"
     },
     {
      "@type": "MedicalTherapy",
-     "name": "Beratung bei Beschwerden nach einer Operation"
+     "name": "Beratung nach einer Operation"
     },
     {
      "@type": "MedicalTherapy",
@@ -95,7 +95,7 @@
     },
     {
      "@type": "Question",
-     "name": "Was kostet eine Zweitmeinung?",
+     "name": "Was kostet eine Beratung?",
      "acceptedAnswer": {
       "@type": "Answer",
       "text": "Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ)."
@@ -114,15 +114,7 @@
      "name": "Ich bin schon operiert. Kann ich trotzdem kommen?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, etwa wenn Beschwerden geblieben oder neu aufgetreten sind."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Was unterscheidet Neurochirurgie von Orthopädie?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Beide behandeln die Wirbelsäule. Die Neurochirurgie kommt vom Nervensystem her: Sie ist dort gefragt, wo Nervenwurzeln oder Rückenmark bedrängt werden."
+      "text": "Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, zum Beispiel zum weiteren Vorgehen. Bitte bringen Sie Ihre Befunde mit."
      }
     },
     {
@@ -224,13 +216,14 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .hero { position: relative; flex: 1 1 auto; display: flex; align-items: center; }
 .hero-copy { display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; width: min(56%, 820px); gap: clamp(12px, 2.4vh, 30px); padding: clamp(20px, 4vh, 72px) clamp(24px, 4vw, 64px) clamp(20px, 4vh, 64px) max(var(--margin), calc((100vw - var(--max)) / 2 + var(--margin))); }
 .hero h1 .ln { display: block; }
+.hero h1 .ln { white-space: nowrap; }
 .hero h1 { font-size: clamp(2.2rem, min(1rem + 3.5vw, 9vh), 4.5rem); font-weight: 680; letter-spacing: -0.04em; line-height: 0.98; }
 .hero h1 em { font-style: normal; color: var(--sea-2); }
 .hero .label::before { display: none; }
 .hero .lede { max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
 .hero-photo { position: absolute; inset: 0; margin: 0; z-index: 0; background: var(--navy); overflow: hidden; }
-.hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247, 247, 245, 0.96) 0%, rgba(247, 247, 245, 0.93) 44%, rgba(247, 247, 245, 0.6) 56%, rgba(247, 247, 245, 0) 70%); }
+.hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247, 247, 245, 0.88) 0%, rgba(247, 247, 245, 0.8) 44%, rgba(247, 247, 245, 0.4) 56%, rgba(247, 247, 245, 0) 70%); }
 .hero-photo > img, .horizon > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
 .byline { display: flex; align-items: center; gap: 18px; }
 .byline img { width: clamp(64px, 10vh, 88px); height: clamp(64px, 10vh, 88px); border-radius: 50%; object-fit: cover; object-position: 50% 22%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--sea); }
@@ -247,9 +240,27 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .stance .wrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 28px var(--margin); }
 .stance p.big { font-size: clamp(1.75rem, 1.1rem + 2.6vw, 3.5rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.03em; line-height: 1.12; max-width: 24em; text-wrap: balance; }
 .stance p.big span { color: #8fcfdc; }
+.stance-body { grid-column: 1 / -1; }
 .stance .label { align-self: start; margin-top: 0.9em; }
 .stance-lead { margin-top: 22px; max-width: 38em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
 .spine-wrap { grid-column: 1 / -1; position: relative; margin-top: clamp(24px, 4vw, 56px); }
+.spine-hint { grid-column: 1 / -1; margin-top: -8px; font-size: var(--step-small); color: #c7d2e6; display: flex; align-items: center; gap: 10px; }
+.hint-icon { flex: none; width: 22px; height: 22px; color: #8fcfdc; }
+.stance-spine .v { cursor: pointer; }
+.stance-spine .v:focus { outline: none; }
+.stance-spine .v:focus-visible { stroke: #8fcfdc; stroke-width: 4; }
+.spine-fact { grid-column: 1 / -1; display: grid; grid-template-rows: 0fr; transition: grid-template-rows 420ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.spine-fact.is-open { grid-template-rows: 1fr; }
+.spine-fact-in { overflow: hidden; min-height: 0; }
+.spine-fact-card { position: relative; max-width: 46em; margin-top: 14px; padding: 20px 52px 22px 24px; border-left: 3px solid #8fcfdc; border-radius: 0 12px 12px 0; background: rgb(255 255 255 / 0.09); }
+.sf-kicker { color: #8fcfdc; font-weight: 700; letter-spacing: 0.04em; font-size: var(--step-small); }
+.sf-text { margin-top: 6px; font-size: var(--step-lead); line-height: 1.4; color: #fff; text-wrap: pretty; }
+.sf-close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.sf-close:hover { background: rgb(255 255 255 / 0.14); }
+.sf-close:focus-visible { outline: 2px solid #8fcfdc; }
+@media (prefers-reduced-motion: reduce) { .spine-fact { transition: none; } }
+.hint-touch { display: none; }
+@media (hover: none) { .hint-mouse { display: none; } .hint-touch { display: inline; } }
 .stance-spine { display: block; width: 100%; height: auto; overflow: visible; }
 .spine-tip { position: absolute; top: 0; left: 0; z-index: 2; color: var(--navy); font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; line-height: 1; white-space: nowrap; pointer-events: none; writing-mode: vertical-rl; rotate: 180deg; opacity: 0; transition: opacity 220ms ease; }
 .spine-tip.is-below { writing-mode: horizontal-tb; rotate: none; color: #fff; font-weight: 600; letter-spacing: 0; }
@@ -267,19 +278,22 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .sec .wrap { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 28px var(--margin); }
 .sec .side { align-self: start; position: sticky; top: calc(var(--bar) + 28px); }
 .advice { padding-block: clamp(56px, 7vw, 104px); border-bottom: 1px solid var(--rule); }
-.advice-head { display: grid; gap: 10px; }
+.advice-head { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 10px var(--margin); align-items: end; }
+.advice-head .label { grid-column: 1 / -1; }
+.advice-head .advice-sub { grid-column: 2; grid-row: 2; margin: 0 0 0.4em; max-width: 24em; }
 .advice-head h2 { max-width: none; }
 .advice-sub { margin-top: 4px; font-size: var(--step-lead); line-height: 1.3; color: #2b3345; }
-.advice .wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px var(--margin); align-items: start; }
-.advice-head { grid-column: 1; grid-row: 1; }
-.how { grid-column: 1; grid-row: 2; display: block; padding: clamp(18px, 2vw, 26px) clamp(20px, 2.2vw, 28px); background: var(--navy); color: #fff; margin: 0; }
-.how-title { font-size: 1rem; font-weight: 600; color: #8fc3d0; margin-bottom: 10px; }
-.how-list { display: grid; gap: 6px; }
+.advice .wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(28px, 3.5vw, 48px) var(--margin); align-items: stretch; }
+.advice-head { grid-column: 1 / -1; grid-row: 1; }
+.how { grid-column: 2; grid-row: 2; display: flex; flex-direction: column; padding: clamp(24px, 2.6vw, 36px) clamp(22px, 2.6vw, 36px); background: var(--navy); color: #fff; margin: 0; }
+.how-title { font-size: 1.05rem; font-weight: 600; color: #8fc3d0; margin-bottom: 18px; }
+.how-list { display: grid; gap: clamp(14px, 1.8vw, 22px); counter-reset: step; margin: 6px 0 clamp(24px, 3vw, 40px); }
 .how-list li { display: flex; align-items: center; gap: 14px; padding: 0; text-align: left; }
-.how-note { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.25); font-size: var(--step-small); line-height: 1.4; color: #c7d2e6; }
-.how-list li::before { content: ""; flex: none; width: 20px; height: 8px; border-radius: 4px; background: #8fc3d0; }
-.how-list b { font-size: clamp(1.125rem, 1rem + 0.4vw, 1.3rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.02em; line-height: 1.1; color: #fff; }
-.topics { grid-column: 2; grid-row: 1 / 3; align-self: start; margin: 0; display: grid; gap: clamp(6px, 0.8vw, 10px); }
+.how-note { margin-top: auto; padding-top: 18px; border-top-width: 1px; border-top: 1px solid rgba(255, 255, 255, 0.25); font-size: var(--step-small); line-height: 1.4; color: #c7d2e6; }
+.how-list li { counter-increment: step; }
+.how-list li::before { content: counter(step); flex: none; display: grid; place-items: center; width: 34px; height: 34px; border: 2px solid #8fc3d0; border-radius: 50%; font-size: 0.95rem; font-weight: 600; color: #8fc3d0; }
+.how-list b { font-size: clamp(1.25rem, 1rem + 0.7vw, 1.6rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.02em; line-height: 1.1; color: #fff; }
+.topics { grid-column: 1; grid-row: 2; align-self: start; margin: 0; display: grid; gap: clamp(6px, 0.8vw, 10px); }
 .topics li { background: #eceff4; color: var(--navy); }
 .topics li { display: flex; }
 .topic { flex: 1; display: flex; align-items: center; gap: clamp(16px, 2vw, 26px); min-height: clamp(64px, 6vw, 84px); padding: clamp(14px, 1.6vw, 22px) clamp(20px, 2.2vw, 30px); }
@@ -292,10 +306,10 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .topics .topic { justify-content: space-between; }
 .topics .topic::before { display: none; }
 .topic-text { padding: 0 clamp(20px, 2.2vw, 30px) clamp(16px, 1.8vw, 24px); max-width: 36em; font-size: var(--step-lead); line-height: 1.4; color: #2b3345; }
-.topic b { font-size: clamp(1.25rem, 1rem + 0.8vw, 1.65rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
+.topic b { font-size: clamp(1.2rem, 1rem + 0.6vw, 1.5rem); font-weight: 560; font-stretch: 108%; letter-spacing: -0.025em; line-height: 1.08; text-wrap: balance; }
 
 /* ---------- about: the whole section in navy, round portrait on the left, text and timeline on the right ---------- */
-.about { padding-block: clamp(28px, 3.9svh, 64px); background: var(--navy); color: #fff; }
+.about { padding-block: clamp(56px, 9svh, 120px); background: var(--navy); color: #fff; }
 .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .about-visual { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .portrait { position: relative; margin: 0; width: min(400px, 44svh, 100%); }
@@ -305,10 +319,10 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .who b { display: block; margin-bottom: 4px; color: #fff; font-size: var(--step-lead); font-weight: 640; font-stretch: var(--wide); letter-spacing: -0.02em; line-height: 1.15; }
 .about .label { color: #8fcfdc; }
 .about-body h2 { font-size: clamp(1.9rem, 0.6rem + 4.3svh, 3.3rem); margin-top: 12px; max-width: 12em; color: #fff; }
-.about-body .text { margin-top: 16px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
-.path { position: relative; margin-top: clamp(14px, 2.1svh, 30px); border-left: 2px solid transparent; }
+.about-body .text { margin-top: 24px; max-width: 34em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
+.path { position: relative; margin-top: clamp(22px, 3.6svh, 48px); border-left: 2px solid transparent; }
 .path::before { content: ""; position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.55); transform-origin: top; }
-.path li { position: relative; padding: 0 0 clamp(5px, 1.15svh, 17px) 28px; }
+.path li { position: relative; padding: 0 0 clamp(10px, 2.2svh, 30px) 28px; }
 .path li:last-child { padding-bottom: 0; }
 .path li::before { content: ""; position: absolute; left: -7px; top: 0.5em; width: 12px; height: 12px; background: var(--navy); border: 2px solid #8fcfdc; }
 .path li:last-child::before { background: #8fcfdc; }
@@ -318,13 +332,14 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 
 /* ---------- the Förde band ---------- */
 
-.horizon { position: relative; height: clamp(380px, 56vw, 620px); background: #cfd8e6; clip-path: inset(0); color: var(--navy); }
-.horizon > img { position: fixed; object-position: 50% 36%; }
-.horizon::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(222, 232, 244, 0.94) 0, rgba(222, 232, 244, 0.8) 28%, rgba(222, 232, 244, 0) 58%); }
+.horizon { position: relative; height: clamp(380px, 56vw, 620px); background: #1f4f8f; clip-path: inset(0); color: #fff; }
+.horizon > img { position: fixed; object-position: 50% 22%; }
+.horizon::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(180deg, rgba(10, 30, 70, 0.35) 0, rgba(10, 30, 70, 0) 55%); }
 @media (max-width: 760px) { .horizon blockquote { font-size: 1.1rem; max-width: 15em; } }
 @media (prefers-reduced-motion: reduce), (max-width: 760px) { .horizon { overflow: hidden; clip-path: none; } .horizon > img { position: absolute; } }
-.horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; padding-top: clamp(28px, 6vw, 72px); }
+.horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; text-align: right; padding-top: clamp(28px, 6vw, 72px); }
 .horizon blockquote { margin: 0; max-width: min(19em, 54vw); font-size: clamp(1.25rem, 0.9rem + 1.5vw, 2.4rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
+@media (max-width: 760px) { .horizon .wrap { justify-content: flex-end; padding-bottom: 28px; } .horizon > img { object-position: 50% 20%; } .horizon::before { background: linear-gradient(0deg, rgba(10, 30, 70, 0.8) 0, rgba(10, 30, 70, 0.55) 45%, rgba(10, 30, 70, 0) 80%); } }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
@@ -472,7 +487,7 @@ details[open] .plus::after { transform: rotate(0); }
   .answer { padding-right: 0; }
     .foot-cols { grid-template-columns: minmax(0, 1fr); }
   }
-@media (max-width: 960px) { .advice .wrap { grid-template-columns: minmax(0, 1fr); } .advice-head, .topics, .how { grid-column: 1; grid-row: auto; } .topics { order: 2; margin-top: 8px; grid-template-rows: none; } .how { order: 3; margin-top: 12px; } }
+@media (max-width: 960px) { .advice .wrap { grid-template-columns: minmax(0, 1fr); } .advice-head, .topics, .how { grid-column: 1; grid-row: auto; } .topics { order: 2; margin-top: 8px; grid-template-rows: none; } .how { order: 3; margin-top: 12px; } .advice-head { grid-template-columns: minmax(0, 1fr); } .advice-head .advice-sub { grid-column: 1; grid-row: auto; } }
 @media (max-width: 520px) { .topic { gap: 16px; } .topic::before { width: 30px; height: 12px; } }
 </style>
 </head>
@@ -501,8 +516,8 @@ details[open] .plus::after { transform: rotate(0); }
   <section class="hero" aria-labelledby="title">
     <div class="hero-copy">
       <p class="label" data-rise style="--i:0">Neurochirurgie in Kiel · Schwerpunkt Wirbelsäule</p>
-      <h1 id="title" data-rise style="--i:1"><span class="ln">Eine Operation</span> <span class="ln">erst, <em>wenn sie</em></span> <span class="ln"><em>unvermeidbar ist.</em></span></h1>
-      <p class="lede" data-rise style="--i:2">Gründliche Diagnostik und ehrliche Beratung, mit Zeit für Ihre Fragen.</p>
+      <h1 id="title" data-rise style="--i:1"><span class="ln">Neurochirurgische</span> <span class="ln"><em>Beratung</em></span></h1>
+      <p class="lede" data-rise style="--i:2">Mit Zeit für Untersuchung, Gespräch und Ihre Fragen. Unabhängig und ausführlich.</p>
       <div class="byline" data-rise style="--i:3">
         <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke">
         <p><b>Dr. med. Christoph Manicke</b>Facharzt für Neurochirurgie</p>
@@ -512,21 +527,22 @@ details[open] .plus::after { transform: rotate(0); }
       </div>
     </div>
     <figure class="hero-photo">
-      <img src="assets/kiel-hafen-1400.webp" srcset="assets/kiel-hafen-1400.webp 1400w, assets/kiel-hafen.webp 2800w" sizes="100vw" width="2800" height="1120" alt="Der Kieler Hafen an der Förde mit Fähren am Anleger und dem Fernsehturm im Hintergrund" fetchpriority="high">
+      <img src="assets/kiel-foerde-abend-1600.webp" srcset="assets/kiel-foerde-abend-900.webp 900w, assets/kiel-foerde-abend-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="Die Kieler Förde im Abendlicht mit Fischkutter am Anleger, einem Ruderboot und den Werftkränen im Hintergrund" fetchpriority="high">
     </figure>
   </section>
 
-  <p class="info"><span>Beratung für Privat Versicherte und Selbstzahler</span><span>Burgstraße&nbsp;2, 4.&nbsp;Stock, mit Aufzug</span><span>zwischen Altem Markt und Schloss</span></p>
+  <p class="info"><span>Beratung für Privat Versicherte und Selbstzahler</span><span>Burgstraße&nbsp;2, 4.&nbsp;Stock, mit Aufzug</span><span>zwischen Altem Markt und Kieler Schloss</span></p>
   </div>
 
   <section class="stance on-navy" aria-label="Haltung">
     <div class="wrap">
-      <p class="label" data-reveal>Zweitmeinung</p>
       <div class="stance-body">
-        <p class="big" data-reveal style="--i:1">Unabhängige fachärztliche Beurteilung, <span>bevor Sie sich entscheiden.</span></p>
-        <p class="stance-lead" data-reveal style="--i:2">Bei mir erhalten Sie eine Zweitmeinung zu Ihrer Wirbelsäulenerkrankung, außerhalb des offiziell geregelten, gesetzlichen Zweitmeinungsverfahrens. Ich nehme mir Zeit für ein ausführliches Gespräch und eine gründliche Untersuchung, sehe mir Ihre Bilder und Befunde an und berate Sie danach eingehend zu Ihrem Krankheitsbild. So lassen sich unklare Befunde besser einordnen, und Sie entscheiden mit mehr Sicherheit. Wenn ein Eingriff nach Ausschöpfung anderer Möglichkeiten ratsam oder nicht zu vermeiden ist, sage ich es Ihnen offen. Ist er nicht nötig, sage ich das ebenso.</p>
+        <p class="big" data-reveal style="--i:1">Unabhängige fachärztliche Beratung, <span>bevor Sie sich entscheiden.</span></p>
+        <p class="stance-lead" data-reveal style="--i:2">Ich nehme mir Zeit für ein ausführliches Gespräch und eine gründliche Untersuchung, sehe mir Ihre Bilder und Befunde an und berate Sie danach eingehend zu Ihrem Krankheitsbild. So lassen sich unklare Befunde besser einordnen, und Sie entscheiden mit mehr Sicherheit. Wenn ein Eingriff nach Ausschöpfung anderer Möglichkeiten ratsam oder nicht zu vermeiden ist, sage ich es Ihnen offen. Ist er nicht nötig, sage ich das ebenso. Ist bereits eine Therapie geplant, erhalten Sie von mir eine unabhängige zweite Meinung außerhalb des gesetzlich geregelten Zweitmeinungsverfahrens.</p>
       </div>
-      <div class="spine-wrap"><svg class="stance-spine" viewBox="0 80 1351 191" aria-hidden="true" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg><div class="spine-tip" role="presentation"></div></div>
+      <div class="spine-wrap"><svg class="stance-spine" viewBox="0 80 1351 191" role="group" aria-label="Wirbelsäule: Wirbel anklicken für Wissenswertes" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg><div class="spine-tip" role="presentation"></div></div>
+      <p class="spine-hint"><svg class="hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v14"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span class="hint-mouse">Klicken Sie auf einen Wirbel und entdecken Sie Wissenswertes.</span><span class="hint-touch">Tippen Sie auf einen Wirbel und entdecken Sie Wissenswertes.</span></p>
+      <div class="spine-fact" id="spine-fact"><div class="spine-fact-in"><div class="spine-fact-card" role="region" aria-live="polite" aria-label="Wissenswertes zum Wirbel"><p class="sf-kicker"></p><p class="sf-text"></p><button type="button" class="sf-close" aria-label="Schließen">×</button></div></div></div>
     </div>
   </section>
 
@@ -538,10 +554,10 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="advice-sub" data-reveal style="--i:2">Das ganze neurochirurgische Fachgebiet, Schwerpunkt Wirbelsäule.</p>
       </header>
       <ul class="topics">
-        <li data-reveal><details name="topics"><summary class="topic"><b>Zweitmeinung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt. Zu bereits geplanten Therapien gebe ich Ihnen außerhalb des gesetzlichen Zweitmeinungsverfahrens eine persönliche Einschätzung.</p></details></li>
-        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Beschwerden nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Die Beschwerden sind nach einem Eingriff geblieben oder wiedergekommen? Gemeinsam ordnen wir ein, woran es liegen kann und was als Nächstes sinnvoll ist. Beratung ist auch nach bereits durchgeführten Eingriffen möglich.</p></details></li>
-        <li data-reveal style="--i:2"><details name="topics"><summary class="topic"><b>Rücken-, Nacken- und Beinbeschwerden</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Schmerzen, Taubheit oder Kribbeln, die Sie schon länger begleiten? Ich nehme mir Zeit, die Ursache einzuordnen, und berate Sie zu den nächsten Schritten.</p></details></li>
-        <li data-reveal style="--i:3"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Frage</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
+        <li data-reveal><details name="topics"><summary class="topic"><b>Nacken-, Rücken-, Arm- und Beinbeschwerden</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Schmerzen, Taubheit oder Kribbeln, die Sie schon länger begleiten? Ich nehme mir Zeit, die Ursache einzuordnen, und berate Sie zu den nächsten Schritten.</p></details></li>
+        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Frage</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
+        <li data-reveal style="--i:2"><details name="topics"><summary class="topic"><b>Beratung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt. Zu bereits geplanten Therapien gebe ich Ihnen außerhalb des gesetzlichen Zweitmeinungsverfahrens eine persönliche Einschätzung.</p></details></li>
+        <li data-reveal style="--i:3"><details name="topics"><summary class="topic"><b>Beratung nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Sie wurden bereits operiert und möchten wissen, wie es weitergeht? Ich sehe mir Ihre Befunde an und bespreche mit Ihnen, was jetzt sinnvoll ist.</p></details></li>
       </ul>
       <div class="how" data-reveal>
         <p class="how-title">So berate ich</p>
@@ -550,7 +566,7 @@ details[open] .plus::after { transform: rotate(0); }
           <li><b>Untersuchung, ggf. MRT</b></li>
           <li><b>Ausführliche Beratung</b></li>
         </ul>
-        <p class="how-note">Dank langjähriger Erfahrung in konservativer und operativer Behandlung erhalten Sie eine unabhängige Empfehlung, ob Sie von einer Operation profitieren könnten oder ein konservatives Vorgehen erfolgversprechender ist.</p>
+        <p class="how-note">Dank langjähriger Erfahrung in konservativer und operativer Behandlung erhalten Sie eine unabhängige Empfehlung, ob Sie von einer Operation profitieren könnten oder ein konservatives Vorgehen erfolgversprechender ist. Der Schlüssel zur Genesung liegt nicht immer in der Wahl der neuesten Methoden, sondern im kritischen Umgang mit deren Einsatz.</p>
       </div>
     </div>
   </section>
@@ -566,7 +582,7 @@ details[open] .plus::after { transform: rotate(0); }
       <div class="about-body">
         <p class="label" data-reveal>Über mich</p>
         <h2 id="about-title" data-reveal style="--i:1">Fast wäre alles anders gekommen.</h2>
-        <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein kleiner VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</p>
+        <p class="text" data-reveal style="--i:2">Als die Zusage fürs Medizinstudium kam, war mein alter VW-Bus schon gepackt, Richtung Italien. Und hätte es mit der Medizin nicht geklappt? Dann wäre ich heute wohl&nbsp;Tischler.</p>
         <ol class="path" aria-label="Mein Weg" data-reveal style="--i:3">
           <li><b>Studium der Humanmedizin</b><span>Bochum und Berlin</span></li>
           <li><b>Seit 1987: Neurochirurgie</b><span>Facharztausbildung am Krankenhaus der Barmherzigen Brüder, Trier</span></li>
@@ -579,10 +595,10 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="horizon" aria-label="Leuchtturm im Abendlicht">
-    <img src="assets/leuchtturm-sintum.webp" width="2400" height="3000" alt="" loading="lazy">
+  <section class="horizon" aria-label="Vollmond über der Kieler Förde">
+    <img src="assets/kiel-mond-1200.webp" srcset="assets/kiel-mond-700.webp 700w, assets/kiel-mond-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" loading="lazy">
     <div class="wrap">
-      <blockquote data-reveal>„Der Schlüssel zur Genesung liegt nicht immer in der Wahl der neuesten Methoden, sondern im kritischen Umgang mit deren Einsatz.“</blockquote>
+      <blockquote data-reveal>„Sie entscheiden. Ich gebe Ihnen die Orientierung dafür.“</blockquote>
     </div>
   </section>
 
@@ -625,10 +641,10 @@ details[open] .plus::after { transform: rotate(0); }
         <div class="cell full">
           <label for="f-topic">Ihr Anliegen</label>
           <select id="f-topic" name="anliegen">
-            <option>Zweitmeinung vor einer Operation</option>
-            <option>Beschwerden nach einer Operation</option>
-            <option>Beratung bei Rückenbeschwerden</option>
+            <option>Nacken-, Rücken-, Arm- und Beinbeschwerden</option>
             <option>Andere neurochirurgische Frage</option>
+            <option>Beratung vor einer Operation</option>
+            <option>Beratung nach einer Operation</option>
           </select>
         </div>
         <div class="cell msg">
@@ -649,7 +665,7 @@ details[open] .plus::after { transform: rotate(0); }
     <div class="map-card" data-reveal>
       <h2 id="map-title">So finden Sie mich</h2>
       <address>Burgstraße&nbsp;2, 4.&nbsp;Stock<br>24103&nbsp;Kiel</address>
-      <p>In der Kieler Innenstadt, zwischen Altem Markt und Schloss. Mit dem Aufzug erreichbar.</p>
+      <p>In der Kieler Innenstadt, zwischen Altem Markt und Kieler Schloss. Mit dem Aufzug erreichbar.</p>
       <a class="tlink" href="https://www.google.com/maps/search/?api=1&amp;query=Burgstra%C3%9Fe+2%2C+24103+Kiel" rel="noopener">In Google Maps öffnen</a>
     </div>
   </section>
@@ -661,10 +677,9 @@ details[open] .plus::after { transform: rotate(0); }
         <div class="list" data-reveal style="--i:1">
           <details name="faq"><summary>Wer kann in die Sprechstunde kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis ist eine Privatpraxis für privat Versicherte und Selbstzahler. Gesetzlich Versicherte können als Selbstzahler kommen.</p></details>
           <details name="faq"><summary>Wie bekomme ich einen Termin?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Schreiben Sie mir über das Anfrageformular. Ich melde mich persönlich bei Ihnen, und wir finden in Ruhe einen Termin.</p></details>
-          <details name="faq"><summary>Was kostet eine Zweitmeinung?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ).</p></details>
+          <details name="faq"><summary>Was kostet eine Beratung?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Abgerechnet wird nach der Gebührenordnung für Ärzte (GOÄ).</p></details>
           <details name="faq"><summary>Was soll ich mitbringen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ihre aktuellen MRT- oder CT-Bilder auf CD oder als Link, Arztbriefe und Befunde, die schriftliche OP-Empfehlung, falls es eine gibt, und eine Liste Ihrer Medikamente.</p></details>
-          <details name="faq"><summary>Ich bin schon operiert. Kann ich trotzdem kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, etwa wenn Beschwerden geblieben oder neu aufgetreten sind.</p></details>
-          <details name="faq"><summary>Was unterscheidet Neurochirurgie von Orthopädie?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Beide behandeln die Wirbelsäule. Die Neurochirurgie kommt vom Nervensystem her: Sie ist dort gefragt, wo Nervenwurzeln oder Rückenmark bedrängt werden.</p></details>
+          <details name="faq"><summary>Ich bin schon operiert. Kann ich trotzdem kommen?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Ja. Auch nach einer bereits durchgeführten Operation ist eine Beratung möglich, zum Beispiel zum weiteren Vorgehen. Bitte bringen Sie Ihre Befunde mit.</p></details>
           <details name="faq"><summary>Ist die Praxis barrierefrei erreichbar?<span class="plus" aria-hidden="true"></span></summary><p class="answer">Die Praxis liegt im 4.&nbsp;Stock der Burgstraße&nbsp;2 und ist mit einem Aufzug erreichbar.</p></details>
         </div>
       </div>
@@ -690,7 +705,7 @@ details[open] .plus::after { transform: rotate(0); }
         <a href="#top">Nach oben ↑</a>
       </nav>
     </div>
-    <p class="credits" id="bildnachweis">Bilder: Kieler Hafen, Marvin Radke, <a href="https://unsplash.com/photos/oDDhvDMvKKg">Unsplash</a>, zugeschnitten und verkleinert. Leuchtturm, Joseph Sintum, <a href="https://unsplash.com/photos/vrqypTgxRiw">Unsplash</a>, zugeschnitten und verkleinert. Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
+    <p class="credits" id="bildnachweis">Karte: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende.</p>
   </div>
 </footer>
 
@@ -791,9 +806,67 @@ details[open] .plus::after { transform: rotate(0); }
   const SWELL = [null, [1.05, 1.15], [1.03, 1.085], [1.015, 1.045], [1.005, 1.015]];
   const from = [255, 255, 255], to = [143, 207, 220];
   const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
-  let hot = -1;
+  let hot = -1, sel = -1;
   const paint = (center) => parts.forEach((part, i) => { part.style.fill = tint(center < 0 ? 0 : (FADE[Math.abs(i - center)] ?? 0)); part.style.fillOpacity = i === center ? 1 : ''; });
   const hide = () => { hot = -1; paint(-1); parts.forEach((p) => { p.style.transform = ''; }); tip.classList.remove('is-on'); };
+  // Fun facts, one per vertebra; the panel below the spine opens on click or tap.
+  const facts = [
+    'Der erste Halswirbel (Atlas) trägt den Schädel und hat als einziger Wirbel keinen Wirbelkörper. Er bildet mit dem Hinterhaupt das obere Kopfgelenk, in dem das Nicken stattfindet.',
+    'Der zweite Halswirbel (Axis) besitzt einen knöchernen Zahn (Dens axis), um den sich der Atlas dreht. Etwa die Hälfte der Kopfdrehung entsteht in diesem Segment.',
+    'Die Halswirbelsäule besteht bei fast allen Säugetieren aus sieben Wirbeln. Sie ist der beweglichste Abschnitt der Wirbelsäule.',
+    'Aus der Halswirbelsäule treten acht Paar Spinalnerven aus. Die unteren versorgen Schulter, Arm und Hand. Eine Nervenwurzelreizung im Nacken kann daher Schmerzen oder Kribbeln bis in die Finger auslösen.',
+    'Im Bereich der mittleren Halswirbelsäule treten Bandscheibenvorfälle und Verschleiß am häufigsten auf, meist zwischen dem fünften und siebten Halswirbel (HWK 5 bis 7).',
+    'Die Segmente HWK 5/6 und HWK 6/7 sind besonders oft von Verschleiß betroffen. Typische Folgen sind Nackenschmerzen mit Ausstrahlung in den Arm.',
+    'Der siebte Halswirbel („Vertebra prominens“) hat einen langen Dornfortsatz, der am Nackenansatz tastbar ist. Er dient als Orientierungspunkt für die Untersuchung.',
+    'Jeder Brustwirbel trägt ein Rippenpaar. Mit Rippen und Brustbein bildet die Brustwirbelsäule den Brustkorb, der Herz und Lunge schützt.',
+    'Die Brustwirbelsäule ist durch die Rippen stabilisiert und der am wenigsten bewegliche Abschnitt. Bandscheibenvorfälle sind hier deutlich seltener als an Hals- und Lendenwirbelsäule.',
+    'Die Brustwirbelsäule ist physiologisch leicht nach hinten gewölbt (Kyphose). Eine verstärkte Rundung kann Beschwerden verursachen und wird im Verlauf kontrolliert.',
+    'Zwischen den Wirbeln und den Rippen liegen kleine Gelenke (Kostovertebralgelenke). Sie können Schmerzen verursachen, die wie ein Ziehen im Brustkorb wirken.',
+    'Das Rückenmark verläuft geschützt im Wirbelkanal und ist beim Erwachsenen etwa 40 bis 45 Zentimeter lang. Eine Einengung des Kanals (Spinalkanalstenose) kann Nerven und Rückenmark belasten.',
+    'Zwischen den Wirbelkörpern liegen die Bandscheiben. Sie bestehen aus einem Faserring und einem wasserreichen Kern und wirken als Stoßdämpfer.',
+    'Die Bandscheiben verlieren im Lauf des Lebens Wasser und werden flacher. Das ist ein normaler Alterungsprozess und nicht zwingend krankhaft.',
+    'Von der Seite betrachtet ist die Wirbelsäule doppelt S-förmig geschwungen. Diese Krümmungen federn Belastungen ab.',
+    'An den Dornfortsätzen und Querfortsätzen setzen Muskeln und Bänder an, die die Wirbelsäule stabilisieren. Eine kräftige Rumpfmuskulatur entlastet die Bandscheiben.',
+    'Insgesamt treten 31 Paar Spinalnerven aus dem Rückenmark aus. Sie steuern Muskeln und leiten Berührung, Temperatur und Schmerz.',
+    'Das Rückenmark endet beim Erwachsenen meist auf Höhe des ersten oder zweiten Lendenwirbels. Darunter verlaufen die Nervenwurzeln als „Cauda equina“ (Pferdeschweif).',
+    'Der zwölfte Brustwirbel markiert den Übergang zur Lendenwirbelsäule. Dieser Abschnitt ist durch den Wechsel von steifer zu beweglicher Wirbelsäule besonders anfällig für Verletzungen.',
+    'Die Lendenwirbel sind die größten Wirbel. Sie tragen den Hauptteil des Körpergewichts und sind starken Belastungen ausgesetzt.',
+    'Die Lendenwirbelsäule ist der häufigste Ort von Rückenschmerzen. In den meisten Fällen sind sie unspezifisch und klingen ohne Operation wieder ab.',
+    'Die Lendenwirbelsäule ist physiologisch leicht nach vorn gewölbt (Lordose). Bei einer Spinalkanalstenose verstärkt das Zurückneigen die Beschwerden, Vorbeugen lindert sie oft.',
+    'Die Segmente LWK 4/5 und LWK 5/SWK 1 sind am häufigsten von Bandscheibenvorfällen betroffen. Typisch ist ein Ischiasschmerz, der in Bein und Fuß ausstrahlt.',
+    'Aus dem Segment LWK 5/SWK 1 tritt die Nervenwurzel S1 aus, aus LWK 4/5 die Wurzel L5. Je nachdem, welche Wurzel gereizt ist, zeigen sich Schmerzen und Ausfälle an anderer Stelle des Beins.',
+    'Das Kreuzbein entsteht aus fünf Wirbeln, die im Lauf des Heranwachsens zu einem Knochen verwachsen. Es bildet die Rückwand des Beckens.',
+    'Über das Kreuzbein ist die Wirbelsäule mit dem Becken verbunden. Die Iliosakralgelenke sind straff gesichert und können unabhängig von der Wirbelsäule Schmerzen verursachen.',
+    'Das Steißbein besteht aus drei bis fünf rückgebildeten Wirbeln. Es dient als Ansatz für Beckenbodenmuskeln und Bänder.'
+  ];
+  const fact = document.getElementById('spine-fact');
+  const kicker = fact?.querySelector('.sf-kicker');
+  const ftext = fact?.querySelector('.sf-text');
+  const wrapEl = spine.parentElement;
+  const mark = () => parts.forEach((p, i) => p.setAttribute('aria-expanded', String(i === sel)));
+  const closeFact = () => { sel = -1; fact?.classList.remove('is-open'); mark(); hide(); };
+  const openFact = (i) => {
+    if (!fact) return;
+    if (sel === i) { closeFact(); return; }
+    sel = i;
+    kicker.textContent = names[i].long;
+    ftext.textContent = facts[i];
+    fact.classList.add('is-open');
+    wrapEl.classList.add('is-touched');
+    mark();
+    show(i);
+  };
+  parts.forEach((p, i) => {
+    p.setAttribute('role', 'button');
+    p.setAttribute('tabindex', '0');
+    p.setAttribute('aria-label', names[i].long);
+    p.setAttribute('aria-controls', 'spine-fact');
+    p.setAttribute('aria-expanded', 'false');
+    p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFact(i); } if (e.key === 'Escape') closeFact(); });
+    p.addEventListener('focus', () => { if (sel < 0) show(i); });
+    p.addEventListener('blur', () => { if (sel < 0) hide(); });
+  });
+  fact?.querySelector('.sf-close').addEventListener('click', closeFact);
   const show = (i) => {
     if (hot === i) return;
     hot = i;
@@ -827,9 +900,10 @@ details[open] .plus::after { transform: rotate(0); }
     tip.classList.add('is-on');
   };
   parts.forEach((part, i) => part.addEventListener('pointerenter', () => show(i)));
-  spine.addEventListener('pointerleave', hide);
-  spine.addEventListener('pointerdown', (e) => { const i = parts.indexOf(e.target); if (i < 0) hide(); else show(i); });
-  document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target)) hide(); });
+  const rest = () => { if (sel >= 0) { hot = -1; show(sel); } else hide(); };
+  spine.addEventListener('pointerleave', rest);
+  spine.addEventListener('click', (e) => { const i = parts.indexOf(e.target); if (i >= 0) openFact(i); });
+  document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target) && !fact?.contains(e.target)) { if (sel >= 0) closeFact(); else hide(); } });
 })();
 </script>
 </body>

@@ -6,7 +6,7 @@ const env = {
   SMTP_HOST: 'mail.your-server.de', SMTP_PORT: '587', SMTP_USER: 'booking@example.com', SMTP_PASS: 'secret',
   MAIL_FROM: 'booking@example.com', MAIL_TO: 'band@example.com', ALLOWED_ORIGINS: 'https://a.example, https://b.example',
 };
-const good = { name: 'Lea Müller', email: 'lea@example.de', anliegen: 'Zweitmeinung vor einer Operation', zeitraum: 'Ich bin flexibel', nachricht: 'Hallo,\r\nmein Rücken 🙃 tut weh.', einwilligung: 'ja', website: '' };
+const good = { name: 'Lea Müller', email: 'lea@example.de', anliegen: 'Beratung vor einer Operation', zeitraum: 'Ich bin flexibel', nachricht: 'Hallo,\r\nmein Rücken 🙃 tut weh.', einwilligung: 'ja', website: '' };
 
 test('readConfig reads all values', () => {
   const c = readConfig(env);
@@ -108,7 +108,7 @@ test('buildMail only takes reply-to and text from the request', () => {
   assert.equal(m.from, 'booking@example.com');
   assert.equal(m.to, 'band@example.com');
   assert.equal(m.replyTo, 'lea@example.de');
-  assert.equal(m.subject, 'Anfrage: Zweitmeinung vor einer Operation');
+  assert.equal(m.subject, 'Anfrage: Beratung vor einer Operation');
   assert.equal(m.html, undefined);
   assert.match(m.text, /Name: Lea Müller/);
   assert.match(m.text, /Zeitraum: Ich bin flexibel/);
