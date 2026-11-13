@@ -15,7 +15,7 @@ const PHONE = /^(?=(?:\D*\d){6,})\+?[\d\s\-/().]+$/;
 export const TOPICS = [
   'Nacken-, Rücken-, Arm- und Beinbeschwerden',
   'Andere neurochirurgische Frage',
-  'Zweitmeinung vor einer Operation',
+  'Beratung vor einer Operation',
   'Beratung nach einer Operation',
 ];
 export const TIMES = ['So bald wie möglich', 'In den nächsten zwei Wochen', 'Im nächsten Monat', 'Ich bin flexibel'];
