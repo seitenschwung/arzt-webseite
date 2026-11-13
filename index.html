@@ -244,7 +244,31 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 .stance .label { align-self: start; margin-top: 0.9em; }
 .stance-lead { margin-top: 22px; max-width: 38em; font-size: var(--step-lead); line-height: 1.4; color: #e8edf5; }
 .spine-wrap { grid-column: 1 / -1; position: relative; margin-top: clamp(24px, 4vw, 56px); }
-.spine-hint { grid-column: 1 / -1; margin-top: -8px; font-size: var(--step-small); color: #c7d2e6; }
+.spine-hint { grid-column: 1 / -1; margin-top: -8px; font-size: var(--step-small); color: #c7d2e6; display: flex; align-items: center; gap: 10px; }
+.hint-icon { flex: none; width: 22px; height: 22px; color: #8fcfdc; }
+.spine-nudge { position: absolute; left: 75.9%; top: 43%; width: 0; height: 0; pointer-events: none; z-index: 3; color: var(--navy); transition: opacity 300ms ease; }
+.spine-nudge .ring { position: absolute; left: -22px; top: -22px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #8fcfdc; opacity: 0; }
+.spine-nudge svg { position: absolute; left: -6px; top: -4px; width: 38px; height: 38px; filter: drop-shadow(0 2px 6px rgb(0 0 0 / 0.45)); fill: #fff; }
+.spine-wrap.is-touched .spine-nudge { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .spine-nudge svg { animation: nudge 2.4s ease-in-out infinite; }
+  .spine-nudge .ring { animation: ring 2.4s ease-out infinite; }
+  @keyframes nudge { 0%, 55%, 100% { translate: 0 0; } 30% { translate: -3px -5px; } 42% { translate: 0 2px; scale: 0.94; } }
+  @keyframes ring { 0%, 38% { opacity: 0; scale: 0.4; } 45% { opacity: 0.9; } 100% { opacity: 0; scale: 1.5; } }
+}
+.stance-spine .v { cursor: pointer; }
+.stance-spine .v:focus { outline: none; }
+.stance-spine .v:focus-visible { stroke: #8fcfdc; stroke-width: 4; }
+.spine-fact { grid-column: 1 / -1; display: grid; grid-template-rows: 0fr; transition: grid-template-rows 420ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+.spine-fact.is-open { grid-template-rows: 1fr; }
+.spine-fact-in { overflow: hidden; min-height: 0; }
+.spine-fact-card { position: relative; max-width: 46em; margin-top: 14px; padding: 20px 52px 22px 24px; border-left: 3px solid #8fcfdc; border-radius: 0 12px 12px 0; background: rgb(255 255 255 / 0.09); }
+.sf-kicker { color: #8fcfdc; font-weight: 700; letter-spacing: 0.04em; font-size: var(--step-small); }
+.sf-text { margin-top: 6px; font-size: var(--step-lead); line-height: 1.4; color: #fff; text-wrap: pretty; }
+.sf-close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.sf-close:hover { background: rgb(255 255 255 / 0.14); }
+.sf-close:focus-visible { outline: 2px solid #8fcfdc; }
+@media (prefers-reduced-motion: reduce) { .spine-fact { transition: none; } }
 .hint-touch { display: none; }
 @media (hover: none) { .hint-mouse { display: none; } .hint-touch { display: inline; } }
 .stance-spine { display: block; width: 100%; height: auto; overflow: visible; }
@@ -526,8 +550,9 @@ details[open] .plus::after { transform: rotate(0); }
         <p class="big" data-reveal style="--i:1">Unabhängige fachärztliche Beratung, <span>bevor Sie sich entscheiden.</span></p>
         <p class="stance-lead" data-reveal style="--i:2">Ich nehme mir Zeit für ein ausführliches Gespräch und eine gründliche Untersuchung, sehe mir Ihre Bilder und Befunde an und berate Sie danach eingehend zu Ihrem Krankheitsbild. So lassen sich unklare Befunde besser einordnen, und Sie entscheiden mit mehr Sicherheit. Wenn ein Eingriff nach Ausschöpfung anderer Möglichkeiten ratsam oder nicht zu vermeiden ist, sage ich es Ihnen offen. Ist er nicht nötig, sage ich das ebenso. Ist bereits eine Therapie geplant, erhalten Sie von mir eine unabhängige zweite Meinung außerhalb des gesetzlich geregelten Zweitmeinungsverfahrens.</p>
       </div>
-      <div class="spine-wrap"><svg class="stance-spine" viewBox="0 80 1351 191" aria-hidden="true" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg><div class="spine-tip" role="presentation"></div></div>
-      <p class="spine-hint"><span class="hint-mouse">Fahren Sie mit der Maus über die Wirbelsäule und lassen Sie sich die Wirbel anzeigen.</span><span class="hint-touch">Tippen Sie auf einen Wirbel, um seinen Namen zu sehen.</span></p>
+      <div class="spine-wrap"><svg class="stance-spine" viewBox="0 80 1351 191" role="group" aria-label="Wirbelsäule: Wirbel anklicken für Wissenswertes" focusable="false" data-reveal style="--i:2"><rect class="v" style="--n:0" x="6.0" y="168.9" width="30" height="72.0" rx="10.2"/><rect class="v" style="--n:1" x="45.0" y="173.6" width="30" height="73.7" rx="10.2"/><rect class="v" style="--n:2" x="84.0" y="177.6" width="30" height="75.3" rx="10.2"/><rect class="v" style="--n:3" x="123.0" y="180.6" width="30" height="77.0" rx="10.2"/><rect class="v" style="--n:4" x="162.0" y="182.6" width="30" height="78.7" rx="10.2"/><rect class="v" style="--n:5" x="201.0" y="183.4" width="30" height="80.3" rx="10.2"/><rect class="v" style="--n:6" x="240.0" y="183.0" width="30" height="82.0" rx="10.2"/><rect class="v" style="--n:7" x="279.0" y="179.0" width="40" height="88.0" rx="13.6"/><rect class="v" style="--n:8" x="328.0" y="174.4" width="40" height="91.3" rx="13.6"/><rect class="v" style="--n:9" x="377.0" y="168.1" width="40" height="94.5" rx="13.6"/><rect class="v" style="--n:10" x="426.0" y="160.4" width="40" height="97.8" rx="13.6"/><rect class="v" style="--n:11" x="475.0" y="151.5" width="40" height="101.1" rx="13.6"/><rect class="v" style="--n:12" x="524.0" y="142.0" width="40" height="104.4" rx="13.6"/><rect class="v" style="--n:13" x="573.0" y="132.2" width="40" height="107.6" rx="13.6"/><rect class="v" style="--n:14" x="622.0" y="122.6" width="40" height="110.9" rx="13.6"/><rect class="v" style="--n:15" x="671.0" y="113.8" width="40" height="114.2" rx="13.6"/><rect class="v" style="--n:16" x="720.0" y="106.0" width="40" height="117.5" rx="13.6"/><rect class="v" style="--n:17" x="769.0" y="99.7" width="40" height="120.7" rx="13.6"/><rect class="v" style="--n:18" x="818.0" y="95.1" width="40" height="124.0" rx="13.6"/><rect class="v" style="--n:19" x="867.0" y="86.0" width="56" height="140.0" rx="19.0"/><rect class="v" style="--n:20" x="932.0" y="84.0" width="56" height="148.0" rx="19.0"/><rect class="v" style="--n:21" x="997.0" y="85.3" width="56" height="156.0" rx="19.0"/><rect class="v" style="--n:22" x="1062.0" y="89.2" width="56" height="164.0" rx="19.0"/><rect class="v" style="--n:23" x="1127.0" y="95.0" width="56" height="172.0" rx="19.0"/><rect class="v" style="--n:24" x="1192.0" y="115.7" width="44" height="150.0" rx="15.0"/><rect class="v" style="--n:25" x="1245.0" y="144.4" width="44" height="110.0" rx="15.0"/><rect class="v" style="--n:26" x="1298.0" y="172.5" width="44" height="70.0" rx="15.0"/></svg><div class="spine-tip" role="presentation"></div><span class="spine-nudge" aria-hidden="true"><i class="ring"></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span></div>
+      <p class="spine-hint"><svg class="hint-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v14"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg><span class="hint-mouse">Klicken Sie auf einen Wirbel und entdecken Sie Wissenswertes.</span><span class="hint-touch">Tippen Sie auf einen Wirbel und entdecken Sie Wissenswertes.</span></p>
+      <div class="spine-fact" id="spine-fact"><div class="spine-fact-in"><div class="spine-fact-card" role="region" aria-live="polite" aria-label="Wissenswertes zum Wirbel"><p class="sf-kicker"></p><p class="sf-text"></p><button type="button" class="sf-close" aria-label="Schließen">×</button></div></div></div>
     </div>
   </section>
 
@@ -791,9 +816,67 @@ details[open] .plus::after { transform: rotate(0); }
   const SWELL = [null, [1.05, 1.15], [1.03, 1.085], [1.015, 1.045], [1.005, 1.015]];
   const from = [255, 255, 255], to = [143, 207, 220];
   const tint = (k) => `rgb(${from.map((c, j) => Math.round(c + (to[j] - c) * k)).join(',')})`;
-  let hot = -1;
+  let hot = -1, sel = -1;
   const paint = (center) => parts.forEach((part, i) => { part.style.fill = tint(center < 0 ? 0 : (FADE[Math.abs(i - center)] ?? 0)); part.style.fillOpacity = i === center ? 1 : ''; });
   const hide = () => { hot = -1; paint(-1); parts.forEach((p) => { p.style.transform = ''; }); tip.classList.remove('is-on'); };
+  // Fun facts, one per vertebra; the panel below the spine opens on click or tap.
+  const facts = [
+    'Der Atlas trägt den Kopf und ist nach dem Titanen der griechischen Sage benannt, der das Himmelsgewölbe trägt. Er ist der einzige Wirbel ohne Wirbelkörper.',
+    'Der Axis hat einen Zahn, um den sich der Atlas dreht. Hier entsteht etwa die Hälfte der Drehung, wenn Sie den Kopf schütteln.',
+    'Giraffen haben genau wie wir sieben Halswirbel, nur sind ihre deutlich länger. Fast alle Säugetiere kommen mit sieben aus.',
+    'Ihr Kopf wiegt vier bis fünf Kilo und ruht auf nur sieben kleinen Wirbeln. Kein Wunder, dass der Nacken so schnell verspannt.',
+    'Beim Blick aufs Handy beugt sich der Kopf nach vorn, und die Halswirbelsäule trägt dann deutlich mehr als sein eigentliches Gewicht.',
+    'Von den Halswirbeln aus ziehen Nervenwurzeln in Schulter, Arm und Hand. Deshalb kann ein Nackenproblem bis in die Finger kribbeln.',
+    'Der siebte Halswirbel ist als Höcker am Nackenansatz tastbar, wenn Sie den Kopf nach vorn beugen. Er heißt „Vertebra prominens“, der hervorstehende Wirbel.',
+    'Ab hier trägt jeder Brustwirbel ein Rippenpaar. Zusammen mit dem Brustbein bilden sie den Brustkorb, der Herz und Lunge schützt.',
+    'Die Brustwirbelsäule ist der steifste Abschnitt, denn die Rippen halten sie fest. Beweglich ist sie vor allem beim Drehen.',
+    'Die Brustwirbelsäule ist von Natur aus leicht nach hinten gewölbt. Diese Rundung heißt Kyphose.',
+    'Zwölf Brustwirbel gibt es, und jeder hat auf beiden Seiten kleine Gelenke für die Rippen.',
+    'Das Rückenmark liegt im Wirbelkanal gut geschützt wie in einem Rohr aus Knochen. Bei Erwachsenen ist es etwa 45 Zentimeter lang.',
+    'Zwischen den Wirbeln liegen Bandscheiben. Sie wirken wie Stoßdämpfer und bestehen zu einem großen Teil aus Wasser.',
+    'Tagsüber werden die Bandscheiben zusammengedrückt. Darum sind Sie morgens etwa ein bis zwei Zentimeter größer als abends.',
+    'Von der Seite betrachtet ist die Wirbelsäule doppelt S-förmig geschwungen. Das federt Stöße beim Gehen und Laufen ab.',
+    'Jeder Wirbel hat Fortsätze, an denen Muskeln und Bänder ansetzen. Die Dornfortsätze können Sie am Rücken entlang tasten.',
+    'Durch kleine Öffnungen zwischen den Wirbeln treten 31 Paar Spinalnerven aus. Sie steuern Muskeln und melden Berührung und Schmerz.',
+    'Der Wirbelkanal reicht durch die gesamte Wirbelsäule. Das Rückenmark selbst endet bei Erwachsenen schon auf Höhe des ersten oder zweiten Lendenwirbels.',
+    'Der letzte Brustwirbel ist ein Übergang. Er ähnelt schon den Lendenwirbeln und trägt die beiden untersten, freien Rippen.',
+    'Die Lendenwirbel sind die größten und kräftigsten Wirbel, denn sie tragen den Großteil Ihres Körpergewichts.',
+    'Im Lendenbereich sitzen die höchsten Lasten. Dort entstehen die meisten Rückenschmerzen.',
+    'Die Lendenwirbelsäule schwingt leicht nach vorn, in die sogenannte Lordose. Sie hält den Oberkörper im Gleichgewicht.',
+    'Die beiden untersten Lendenwirbel sind am häufigsten von Bandscheibenvorfällen betroffen. Sie tragen viel Last und bewegen sich viel.',
+    'Der fünfte Lendenwirbel ist der Übergang zum Kreuzbein. Hier knickt die Wirbelsäule im Becken ab.',
+    'Das Kreuzbein besteht aus fünf Wirbeln, die im Lauf des Erwachsenwerdens zu einem einzigen Knochen verwachsen sind. Es bildet die Rückwand des Beckens.',
+    'Das Kreuzbein verbindet die Wirbelsäule mit dem Becken. Seine Gelenke zu den Beckenschaufeln sind kaum beweglich und sehr stabil.',
+    'Das Steißbein ist der Rest des Schwanzes unserer Vorfahren. Es besteht aus drei bis fünf verwachsenen Wirbeln und dient als Ansatzpunkt für Muskeln.'
+  ];
+  const fact = document.getElementById('spine-fact');
+  const kicker = fact?.querySelector('.sf-kicker');
+  const ftext = fact?.querySelector('.sf-text');
+  const wrapEl = spine.parentElement;
+  const mark = () => parts.forEach((p, i) => p.setAttribute('aria-expanded', String(i === sel)));
+  const closeFact = () => { sel = -1; fact?.classList.remove('is-open'); mark(); hide(); };
+  const openFact = (i) => {
+    if (!fact) return;
+    if (sel === i) { closeFact(); return; }
+    sel = i;
+    kicker.textContent = names[i].long;
+    ftext.textContent = facts[i];
+    fact.classList.add('is-open');
+    wrapEl.classList.add('is-touched');
+    mark();
+    show(i);
+  };
+  parts.forEach((p, i) => {
+    p.setAttribute('role', 'button');
+    p.setAttribute('tabindex', '0');
+    p.setAttribute('aria-label', names[i].long);
+    p.setAttribute('aria-controls', 'spine-fact');
+    p.setAttribute('aria-expanded', 'false');
+    p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFact(i); } if (e.key === 'Escape') closeFact(); });
+    p.addEventListener('focus', () => { if (sel < 0) show(i); });
+    p.addEventListener('blur', () => { if (sel < 0) hide(); });
+  });
+  fact?.querySelector('.sf-close').addEventListener('click', closeFact);
   const show = (i) => {
     if (hot === i) return;
     hot = i;
@@ -827,9 +910,10 @@ details[open] .plus::after { transform: rotate(0); }
     tip.classList.add('is-on');
   };
   parts.forEach((part, i) => part.addEventListener('pointerenter', () => show(i)));
-  spine.addEventListener('pointerleave', hide);
-  spine.addEventListener('pointerdown', (e) => { const i = parts.indexOf(e.target); if (i < 0) hide(); else show(i); });
-  document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target)) hide(); });
+  const rest = () => { if (sel >= 0) { hot = -1; show(sel); } else hide(); };
+  spine.addEventListener('pointerleave', rest);
+  spine.addEventListener('click', (e) => { const i = parts.indexOf(e.target); if (i >= 0) openFact(i); });
+  document.addEventListener('pointerdown', (e) => { if (!spine.contains(e.target) && !fact?.contains(e.target)) { if (sel >= 0) closeFact(); else hide(); } });
 })();
 </script>
 </body>
