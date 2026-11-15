@@ -29,6 +29,7 @@ const FIELDS = {
   nachricht: { max: 2000, required: false, multiLine: true },
   einwilligung: { max: 2, required: true, oneOf: ['ja'] },
   website: { max: 200, required: false }, // honeypot, must stay empty for people
+  dauer: { max: 12, required: false }, // milliseconds between loading the page and sending; people need longer than bots
 };
 
 const isEmail = (s) => s.length <= 254 && EMAIL.test(s);
@@ -111,6 +112,9 @@ export function createLimiter({ max, windowMs, now = Date.now }) {
   };
 }
 
+// A form filled in faster than this (or without a time at all) did not come from a person.
+export const MIN_FILL_MS = 3000;
+
 const MAX_BODY = 16 * 1024;
 
 const reply = (res, status, payload, extra = {}) => {
@@ -167,6 +171,7 @@ export function createHandler({ config, transport, limiter, maxConcurrent = 2, l
     const checked = validate(parsed);
     if (!checked.ok) return reply(res, 400, { ok: false, field: checked.field });
     if (checked.data.website) return reply(res, 200, { ok: true }); // honeypot: pretend success, send nothing
+    if (!(Number(checked.data.dauer) >= MIN_FILL_MS)) return reply(res, 200, { ok: true }); // too fast or no time given: same silence
 
     if (active >= maxConcurrent) return reply(res, 503, { ok: false });
     active++;

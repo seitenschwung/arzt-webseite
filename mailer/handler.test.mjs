@@ -9,7 +9,7 @@ const env = {
   MAIL_FROM: 'booking@example.com', MAIL_TO: 'band@example.com', ALLOWED_ORIGINS: 'https://christophmanicke.de',
 };
 const ORIGIN = 'https://christophmanicke.de';
-const good = { name: 'Lea Müller', email: 'lea@example.de', anliegen: 'Beratung vor einer Operation', zeitraum: 'Ich bin flexibel', nachricht: 'Hallo!\r\nGrüße', einwilligung: 'ja', website: '' };
+const good = { name: 'Lea Müller', email: 'lea@example.de', anliegen: 'Beratung vor einer Operation', zeitraum: 'Ich bin flexibel', nachricht: 'Hallo!\r\nGrüße', einwilligung: 'ja', website: '', dauer: '8000' };
 
 async function start({ config = readConfig(env), transport, limit = 10 } = {}) {
   const sent = [];
@@ -99,6 +99,17 @@ test('a filled honeypot gets 200 but no mail', async () => {
   const res = await post(s.base, { ...good, website: 'http://spam.example' });
   assert.equal(res.status, 200);
   assert.equal(s.sent.length, 0);
+  await s.close();
+});
+
+test('a form sent too fast or without a time gets 200 but no mail', async () => {
+  const s = await start();
+  for (const dauer of ['500', '2999', '', 'abc']) assert.equal((await post(s.base, { ...good, dauer })).status, 200);
+  const { dauer, ...noTime } = good;
+  assert.equal((await post(s.base, noTime)).status, 200);
+  assert.equal(s.sent.length, 0);
+  assert.equal((await post(s.base, { ...good, dauer: '3000' })).status, 200);
+  assert.equal(s.sent.length, 1);
   await s.close();
 });
 

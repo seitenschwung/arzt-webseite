@@ -754,6 +754,7 @@ details[open] .plus::after { transform: rotate(0); }
 // The request: sent to the mailer (/api/anfrage); where it is not set up or not reachable, the visitor's own mail program takes over.
 (() => {
   const form = document.querySelector('.request');
+  const loadedAt = Date.now();
   const status = form.querySelector('.form-status');
   const button = form.querySelector('.submit');
   const viaMail = () => {
@@ -770,6 +771,7 @@ details[open] .plus::after { transform: rotate(0); }
     try {
       const fields = ['name', 'email', 'telefon', 'anliegen', 'zeitraum', 'nachricht', 'einwilligung', 'website'];
       const body = Object.fromEntries(fields.map((k) => [k, form.elements[k].type === 'checkbox' ? (form.elements[k].checked ? 'ja' : '') : form.elements[k].value]));
+      body.dauer = String(Date.now() - loadedAt);
       const res = await fetch('/api/anfrage', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
       if (res.ok) {
         status.textContent = 'Danke, Ihre Anfrage ist angekommen. Ich melde mich persönlich bei Ihnen.';
