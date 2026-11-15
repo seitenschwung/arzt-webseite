@@ -339,7 +339,7 @@ h3 { font-size: var(--step-lead); letter-spacing: -0.015em; line-height: 1.15; }
 @media (prefers-reduced-motion: reduce), (max-width: 760px) { .horizon { overflow: hidden; clip-path: none; } .horizon > img { position: absolute; } }
 .horizon .wrap { position: absolute; z-index: 2; inset: 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; text-align: right; padding-top: clamp(28px, 6vw, 72px); }
 .horizon blockquote { margin: 0; max-width: min(19em, 54vw); font-size: clamp(1.25rem, 0.9rem + 1.5vw, 2.4rem); font-weight: 580; font-stretch: 110%; letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance;  }
-@media (max-width: 760px) { .horizon .wrap { justify-content: flex-end; padding-bottom: 28px; } .horizon > img { object-position: 50% 20%; } .horizon::before { background: linear-gradient(0deg, rgba(10, 30, 70, 0.8) 0, rgba(10, 30, 70, 0.55) 45%, rgba(10, 30, 70, 0) 80%); } }
+@media (max-width: 760px) { .horizon .wrap { justify-content: flex-end; padding-bottom: 28px; } .horizon > img { object-position: 50% 45%; } .horizon::before { background: linear-gradient(0deg, rgba(10, 30, 70, 0.7) 0, rgba(10, 30, 70, 0.3) 40%, rgba(10, 30, 70, 0) 70%); } }
 
 /* ---------- map: the Altstadt, zoomed in on Burgstraße 2 ---------- */
 .mapsec { position: relative; height: min(78svh, 720px); min-height: 30rem; overflow: hidden; background: #cfe3ea; --z: 1; }
@@ -555,14 +555,14 @@ details[open] .plus::after { transform: rotate(0); }
       </header>
       <ul class="topics">
         <li data-reveal><details name="topics"><summary class="topic"><b>Nacken-, Rücken-, Arm- und Beinbeschwerden</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Schmerzen, Taubheit oder Kribbeln, die Sie schon länger begleiten? Ich nehme mir Zeit, die Ursache einzuordnen, und berate Sie zu den nächsten Schritten.</p></details></li>
-        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Frage</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
+        <li data-reveal style="--i:1"><details name="topics"><summary class="topic"><b>Andere neurochirurgische Fragen</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihre Frage passt in keine Schublade? Schreiben Sie mir. Das ganze neurochirurgische Fachgebiet gehört zu meiner Beratung.</p></details></li>
         <li data-reveal style="--i:2"><details name="topics"><summary class="topic"><b>Beratung vor einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Ihnen wurde eine Operation empfohlen, und Sie möchten sicher sein? Ich sehe mir Ihre Bilder und Befunde an, untersuche Sie und bespreche mit Ihnen, welche Möglichkeiten es gibt. Zu bereits geplanten Therapien gebe ich Ihnen außerhalb des gesetzlichen Zweitmeinungsverfahrens eine persönliche Einschätzung.</p></details></li>
         <li data-reveal style="--i:3"><details name="topics"><summary class="topic"><b>Beratung nach einer Operation</b><span class="plus" aria-hidden="true"></span></summary><p class="topic-text">Sie wurden bereits operiert und möchten wissen, wie es weitergeht? Ich sehe mir Ihre Befunde an und bespreche mit Ihnen, was jetzt sinnvoll ist.</p></details></li>
       </ul>
       <div class="how" data-reveal>
         <p class="how-title">So berate ich</p>
         <ul class="how-list">
-          <li><b>Krankengeschichte</b></li>
+          <li><b>Erfassung der gesundheitlichen Vorgeschichte</b></li>
           <li><b>Untersuchung, ggf. MRT</b></li>
           <li><b>Ausführliche Beratung</b></li>
         </ul>
@@ -595,8 +595,8 @@ details[open] .plus::after { transform: rotate(0); }
     </div>
   </section>
 
-  <section class="horizon" aria-label="Vollmond über der Kieler Förde">
-    <img src="assets/kiel-mond-1200.webp" srcset="assets/kiel-mond-700.webp 700w, assets/kiel-mond-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" loading="lazy">
+  <section class="horizon" aria-label="Abendhimmel über dem Kieler Hafen">
+    <img src="assets/kiel-steg-1200.webp" srcset="assets/kiel-steg-700.webp 700w, assets/kiel-steg-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" loading="lazy">
     <div class="wrap">
       <blockquote data-reveal>„Sie entscheiden. Ich gebe Ihnen die Orientierung dafür.“</blockquote>
     </div>
@@ -642,7 +642,7 @@ details[open] .plus::after { transform: rotate(0); }
           <label for="f-topic">Ihr Anliegen</label>
           <select id="f-topic" name="anliegen">
             <option>Nacken-, Rücken-, Arm- und Beinbeschwerden</option>
-            <option>Andere neurochirurgische Frage</option>
+            <option>Andere neurochirurgische Fragen</option>
             <option>Beratung vor einer Operation</option>
             <option>Beratung nach einer Operation</option>
           </select>
