@@ -14,7 +14,7 @@ const PHONE = /^(?=(?:\D*\d){6,})\+?[\d\s\-/().]+$/;
 // The choices offered by the form; anything else is refused.
 export const TOPICS = [
   'Nacken-, Rücken-, Arm- und Beinbeschwerden',
-  'Andere neurochirurgische Frage',
+  'Andere neurochirurgische Fragen',
   'Beratung vor einer Operation',
   'Beratung nach einer Operation',
 ];
