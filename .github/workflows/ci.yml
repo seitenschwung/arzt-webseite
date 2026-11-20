@@ -16,3 +16,15 @@ jobs:
       packages: write
     uses: seitenschwung/template/.github/workflows/pipeline.yml@v1
     secrets: inherit
+
+  # Preview: puts the link to the PR's preview app (https://arzt-webseite-pr<n>.seitenschwung.com) on top of
+  # the PR description; on PRs labelled manual-review also a comment with before/after screenshots.
+  # Runs when the tests fail too. The reusable workflow decides itself which events it acts on.
+  preview:
+    needs: pipeline
+    if: ${{ !cancelled() }}
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: seitenschwung/template/.github/workflows/preview.yml@v1
+    secrets: inherit
