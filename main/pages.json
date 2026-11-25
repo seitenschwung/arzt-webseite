@@ -1,0 +1,25 @@
+{
+  "sha": "6bb1731a9dadf8492a3dbae58e5648ee3e38375a",
+  "pages": [
+    {
+      "slug": "datenschutz.html",
+      "path": "/datenschutz.html",
+      "hash": "eae4b2c808cad5f91190c7ae9fe23d244fea2747d2328342cb0de57364008bc3"
+    },
+    {
+      "slug": "fancy",
+      "path": "/fancy/",
+      "hash": "22d4fa1c920a07c1eecb9b70dbc0da1d35296df9ec1ab3b8ffa95dcd47803fab"
+    },
+    {
+      "slug": "home",
+      "path": "/",
+      "hash": "0f5d3ca0d1e4cd3b4322faa22525a1c9046a6ae9c4a460df23d6af161fbc326e"
+    },
+    {
+      "slug": "impressum.html",
+      "path": "/impressum.html",
+      "hash": "b0f89177efa6857ef8e8659d782f7cbae88690ec9ebc40696a66dd2d9e69846b"
+    }
+  ]
+}
