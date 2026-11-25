@@ -45,6 +45,15 @@
     "addressRegion": "Schleswig-Holstein",
     "addressCountry": "DE"
    },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 54.32433,
+    "longitude": 10.14184
+   },
+   "hasMap": "https://www.google.com/maps/search/?api=1&query=Burgstra%C3%9Fe+2%2C+24103+Kiel",
+   "sameAs": [
+    "https://www.doctolib.de/neurochirurgie/kiel/christoph-manicke"
+   ],
    "areaServed": {
     "@type": "City",
     "name": "Kiel"
@@ -70,6 +79,9 @@
    "name": "Dr. med. Christoph Manicke",
    "jobTitle": "Facharzt für Neurochirurgie",
    "image": "https://christophmanicke.de/assets/v2/portrait-manicke.webp",
+   "sameAs": [
+    "https://www.doctolib.de/neurochirurgie/kiel/christoph-manicke"
+   ],
    "worksFor": {
     "@id": "https://christophmanicke.de/#praxis"
    }
@@ -516,7 +528,7 @@ details[open] .plus::after { transform: rotate(0); }
   <section class="hero" aria-labelledby="title">
     <div class="hero-copy">
       <p class="label" data-rise style="--i:0">Neurochirurgie in Kiel · Schwerpunkt Wirbelsäule</p>
-      <h1 id="title" data-rise style="--i:1"><span class="ln">Neurochirurgische</span> <span class="ln"><em>Beratung</em></span></h1>
+      <h1 id="title" data-rise style="--i:1"><span class="ln">Neurochirurgische</span> <span class="ln"><em>Beratung</em> in Kiel</span></h1>
       <p class="lede" data-rise style="--i:2">Mit Zeit für Untersuchung, Gespräch und Ihre Fragen. Unabhängig und ausführlich.</p>
       <div class="byline" data-rise style="--i:3">
         <img src="assets/v2/portrait-manicke.webp" width="528" height="700" alt="Porträt von Dr. med. Christoph Manicke">
@@ -718,8 +730,8 @@ details[open] .plus::after { transform: rotate(0); }
   const quote = document.querySelector('.horizon blockquote');
   if (quote) {
     const words = quote.textContent.trim().split(/\s+/);
-    quote.setAttribute('aria-label', words.join(' '));
-    quote.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true" style="--k:${i}">${w}</span>`).join(' ');
+    // Screen readers get the whole sentence once (aria-label is not allowed on a blockquote), the words are decoration.
+    quote.innerHTML = `<span class="sr-only">${words.join(' ')}</span>` + words.map((w, i) => `<span class="w" aria-hidden="true" style="--k:${i}">${w}</span>`).join(' ');
   }
   const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
   items.forEach((el) => io.observe(el));
